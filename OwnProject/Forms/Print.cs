@@ -42,7 +42,7 @@ namespace OwnProject
                 Print.Add("Statlap2");
             }
 
-            save();
+            Save();
             //Thread.Sleep(3000);
             //printSheet(Print);
         }
@@ -68,7 +68,7 @@ namespace OwnProject
 
         private void FormPrint_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
     }
 }

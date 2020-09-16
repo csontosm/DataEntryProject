@@ -11,7 +11,7 @@ namespace OwnProject
 {
     public class FormBase : Form
     {
-        public void closingDialog(FormClosingEventArgs e)
+        public void ClosingDialog(FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Biztos ki szeretnél lépni ?", "Bezárás", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -23,7 +23,7 @@ namespace OwnProject
                 e.Cancel = true;
             }
         }
-        public void cbFill(ComboBox cb, int x, int i)
+        public void CbFill(ComboBox cb, int x, int i)
         {
             int j = x;
             while (j - 1 < i)
@@ -41,7 +41,7 @@ namespace OwnProject
             }
         }
 
-        public void save()
+        public void Save()
         {
             string[] docTemplateFilesArray = Forms.dataManager.getDocFiles(Settings.templateDocFolderPath);
 

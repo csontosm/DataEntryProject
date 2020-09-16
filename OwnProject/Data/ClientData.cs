@@ -14,13 +14,7 @@ namespace OwnProject
 
         public string ClientRelative { get; set; }
 
-        public string ClientIdentifierDocumentType { get; set; }
-
-        public string ClientIdentifierDocumentIssuer { get; set; }
-
         public string ClientIdentifierDocumentNumber { get; set; }
-
-        public string ClientIdentifierDocumentValidity { get; set; }
 
         public string ClientHomeCountry { get; set; }
 
@@ -31,14 +25,6 @@ namespace OwnProject
         public string ClientHomeAddress { get; set; }
 
         public string ClientHomeDistrict { get; set; }
-
-        public string ClientName { get; set; }
-
-        public string ClientIdentifierDocumentValidityYear { get; set; }
-
-        public string ClientIdentifierDocumentValidityMonth { get; set; }
-
-        public string ClientIdentifierDocumentValidityDay { get; set; }
 
         public string ClientReach { get; set; }
     }

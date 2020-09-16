@@ -42,14 +42,10 @@ namespace OwnProject
 
         public string HomeDistrict { get; set; }
 
-        public string Nationality { get; set; }
-
-        public string BirthName { get; set; }
+        public string Nationality { get; set; }    
 
         public string ResidenceCity { get; set; }
 
         public string ResidenceDistrict { get; set; }
-
-        public string ELHUNYT_KAPCSOLAT_HELYE { get; set; }
     }
 }

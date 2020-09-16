@@ -17,18 +17,18 @@ namespace OwnProject
             InitializeComponent();
             Forms.SpouseForm = this;
 
-            cbFill(cbE_K_E, 1900, DateTime.Now.Year);
+            CbFill(cbE_K_E, 1900, DateTime.Now.Year);
             cbE_K_E.SelectedIndex = 0;
-            cbFill(cbE_K_H, 1, 12);
+            CbFill(cbE_K_H, 1, 12);
             cbE_K_H.SelectedIndex = 0;
-            cbFill(cbE_K_N, 1, 31);
+            CbFill(cbE_K_N, 1, 31);
             cbE_K_N.SelectedIndex = 0;
 
-            cbFill(cbE_K_SZ_E, 1900, DateTime.Now.Year);
+            CbFill(cbE_K_SZ_E, 1900, DateTime.Now.Year);
             cbE_K_SZ_E.SelectedIndex = 0;
-            cbFill(cbE_K_SZ_H, 1, 12);
+            CbFill(cbE_K_SZ_H, 1, 12);
             cbE_K_SZ_H.SelectedIndex = 0;
-            cbFill(cbE_K_SZ_N, 1, 31);
+            CbFill(cbE_K_SZ_N, 1, 31);
             cbE_K_SZ_N.SelectedIndex = 0;
         }
 
@@ -56,10 +56,8 @@ namespace OwnProject
 
         private void FormHazastars_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
-
-        //TextBox.TextChanged methods
 
         private void tbELHUNYT_KAPCSOLAT_VAROS_TextChanged(object sender, EventArgs e)
         {
@@ -149,8 +147,6 @@ namespace OwnProject
             tbH_SZA_SZ.Text = (cbE_K_SZ_E.Text.Substring(2, cbE_K_SZ_E.Text.Length - 2) + cbE_K_SZ_H.Text + cbE_K_SZ_N.Text);
         }
 
-        //Update data
-
         private void updateData()
         {
             var spouseData = Forms.spouseData;
@@ -163,30 +159,18 @@ namespace OwnProject
             spouseData.MarriageName = tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.Text;
             spouseData.Nationality = tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Text;
             spouseData.PlaceOfBirthCountry = tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Text;
-
             spouseData.HomeCity = tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Text;
             spouseData.HomeDistrict = tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Text;
             spouseData.HomeAddress = tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.Text;
-
             spouseData.ResidenceCity = tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Text;
             spouseData.ResidenceDistrict = tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Text;
-
             spouseData.DateOfMarriageYear = cbE_K_E.Text;
             spouseData.DateOfMarriageMonth = cbE_K_H.Text;
             spouseData.DateOfMarriageDay = cbE_K_N.Text;
-
             spouseData.DateOfBirthYear = cbE_K_SZ_E.Text;
             spouseData.DateOfBirthMonth = cbE_K_SZ_H.Text;
             spouseData.DateOfBirthDay = cbE_K_SZ_N.Text;
-
-
-            //Összevont adatok
-
-            spouseData.ELHUNYT_KAPCSOLAT_HELYE = (tbELHUNYT_KAPCSOLAT_ORSZAG.Text + " " + tbELHUNYT_KAPCSOLAT_VAROS.Text);
-
             spouseData.PersonalIdentifierNumber = (tbH_SZA_N.Text + " " + tbH_SZA_SZ.Text + " " + tbH_SZA.Text);
-
-            spouseData.BirthName = (tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.Text + " " + tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.Text);
         }
     }
 }

@@ -91,12 +91,12 @@ namespace OwnProject
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
 
         private void btnPrint_Click_1(object sender, EventArgs e)
         {
-            save();
+            Save();
         }
     }
 }

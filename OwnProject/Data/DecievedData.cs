@@ -14,8 +14,6 @@ namespace OwnProject
 
         public string DateOfDeathDay { get; set; }
 
-        public string PlaceOfDeathCountry { get; set; }
-
         public string PlaceOfDeathCity { get; set; }
 
         public string BirthSurname { get; set; }
@@ -71,14 +69,6 @@ namespace OwnProject
         public string Profession { get; set; }
 
         public string Name { get; set; }
-
-        public string TimeOfDeath { get; set; }
-
-        public string PlaceOfDeath { get; set; }
-
-        public string TimeOfBirth { get; set; }
-
-        public string PlaceOfBirth { get; set; }
 
         public string Age { get; set; }
 

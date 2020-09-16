@@ -8,48 +8,44 @@ namespace OwnProject
 {
    public class FuneralData
     {
-        public string ELHUNYT_IGAZOLVANY_VISSZAIGENYLES { get; set; }
+        public string Method { get; set; }
 
-        public string TEMETES_MODJA { get; set; }
+        public string Type { get; set; }
 
-        public string TEMETES_TIPUSA { get; set; }
+        public string Date { get; set; }
 
-        public string TEMETES_IDOPONTJA { get; set; }
+        public string Catafalque { get; set; }
 
-        public string RAVATALOZO { get; set; }
+        public string CoffinOrUrnType { get; set; }
 
-        public string KOPORSO_URNA_TIPUS { get; set; }
+        public string CryptOrCaissionType { get; set; }
 
-        public string VAKKRIPTA_KESZON_TIPUS { get; set; }
+        public bool UrnCloth { get; set; }
 
-        public bool A_E_SZ_I { get; set; }
+        public string Grave { get; set; }
 
-        public bool A_E_L { get; set; }
+        public string GarveDigging { get; set; }
 
-        public bool A_E_H_B { get; set; }
+        public string GraveMarker { get; set; }
 
-        public bool A_E_SZ_A_K { get; set; }
+        public string Music { get; set; }
 
-        public bool A_H_A_K { get; set; }
 
-        public bool A_H_H_A_K { get; set; }
 
-        public bool URNATERITO { get; set; }
+        //Taken over documents
 
-        public string TEMETES_SIRHELY { get; set; }
+        public bool isIDCardTaken { get; set; }
 
-        public string TEMETES_PARCELLA { get; set; }
+        public bool isAddressCardTaken { get; set; }
 
-        public string TEMETES_SOR { get; set; }
+        public bool isDeathCertificateTaken { get; set; }
 
-        public string TEMETES_SIRHELY_SZAMA { get; set; }
+        public bool isBirthCertificateTaken { get; set; }
 
-        public string TEMETES_SIRASAS { get; set; }
+        public bool isMarriageCertificateTaken { get; set; }
 
-        public string TEMETES_SIRJELZO { get; set; }
+        public bool isSpouseDeathCertificateTaken { get; set; }
 
-        public string TEMETES_ZENE { get; set; }
-
-        public bool A_E_SZ_V { get; set; }
+        public bool isIDCardNeededByClient { get; set; }
     }
 }

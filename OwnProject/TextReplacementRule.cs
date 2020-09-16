@@ -15,6 +15,10 @@ namespace OwnProject
             ShouldReplace = shouldReplace;
         }
 
+        public TextReplacementRule(string textToReplace, string textToInsertTrue, string textToInsertFalse, Func<bool> shouldReplace) : this(textToReplace, shouldReplace() ? textToInsertTrue : textToInsertFalse)
+        {
+        }
+
         public TextReplacementRule(string textToReplace, string textToInsert) : this(textToReplace, textToInsert, () => true)
         {
         }

@@ -17,29 +17,29 @@ namespace OwnProject
             InitializeComponent();
             Forms.DeceivedForm = this;
 
-            cbFill(cbE_SZ_E, 1900, DateTime.Now.Year);
+            CbFill(cbE_SZ_E, 1900, DateTime.Now.Year);
             cbE_SZ_E.SelectedIndex = 0;
-            cbFill(cbE_SZ_H, 1, 12);
+            CbFill(cbE_SZ_H, 1, 12);
             cbE_SZ_H.SelectedIndex = 0;
-            cbFill(cbE_SZ_N, 1, 31);
+            CbFill(cbE_SZ_N, 1, 31);
             cbE_SZ_N.SelectedIndex = 0;
 
 
             tbE_H_E.Text = DateTime.Now.Year.ToString();
-            cbFill(cbE_H_H, 1, 12);
+            CbFill(cbE_H_H, 1, 12);
             cbE_H_H.SelectedIndex = 0;
-            cbFill(cbE_H_N, 1, 31);
+            CbFill(cbE_H_N, 1, 31);
             cbE_H_N.SelectedIndex = 0;
 
 
             cbE_O_E.Items.Add("Hat. Nélk.");
-            cbFill(cbE_O_E, DateTime.Now.Year, DateTime.Now.Year + 30);
+            CbFill(cbE_O_E, DateTime.Now.Year, DateTime.Now.Year + 30);
             cbE_O_E.SelectedIndex = 0;
 
-            cbFill(cbE_O_H, 1, 12);
+            CbFill(cbE_O_H, 1, 12);
             cbE_O_H.SelectedIndex = 0;
 
-            cbFill(cbE_O_N, 1, 31);
+            CbFill(cbE_O_N, 1, 31);
             cbE_O_N.SelectedIndex = 0;
         }
 
@@ -63,7 +63,7 @@ namespace OwnProject
             }
             else
             {
-                Forms.VOLTHAZASSAG = checkBox_VoltHazastarsa.Checked;
+                Forms.isMarried = checkBox_VoltHazastarsa.Checked;
                 if (checkBox_VoltHazastarsa.Checked == true)
                 {
                     Forms.SpouseForm.Show();
@@ -81,7 +81,7 @@ namespace OwnProject
 
         private void FormElhunyt_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
 
 
@@ -181,18 +181,8 @@ namespace OwnProject
 
         private void tbELHUNYT_SZULETESI_HELYE_VAROS_TextChanged(object sender, EventArgs e)
         {
-            bool visible;
-            if (tbELHUNYT_SZULETESI_HELYE_VAROS.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbELHUNYT_SZULETESI_HELYE_KERULET.Text = "";
-            }
-
-            tbELHUNYT_SZULETESI_HELYE_KERULET.Enabled = visible;
+            bool visible = tbELHUNYT_SZULETESI_HELYE_VAROS.Text == "BUDAPEST" ? true : false;
+            tbELHUNYT_SZULETESI_HELYE_VAROS.Enabled = visible;
         }
 
         private void tbELHUNYT_HALALESET_VAROS_TextChanged(object sender, EventArgs e)
@@ -296,38 +286,27 @@ namespace OwnProject
             elhunytData.BirthSurname = tbELHUNYT_NEVE_SZULETESI_CSALADI_NEVE.Text;
             elhunytData.BirthForename = tbELHUNYT_NEVE_SZULETESI_UTONEVE.Text;
             elhunytData.MarriageName = tbELHUNYT_NEVE_HAZASSAGI_NEVE.Text;
-
             elhunytData.Gender = cbElhunytNeme.Text;
-
             elhunytData.PlaceOfBirthCountry = tbELHUNYT_SZULETESI_HELYE_ORSZAG.Text;
             elhunytData.PlaceOfBirthCity = tbELHUNYT_SZULETESI_HELYE_VAROS.Text;
             elhunytData.PlaceOfBrithDistrict = tbELHUNYT_SZULETESI_HELYE_KERULET.Text;
-
             elhunytData.DateOfBirthYear = cbE_SZ_E.Text;
             elhunytData.DateOfBirthMonth = cbE_SZ_H.Text;
             elhunytData.DateOfBirthDay = cbE_SZ_N.Text;
-
             elhunytData.DateOfDeathYear = tbE_H_E.Text;
             elhunytData.DateOfDeathMonth = cbE_H_H.Text;
             elhunytData.DateOfDeathDay = cbE_H_N.Text;
-
             elhunytData.HomeCardNumber = tbELHUNYT_LAKCIM_KARTYASZAM.Text;
-
             elhunytData.IdentifierDocumentNumber = tbELHUNYT_SZ_OKMANY_AZONOSITO.Text;
-
             elhunytData.Nationality = tbELHUNYT_ALLAMPOLGARSAG.Text;
-
             elhunytData.PlaceOfDeathCity = tbELHUNYT_HALALESET_VAROS.Text;
             elhunytData.PlaceOfDeathDistrict = tbELHUNYT_HALALESET_KERULET.Text;
-
             elhunytData.HomeCountry = tbELHUNYT_LAKOHELY_ORSZAG.Text;
             elhunytData.HomeCity = tbELHUNYT_LAKOHELY_VAROS.Text;
             elhunytData.HomeDistrict = tbELHUNYT_LAKOHELY_KERULET.Text;
             elhunytData.HomeAddress = tbELHUNYT_LAKOHELY_UTCA_HSZ.Text;
-
             elhunytData.ResidenceCity = tbELHUNYT_TARTOZKODASI_VAROS.Text;
             elhunytData.ResidenceDistrict = tbELHUNYT_TARTOZKODASI_KERULET.Text;
-
             elhunytData.FatherBirthSurname = tbELHUNYT_APJA_SZULETESI_CSALADI_NEVE.Text;
             elhunytData.FatherBirthForename = tbELHUNYT_APJA_SZULETESI_UTONEVE.Text;
             elhunytData.MotherBirthSurname = tbELHUNYT_ANYJA_SZULETESI_CSALADI_NEVE.Text;
@@ -336,22 +315,17 @@ namespace OwnProject
             elhunytData.KidsFromLastMarriageAll = tbUH_O.Text;
             elhunytData.KidsFromLastMarriageBornAlive = tbUH_ESZ.Text;
             elhunytData.KidsFromLastMarriageAlive = tbUH_EV.Text;
-
             elhunytData.KidsAlltogetherAll = tbOSSZ_O.Text;
             elhunytData.KidsAlltogetherBornAlive = tbOSSZ_ESZ.Text;
             elhunytData.KidsAlltogetherAlive = tbOSSZ_EV.Text;
 
             elhunytData.Qualification = tbELHUNYT_VEGZETTSEG.Text;
             elhunytData.Profession = tbELHUNYT_FOGLALKOZAS.Text;
-
-
-
-            elhunytData.TimeOfDeath = (tbE_H_E.Text + "/" + cbE_H_H.Text + "/" + cbE_H_N.Text);
-            elhunytData.PlaceOfDeath = (tbELHUNYT_HALALESET_VAROS.Text + " " + tbELHUNYT_HALALESET_KERULET.Text);
-
             elhunytData.PersonalIdentifierNumber = (tbE_SZA_N.Text + " " + tbE_SZA_SZ.Text + " " + tbE_SZA.Text);
 
-            elhunytData.Age = Convert.ToInt32(HelperMethods.CalculateAge(elhunytData.TimeOfBirth, elhunytData.TimeOfDeath)).ToString();
+            string TimeOfBirth = cbE_SZ_E.Text + "/" + cbE_SZ_H.Text + "/" + cbE_SZ_N.Text;
+            string TimeOfDeath = tbE_H_E.Text + "/" + cbE_H_H.Text + "/" + cbE_H_N.Text;
+            elhunytData.Age = Convert.ToInt32(HelperMethods.CalculateAge(TimeOfBirth, TimeOfDeath)).ToString();
         }
     }
 }

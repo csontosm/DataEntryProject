@@ -22,7 +22,7 @@ namespace OwnProject
 
         private void KiegAdatok_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
 
         private void btnBefejezesVisszaFomenu_Click(object sender, EventArgs e)
@@ -51,50 +51,50 @@ namespace OwnProject
 
             string sirko;
             if (cbSirkoKripta.SelectedIndex == 0) sirko = "van sirkő"; else if (cbSirkoKripta.SelectedIndex == 1) sirko = "kripta"; else sirko = "nincs sirkő";
-            temetesData.TEMETES_MODJA = cbTemetesModja.Text + ", " + sirko;
+            temetesData.Method = cbTemetesModja.Text + ", " + sirko;
 
-            temetesData.TEMETES_TIPUSA = cbTemetesTipusa.Text;
+            temetesData.Type = cbTemetesTipusa.Text;
 
-            temetesData.TEMETES_IDOPONTJA = (tbT_I_E.Text + " " + cbT_I_H.Text + " " + cbT_I_N.Text + "  " + cbT_I_ORA.Text + ":" + cbT_I_PERC.Text);
+            temetesData.Date = (tbT_I_E.Text + " " + cbT_I_H.Text + " " + cbT_I_N.Text + "  " + cbT_I_ORA.Text + ":" + cbT_I_PERC.Text);
 
-            temetesData.RAVATALOZO = cbRavatalozo.Text;
-            temetesData.URNATERITO = checkBoxUrnaterito.Checked;
+            temetesData.Catafalque = cbRavatalozo.Text;
+            temetesData.UrnCloth = checkBoxUrnaterito.Checked;
 
-            temetesData.TEMETES_SIRHELY = tbSirhelyKolombariumSzam.Text;
+            temetesData.Grave = tbSirhelyKolombariumSzam.Text;
 
-            temetesData.TEMETES_SIRASAS = cbSirasas.Text;
-            temetesData.TEMETES_SIRJELZO = cbSirjelzo.Text;
-            temetesData.TEMETES_ZENE = tbZene.Text;
+            temetesData.GarveDigging = cbSirasas.Text;
+            temetesData.GraveMarker = cbSirjelzo.Text;
+            temetesData.Music = tbZene.Text;
             
             if (cbTemetesModja.SelectedIndex == 0)
             {
-                temetesData.KOPORSO_URNA_TIPUS = cbUrnaTipus.Text;
-                temetesData.VAKKRIPTA_KESZON_TIPUS = "";
+                temetesData.CoffinOrUrnType = cbUrnaTipus.Text;
+                temetesData.CryptOrCaissionType = "";
             }
             else if (cbTemetesModja.SelectedIndex == 2)
             {
-                temetesData.KOPORSO_URNA_TIPUS = cbUrnaTipus.Text;
-                temetesData.VAKKRIPTA_KESZON_TIPUS = cbKeszon.Text;
+                temetesData.CoffinOrUrnType = cbUrnaTipus.Text;
+                temetesData.CryptOrCaissionType = cbKeszon.Text;
             }
             else if (cbTemetesModja.SelectedIndex == 1)
             {
-                temetesData.KOPORSO_URNA_TIPUS = cbKoporsoTipus.Text;
-                temetesData.VAKKRIPTA_KESZON_TIPUS = cbVakkripta.Text;
+                temetesData.CoffinOrUrnType = cbKoporsoTipus.Text;
+                temetesData.CryptOrCaissionType = cbVakkripta.Text;
             }
             else
             {
-                temetesData.KOPORSO_URNA_TIPUS = "";
-                temetesData.VAKKRIPTA_KESZON_TIPUS = "";
+                temetesData.CoffinOrUrnType = "";
+                temetesData.CryptOrCaissionType = "";
             }
 
-            temetesData.A_E_SZ_I = checkBoxA_E_SZ_I.Checked;
-            temetesData.A_E_L = checkBoxA_E_L.Checked;
-            temetesData.A_E_H_B = checkBoxA_E_H_B.Checked;
-            temetesData.A_E_SZ_A_K = checkBoxA_E_SZ_A_K.Checked;
-            temetesData.A_H_A_K = checkBoxA_H_A_K.Checked;
-            temetesData.A_H_H_A_K = checkBoxA_H_H_A_K.Checked;
+            temetesData.isIDCardTaken = checkBoxA_E_SZ_I.Checked;
+            temetesData.isAddressCardTaken = checkBoxA_E_L.Checked;
+            temetesData.isDeathCertificateTaken = checkBoxA_E_H_B.Checked;
+            temetesData.isBirthCertificateTaken = checkBoxA_E_SZ_A_K.Checked;
+            temetesData.isMarriageCertificateTaken = checkBoxA_H_A_K.Checked;
+            temetesData.isSpouseDeathCertificateTaken = checkBoxA_H_H_A_K.Checked;
 
-            temetesData.A_E_SZ_V = checkBoxELHUNYT_SZEMELYI_VISSZAIGENYLES.Checked;
+            temetesData.isIDCardNeededByClient = checkBoxELHUNYT_SZEMELYI_VISSZAIGENYLES.Checked;
 
             bejelentoData.ClientReach = tbELERHETOSEG.Text;
         }
@@ -158,11 +158,11 @@ namespace OwnProject
 
 
                 tbT_I_E.Text = DateTime.Now.Year.ToString();
-                cbFill(cbT_I_H, 1, 12);
+                CbFill(cbT_I_H, 1, 12);
                 cbT_I_H.SelectedIndex = 0;
-                cbFill(cbT_I_N, 1, 31);
+                CbFill(cbT_I_N, 1, 31);
                 cbT_I_N.SelectedIndex = 0;
-                cbFill(cbT_I_ORA, 9, 17);
+                CbFill(cbT_I_ORA, 9, 17);
                 cbT_I_ORA.SelectedIndex = 0;
                 cbT_I_PERC.Items.Add("00");
                 cbT_I_PERC.Items.Add("30");
@@ -209,11 +209,11 @@ namespace OwnProject
 
 
                 tbT_I_E.Text = DateTime.Now.Year.ToString();
-                cbFill(cbT_I_H, 1, 12);
+                CbFill(cbT_I_H, 1, 12);
                 cbT_I_H.SelectedIndex = 0;
-                cbFill(cbT_I_N, 1, 31);
+                CbFill(cbT_I_N, 1, 31);
                 cbT_I_N.SelectedIndex = 0;
-                cbFill(cbT_I_ORA, 9, 17);
+                CbFill(cbT_I_ORA, 9, 17);
                 cbT_I_ORA.SelectedIndex = 0;
                 cbT_I_PERC.Items.Add("00");
                 cbT_I_PERC.Items.Add("30");

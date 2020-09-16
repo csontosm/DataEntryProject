@@ -115,7 +115,7 @@ namespace OwnProject
 
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
     }
 }

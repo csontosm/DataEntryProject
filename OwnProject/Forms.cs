@@ -33,8 +33,8 @@ namespace OwnProject
             Settings frmSettings = new Settings();
         }
 
-        public static bool VOLTHAZASSAG;
-        public static bool HAZASTARS_E_BEJELENTO;
+        public static bool isMarried;
+        public static bool isSpouseTheClient;
     }
 
 }

@@ -18,33 +18,33 @@ namespace OwnProject
             Forms.ClientForm = this;
 
             cbB_O_E.Items.Add("Hat. Nélk.");
-            cbFill(cbB_O_E, DateTime.Now.Year, DateTime.Now.Year + 30);
+            CbFill(cbB_O_E, DateTime.Now.Year, DateTime.Now.Year + 30);
             cbB_O_E.SelectedIndex = 0;
 
             cbB_O_H.Items.Add("");
-            cbFill(cbB_O_H, 1, 12);
+            CbFill(cbB_O_H, 1, 12);
             cbB_O_H.SelectedIndex = 0;
 
             cbB_O_N.Items.Add("");
-            cbFill(cbB_O_N, 1, 31);
+            CbFill(cbB_O_N, 1, 31);
             cbB_O_N.SelectedIndex = 0;
         }
 
         private void FormBejelento_FormClosing(object sender, FormClosingEventArgs e)
         {
-            closingDialog(e);
+            ClosingDialog(e);
         }
 
         private void btnVisszaHazastars_Click(object sender, EventArgs e)
         {
             updateData();
 
-            if (Forms.VOLTHAZASSAG == true)
+            if (Forms.isMarried == true)
             {
                 Forms.SpouseForm.Show();
                 this.Hide();
             }
-            else if (Forms.VOLTHAZASSAG == false)
+            else if (Forms.isMarried == false)
             {
                 Forms.DeceivedForm.Show();
                 this.Hide();
@@ -71,7 +71,7 @@ namespace OwnProject
 
         private void label1_VisibleChanged(object sender, EventArgs e)
         {
-            checkBox_Hazastars_A_Bejelento.Enabled = Forms.VOLTHAZASSAG;
+            checkBox_Hazastars_A_Bejelento.Enabled = Forms.isMarried;
         }
 
         private void checkBox_Hazastars_A_Bejelento_CheckedChanged(object sender, EventArgs e)
@@ -128,7 +128,7 @@ namespace OwnProject
         {
             var bejelentoData = Forms.clientData;
             bool hazastars = checkBox_Hazastars_A_Bejelento.Checked;
-            Forms.HAZASTARS_E_BEJELENTO = hazastars;
+            Forms.isSpouseTheClient = hazastars;
 
             if (hazastars)
             {
