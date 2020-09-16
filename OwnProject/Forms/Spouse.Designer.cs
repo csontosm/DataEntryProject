@@ -32,47 +32,47 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG = new System.Windows.Forms.TextBox();
+            this.tbPlaceOfMarriageCountry = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE = new System.Windows.Forms.TextBox();
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE = new System.Windows.Forms.TextBox();
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE = new System.Windows.Forms.TextBox();
+            this.tbSpouseMarriageName = new System.Windows.Forms.TextBox();
+            this.tbSpouseBirthForename = new System.Windows.Forms.TextBox();
+            this.tbSpouseBirthSurname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG = new System.Windows.Forms.TextBox();
+            this.tbSpousePlaceOfBirthCountry = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ = new System.Windows.Forms.TextBox();
-            this.btnVisszaElhunyt = new System.Windows.Forms.Button();
-            this.btnTovabbBejelento = new System.Windows.Forms.Button();
+            this.tbSpouseHomeAddress = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG = new System.Windows.Forms.TextBox();
-            this.tbH_SZA_N = new System.Windows.Forms.TextBox();
-            this.cbE_K_SZ_N = new System.Windows.Forms.ComboBox();
-            this.cbE_K_SZ_H = new System.Windows.Forms.ComboBox();
-            this.cbE_K_SZ_E = new System.Windows.Forms.ComboBox();
-            this.cbE_K_N = new System.Windows.Forms.ComboBox();
-            this.cbE_K_H = new System.Windows.Forms.ComboBox();
-            this.cbE_K_E = new System.Windows.Forms.ComboBox();
-            this.tbELHUNYT_KAPCSOLAT_KERULET = new System.Windows.Forms.TextBox();
-            this.tbELHUNYT_KAPCSOLAT_VAROS = new System.Windows.Forms.TextBox();
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET = new System.Windows.Forms.TextBox();
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS = new System.Windows.Forms.TextBox();
-            this.checkBoxLAKOHELYTARTOZKODASI = new System.Windows.Forms.CheckBox();
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET = new System.Windows.Forms.TextBox();
+            this.tbSpouseNationality = new System.Windows.Forms.TextBox();
+            this.tbSpousePersonalIdentifierNumberGender = new System.Windows.Forms.TextBox();
+            this.cmbSpouseDateOfBirthDay = new System.Windows.Forms.ComboBox();
+            this.cmbSpouseDateOfBirthMonth = new System.Windows.Forms.ComboBox();
+            this.cmbSpouseDateOfBirthYear = new System.Windows.Forms.ComboBox();
+            this.cmbDateOfMarriageDay = new System.Windows.Forms.ComboBox();
+            this.cmbDateOfMarriageMonth = new System.Windows.Forms.ComboBox();
+            this.cmbDateOfMarriageYear = new System.Windows.Forms.ComboBox();
+            this.tbPlaceOfMarriageDistrict = new System.Windows.Forms.TextBox();
+            this.tbPlaceOfMarriageCity = new System.Windows.Forms.TextBox();
+            this.tbSpouseHomeDistrict = new System.Windows.Forms.TextBox();
+            this.tbSpouseHomeCity = new System.Windows.Forms.TextBox();
+            this.cbHomeEqualsResidence = new System.Windows.Forms.CheckBox();
+            this.tbSpouseResidenceDistrict = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS = new System.Windows.Forms.TextBox();
-            this.tbH_SZA = new System.Windows.Forms.TextBox();
-            this.tbH_SZA_SZ = new System.Windows.Forms.TextBox();
+            this.tbSpouseResidenceCity = new System.Windows.Forms.TextBox();
+            this.tbSpousePersonalIdentifierNumber = new System.Windows.Forms.TextBox();
+            this.tbSpousePersonalIdentifierNumberBirthDate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label16
@@ -111,15 +111,15 @@
             this.label19.TabIndex = 47;
             this.label19.Text = "Házassági / Élettársi kapcsolat létesités...:";
             // 
-            // tbELHUNYT_KAPCSOLAT_ORSZAG
+            // tbPlaceOfMarriageCountry
             // 
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.Location = new System.Drawing.Point(128, 80);
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.Name = "tbELHUNYT_KAPCSOLAT_ORSZAG";
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.TabIndex = 44;
-            this.tbELHUNYT_KAPCSOLAT_ORSZAG.Text = "MAGYAR";
+            this.tbPlaceOfMarriageCountry.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbPlaceOfMarriageCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbPlaceOfMarriageCountry.Location = new System.Drawing.Point(128, 80);
+            this.tbPlaceOfMarriageCountry.Name = "tbPlaceOfMarriageCountry";
+            this.tbPlaceOfMarriageCountry.Size = new System.Drawing.Size(202, 29);
+            this.tbPlaceOfMarriageCountry.TabIndex = 44;
+            this.tbPlaceOfMarriageCountry.Text = "MAGYAR";
             // 
             // label1
             // 
@@ -166,32 +166,32 @@
             this.label5.TabIndex = 55;
             this.label5.Text = "Házastárs / Élettárs neve:";
             // 
-            // tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE
+            // tbSpouseMarriageName
             // 
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.Location = new System.Drawing.Point(129, 238);
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.Name = "tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE";
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.TabIndex = 54;
+            this.tbSpouseMarriageName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseMarriageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseMarriageName.Location = new System.Drawing.Point(129, 238);
+            this.tbSpouseMarriageName.Name = "tbSpouseMarriageName";
+            this.tbSpouseMarriageName.Size = new System.Drawing.Size(202, 29);
+            this.tbSpouseMarriageName.TabIndex = 54;
             // 
-            // tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE
+            // tbSpouseBirthForename
             // 
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.Location = new System.Drawing.Point(129, 203);
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.Name = "tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE";
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.TabIndex = 53;
+            this.tbSpouseBirthForename.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseBirthForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseBirthForename.Location = new System.Drawing.Point(129, 203);
+            this.tbSpouseBirthForename.Name = "tbSpouseBirthForename";
+            this.tbSpouseBirthForename.Size = new System.Drawing.Size(202, 29);
+            this.tbSpouseBirthForename.TabIndex = 53;
             // 
-            // tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE
+            // tbSpouseBirthSurname
             // 
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.Location = new System.Drawing.Point(129, 168);
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.Name = "tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE";
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.TabIndex = 52;
+            this.tbSpouseBirthSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseBirthSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseBirthSurname.Location = new System.Drawing.Point(129, 168);
+            this.tbSpouseBirthSurname.Name = "tbSpouseBirthSurname";
+            this.tbSpouseBirthSurname.Size = new System.Drawing.Size(202, 29);
+            this.tbSpouseBirthSurname.TabIndex = 52;
             // 
             // label9
             // 
@@ -229,15 +229,15 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Házastárs / Élettárs születési...:";
             // 
-            // tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG
+            // tbSpousePlaceOfBirthCountry
             // 
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Location = new System.Drawing.Point(129, 346);
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Name = "tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG";
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.TabIndex = 60;
-            this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Text = "MAGYAR";
+            this.tbSpousePlaceOfBirthCountry.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpousePlaceOfBirthCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpousePlaceOfBirthCountry.Location = new System.Drawing.Point(129, 346);
+            this.tbSpousePlaceOfBirthCountry.Name = "tbSpousePlaceOfBirthCountry";
+            this.tbSpousePlaceOfBirthCountry.Size = new System.Drawing.Size(202, 29);
+            this.tbSpousePlaceOfBirthCountry.TabIndex = 60;
+            this.tbSpousePlaceOfBirthCountry.Text = "MAGYAR";
             // 
             // label11
             // 
@@ -266,34 +266,34 @@
             this.label14.TabIndex = 70;
             this.label14.Text = "Házastárs / Élettárs lakóhelye:";
             // 
-            // tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ
+            // tbSpouseHomeAddress
             // 
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.Location = new System.Drawing.Point(129, 520);
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.Name = "tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ";
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.TabIndex = 69;
+            this.tbSpouseHomeAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseHomeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseHomeAddress.Location = new System.Drawing.Point(129, 520);
+            this.tbSpouseHomeAddress.Name = "tbSpouseHomeAddress";
+            this.tbSpouseHomeAddress.Size = new System.Drawing.Size(202, 29);
+            this.tbSpouseHomeAddress.TabIndex = 69;
             // 
-            // btnVisszaElhunyt
+            // btnBack
             // 
-            this.btnVisszaElhunyt.Location = new System.Drawing.Point(46, 654);
-            this.btnVisszaElhunyt.Name = "btnVisszaElhunyt";
-            this.btnVisszaElhunyt.Size = new System.Drawing.Size(77, 23);
-            this.btnVisszaElhunyt.TabIndex = 74;
-            this.btnVisszaElhunyt.Text = "Vissza";
-            this.btnVisszaElhunyt.UseVisualStyleBackColor = true;
-            this.btnVisszaElhunyt.Click += new System.EventHandler(this.btnVisszaElhunyt_Click);
+            this.btnBack.Location = new System.Drawing.Point(46, 654);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(77, 23);
+            this.btnBack.TabIndex = 74;
+            this.btnBack.Text = "Vissza";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnTovabbBejelento
+            // btnNext
             // 
-            this.btnTovabbBejelento.Location = new System.Drawing.Point(227, 654);
-            this.btnTovabbBejelento.Name = "btnTovabbBejelento";
-            this.btnTovabbBejelento.Size = new System.Drawing.Size(104, 23);
-            this.btnTovabbBejelento.TabIndex = 75;
-            this.btnTovabbBejelento.Text = "Tovább: Bejelentő";
-            this.btnTovabbBejelento.UseVisualStyleBackColor = true;
-            this.btnTovabbBejelento.Click += new System.EventHandler(this.btnTovabbBejelento_Click);
+            this.btnNext.Location = new System.Drawing.Point(227, 654);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(104, 23);
+            this.btnNext.TabIndex = 75;
+            this.btnNext.Text = "Tovább: Bejelentő";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // label15
             // 
@@ -313,151 +313,151 @@
             this.label20.TabIndex = 78;
             this.label20.Text = "Személyi azonositója";
             // 
-            // tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG
+            // tbSpouseNationality
             // 
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Location = new System.Drawing.Point(128, 427);
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Name = "tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG";
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Size = new System.Drawing.Size(202, 29);
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.TabIndex = 77;
-            this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Text = "MAGYAR";
+            this.tbSpouseNationality.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseNationality.Location = new System.Drawing.Point(128, 427);
+            this.tbSpouseNationality.Name = "tbSpouseNationality";
+            this.tbSpouseNationality.Size = new System.Drawing.Size(202, 29);
+            this.tbSpouseNationality.TabIndex = 77;
+            this.tbSpouseNationality.Text = "MAGYAR";
             // 
-            // tbH_SZA_N
+            // tbSpousePersonalIdentifierNumberGender
             // 
-            this.tbH_SZA_N.Enabled = false;
-            this.tbH_SZA_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbH_SZA_N.Location = new System.Drawing.Point(128, 392);
-            this.tbH_SZA_N.Name = "tbH_SZA_N";
-            this.tbH_SZA_N.Size = new System.Drawing.Size(33, 29);
-            this.tbH_SZA_N.TabIndex = 76;
+            this.tbSpousePersonalIdentifierNumberGender.Enabled = false;
+            this.tbSpousePersonalIdentifierNumberGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpousePersonalIdentifierNumberGender.Location = new System.Drawing.Point(128, 392);
+            this.tbSpousePersonalIdentifierNumberGender.Name = "tbSpousePersonalIdentifierNumberGender";
+            this.tbSpousePersonalIdentifierNumberGender.Size = new System.Drawing.Size(33, 29);
+            this.tbSpousePersonalIdentifierNumberGender.TabIndex = 76;
             // 
-            // cbE_K_SZ_N
+            // cmbSpouseDateOfBirthDay
             // 
-            this.cbE_K_SZ_N.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbE_K_SZ_N.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbE_K_SZ_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbE_K_SZ_N.FormattingEnabled = true;
-            this.cbE_K_SZ_N.Location = new System.Drawing.Point(286, 300);
-            this.cbE_K_SZ_N.Name = "cbE_K_SZ_N";
-            this.cbE_K_SZ_N.Size = new System.Drawing.Size(45, 28);
-            this.cbE_K_SZ_N.TabIndex = 105;
-            this.cbE_K_SZ_N.SelectedIndexChanged += new System.EventHandler(this.cbE_K_SZ_N_SelectedIndexChanged);
+            this.cmbSpouseDateOfBirthDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSpouseDateOfBirthDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbSpouseDateOfBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbSpouseDateOfBirthDay.FormattingEnabled = true;
+            this.cmbSpouseDateOfBirthDay.Location = new System.Drawing.Point(286, 300);
+            this.cmbSpouseDateOfBirthDay.Name = "cmbSpouseDateOfBirthDay";
+            this.cmbSpouseDateOfBirthDay.Size = new System.Drawing.Size(45, 28);
+            this.cmbSpouseDateOfBirthDay.TabIndex = 105;
+            this.cmbSpouseDateOfBirthDay.SelectedIndexChanged += new System.EventHandler(this.cmbSpouseDateOfBirthDay_SelectedIndexChanged);
             // 
-            // cbE_K_SZ_H
+            // cmbSpouseDateOfBirthMonth
             // 
-            this.cbE_K_SZ_H.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbE_K_SZ_H.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbE_K_SZ_H.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbE_K_SZ_H.FormattingEnabled = true;
-            this.cbE_K_SZ_H.Location = new System.Drawing.Point(235, 300);
-            this.cbE_K_SZ_H.Name = "cbE_K_SZ_H";
-            this.cbE_K_SZ_H.Size = new System.Drawing.Size(45, 28);
-            this.cbE_K_SZ_H.TabIndex = 104;
-            this.cbE_K_SZ_H.SelectedIndexChanged += new System.EventHandler(this.cbE_K_SZ_H_SelectedIndexChanged);
+            this.cmbSpouseDateOfBirthMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSpouseDateOfBirthMonth.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbSpouseDateOfBirthMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbSpouseDateOfBirthMonth.FormattingEnabled = true;
+            this.cmbSpouseDateOfBirthMonth.Location = new System.Drawing.Point(235, 300);
+            this.cmbSpouseDateOfBirthMonth.Name = "cmbSpouseDateOfBirthMonth";
+            this.cmbSpouseDateOfBirthMonth.Size = new System.Drawing.Size(45, 28);
+            this.cmbSpouseDateOfBirthMonth.TabIndex = 104;
+            this.cmbSpouseDateOfBirthMonth.SelectedIndexChanged += new System.EventHandler(this.cmbSpouseDateOfBirthMonth_SelectedIndexChanged);
             // 
-            // cbE_K_SZ_E
+            // cmbSpouseDateOfBirthYear
             // 
-            this.cbE_K_SZ_E.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbE_K_SZ_E.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbE_K_SZ_E.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbE_K_SZ_E.FormattingEnabled = true;
-            this.cbE_K_SZ_E.Location = new System.Drawing.Point(128, 300);
-            this.cbE_K_SZ_E.Name = "cbE_K_SZ_E";
-            this.cbE_K_SZ_E.Size = new System.Drawing.Size(101, 28);
-            this.cbE_K_SZ_E.TabIndex = 103;
-            this.cbE_K_SZ_E.SelectedIndexChanged += new System.EventHandler(this.cbE_K_SZ_E_SelectedIndexChanged);
+            this.cmbSpouseDateOfBirthYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSpouseDateOfBirthYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbSpouseDateOfBirthYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbSpouseDateOfBirthYear.FormattingEnabled = true;
+            this.cmbSpouseDateOfBirthYear.Location = new System.Drawing.Point(128, 300);
+            this.cmbSpouseDateOfBirthYear.Name = "cmbSpouseDateOfBirthYear";
+            this.cmbSpouseDateOfBirthYear.Size = new System.Drawing.Size(101, 28);
+            this.cmbSpouseDateOfBirthYear.TabIndex = 103;
+            this.cmbSpouseDateOfBirthYear.SelectedIndexChanged += new System.EventHandler(this.cmbSpouseDateOfBirthYear_SelectedIndexChanged);
             // 
-            // cbE_K_N
+            // cmbDateOfMarriageDay
             // 
-            this.cbE_K_N.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbE_K_N.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbE_K_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbE_K_N.FormattingEnabled = true;
-            this.cbE_K_N.Location = new System.Drawing.Point(286, 30);
-            this.cbE_K_N.Name = "cbE_K_N";
-            this.cbE_K_N.Size = new System.Drawing.Size(45, 28);
-            this.cbE_K_N.TabIndex = 108;
+            this.cmbDateOfMarriageDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateOfMarriageDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbDateOfMarriageDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbDateOfMarriageDay.FormattingEnabled = true;
+            this.cmbDateOfMarriageDay.Location = new System.Drawing.Point(286, 30);
+            this.cmbDateOfMarriageDay.Name = "cmbDateOfMarriageDay";
+            this.cmbDateOfMarriageDay.Size = new System.Drawing.Size(45, 28);
+            this.cmbDateOfMarriageDay.TabIndex = 108;
             // 
-            // cbE_K_H
+            // cmbDateOfMarriageMonth
             // 
-            this.cbE_K_H.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbE_K_H.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbE_K_H.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbE_K_H.FormattingEnabled = true;
-            this.cbE_K_H.Location = new System.Drawing.Point(235, 30);
-            this.cbE_K_H.Name = "cbE_K_H";
-            this.cbE_K_H.Size = new System.Drawing.Size(45, 28);
-            this.cbE_K_H.TabIndex = 107;
+            this.cmbDateOfMarriageMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateOfMarriageMonth.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbDateOfMarriageMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbDateOfMarriageMonth.FormattingEnabled = true;
+            this.cmbDateOfMarriageMonth.Location = new System.Drawing.Point(235, 30);
+            this.cmbDateOfMarriageMonth.Name = "cmbDateOfMarriageMonth";
+            this.cmbDateOfMarriageMonth.Size = new System.Drawing.Size(45, 28);
+            this.cmbDateOfMarriageMonth.TabIndex = 107;
             // 
-            // cbE_K_E
+            // cmbDateOfMarriageYear
             // 
-            this.cbE_K_E.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbE_K_E.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbE_K_E.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbE_K_E.FormattingEnabled = true;
-            this.cbE_K_E.Location = new System.Drawing.Point(128, 30);
-            this.cbE_K_E.Name = "cbE_K_E";
-            this.cbE_K_E.Size = new System.Drawing.Size(101, 28);
-            this.cbE_K_E.TabIndex = 106;
+            this.cmbDateOfMarriageYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateOfMarriageYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbDateOfMarriageYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbDateOfMarriageYear.FormattingEnabled = true;
+            this.cmbDateOfMarriageYear.Location = new System.Drawing.Point(128, 30);
+            this.cmbDateOfMarriageYear.Name = "cmbDateOfMarriageYear";
+            this.cmbDateOfMarriageYear.Size = new System.Drawing.Size(101, 28);
+            this.cmbDateOfMarriageYear.TabIndex = 106;
             // 
-            // tbELHUNYT_KAPCSOLAT_KERULET
+            // tbPlaceOfMarriageDistrict
             // 
-            this.tbELHUNYT_KAPCSOLAT_KERULET.Enabled = false;
-            this.tbELHUNYT_KAPCSOLAT_KERULET.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_KERULET.Location = new System.Drawing.Point(293, 115);
-            this.tbELHUNYT_KAPCSOLAT_KERULET.Name = "tbELHUNYT_KAPCSOLAT_KERULET";
-            this.tbELHUNYT_KAPCSOLAT_KERULET.Size = new System.Drawing.Size(37, 29);
-            this.tbELHUNYT_KAPCSOLAT_KERULET.TabIndex = 110;
+            this.tbPlaceOfMarriageDistrict.Enabled = false;
+            this.tbPlaceOfMarriageDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbPlaceOfMarriageDistrict.Location = new System.Drawing.Point(293, 115);
+            this.tbPlaceOfMarriageDistrict.Name = "tbPlaceOfMarriageDistrict";
+            this.tbPlaceOfMarriageDistrict.Size = new System.Drawing.Size(37, 29);
+            this.tbPlaceOfMarriageDistrict.TabIndex = 110;
             // 
-            // tbELHUNYT_KAPCSOLAT_VAROS
+            // tbPlaceOfMarriageCity
             // 
-            this.tbELHUNYT_KAPCSOLAT_VAROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_VAROS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_VAROS.Location = new System.Drawing.Point(128, 115);
-            this.tbELHUNYT_KAPCSOLAT_VAROS.Name = "tbELHUNYT_KAPCSOLAT_VAROS";
-            this.tbELHUNYT_KAPCSOLAT_VAROS.Size = new System.Drawing.Size(159, 29);
-            this.tbELHUNYT_KAPCSOLAT_VAROS.TabIndex = 109;
-            this.tbELHUNYT_KAPCSOLAT_VAROS.TextChanged += new System.EventHandler(this.tbELHUNYT_KAPCSOLAT_VAROS_TextChanged);
+            this.tbPlaceOfMarriageCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbPlaceOfMarriageCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbPlaceOfMarriageCity.Location = new System.Drawing.Point(128, 115);
+            this.tbPlaceOfMarriageCity.Name = "tbPlaceOfMarriageCity";
+            this.tbPlaceOfMarriageCity.Size = new System.Drawing.Size(159, 29);
+            this.tbPlaceOfMarriageCity.TabIndex = 109;
+            this.tbPlaceOfMarriageCity.TextChanged += new System.EventHandler(this.tbPlaceOfMarriageCity_TextChanged);
             // 
-            // tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET
+            // tbSpouseHomeDistrict
             // 
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Enabled = false;
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Location = new System.Drawing.Point(294, 485);
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Name = "tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET";
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Size = new System.Drawing.Size(37, 29);
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.TabIndex = 112;
+            this.tbSpouseHomeDistrict.Enabled = false;
+            this.tbSpouseHomeDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseHomeDistrict.Location = new System.Drawing.Point(294, 485);
+            this.tbSpouseHomeDistrict.Name = "tbSpouseHomeDistrict";
+            this.tbSpouseHomeDistrict.Size = new System.Drawing.Size(37, 29);
+            this.tbSpouseHomeDistrict.TabIndex = 112;
             // 
-            // tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS
+            // tbSpouseHomeCity
             // 
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Location = new System.Drawing.Point(129, 485);
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Name = "tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS";
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Size = new System.Drawing.Size(159, 29);
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.TabIndex = 111;
-            this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.TextChanged += new System.EventHandler(this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS_TextChanged);
+            this.tbSpouseHomeCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseHomeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseHomeCity.Location = new System.Drawing.Point(129, 485);
+            this.tbSpouseHomeCity.Name = "tbSpouseHomeCity";
+            this.tbSpouseHomeCity.Size = new System.Drawing.Size(159, 29);
+            this.tbSpouseHomeCity.TabIndex = 111;
+            this.tbSpouseHomeCity.TextChanged += new System.EventHandler(this.tbSpouseHomeCity_TextChanged);
             // 
-            // checkBoxLAKOHELYTARTOZKODASI
+            // cbHomeEqualsResidence
             // 
-            this.checkBoxLAKOHELYTARTOZKODASI.AutoSize = true;
-            this.checkBoxLAKOHELYTARTOZKODASI.Location = new System.Drawing.Point(129, 559);
-            this.checkBoxLAKOHELYTARTOZKODASI.Name = "checkBoxLAKOHELYTARTOZKODASI";
-            this.checkBoxLAKOHELYTARTOZKODASI.Size = new System.Drawing.Size(229, 17);
-            this.checkBoxLAKOHELYTARTOZKODASI.TabIndex = 117;
-            this.checkBoxLAKOHELYTARTOZKODASI.Text = "Lakóhely megegyezik a tartózkodási hellyel";
-            this.checkBoxLAKOHELYTARTOZKODASI.UseVisualStyleBackColor = true;
-            this.checkBoxLAKOHELYTARTOZKODASI.CheckedChanged += new System.EventHandler(this.checkBoxLAKOHELYTARTOZKODASI_CheckedChanged);
+            this.cbHomeEqualsResidence.AutoSize = true;
+            this.cbHomeEqualsResidence.Location = new System.Drawing.Point(129, 559);
+            this.cbHomeEqualsResidence.Name = "cbHomeEqualsResidence";
+            this.cbHomeEqualsResidence.Size = new System.Drawing.Size(229, 17);
+            this.cbHomeEqualsResidence.TabIndex = 117;
+            this.cbHomeEqualsResidence.Text = "Lakóhely megegyezik a tartózkodási hellyel";
+            this.cbHomeEqualsResidence.UseVisualStyleBackColor = true;
+            this.cbHomeEqualsResidence.CheckedChanged += new System.EventHandler(this.cbHomeEqualsResidence_CheckedChanged);
             // 
-            // tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET
+            // tbSpouseResidenceDistrict
             // 
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Enabled = false;
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Location = new System.Drawing.Point(294, 598);
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Name = "tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET";
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Size = new System.Drawing.Size(37, 29);
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.TabIndex = 116;
+            this.tbSpouseResidenceDistrict.Enabled = false;
+            this.tbSpouseResidenceDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseResidenceDistrict.Location = new System.Drawing.Point(294, 598);
+            this.tbSpouseResidenceDistrict.Name = "tbSpouseResidenceDistrict";
+            this.tbSpouseResidenceDistrict.Size = new System.Drawing.Size(37, 29);
+            this.tbSpouseResidenceDistrict.TabIndex = 116;
             // 
             // label37
             // 
@@ -477,89 +477,89 @@
             this.label39.TabIndex = 114;
             this.label39.Text = "Házastárs tartózkodási helye:";
             // 
-            // tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS
+            // tbSpouseResidenceCity
             // 
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Location = new System.Drawing.Point(129, 598);
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Name = "tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS";
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Size = new System.Drawing.Size(159, 29);
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.TabIndex = 113;
-            this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.TextChanged += new System.EventHandler(this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS_TextChanged);
+            this.tbSpouseResidenceCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbSpouseResidenceCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpouseResidenceCity.Location = new System.Drawing.Point(129, 598);
+            this.tbSpouseResidenceCity.Name = "tbSpouseResidenceCity";
+            this.tbSpouseResidenceCity.Size = new System.Drawing.Size(159, 29);
+            this.tbSpouseResidenceCity.TabIndex = 113;
+            this.tbSpouseResidenceCity.TextChanged += new System.EventHandler(this.tbSpouseResidenceCity_TextChanged);
             // 
-            // tbH_SZA
+            // tbSpousePersonalIdentifierNumber
             // 
-            this.tbH_SZA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbH_SZA.Location = new System.Drawing.Point(253, 392);
-            this.tbH_SZA.MaxLength = 4;
-            this.tbH_SZA.Name = "tbH_SZA";
-            this.tbH_SZA.Size = new System.Drawing.Size(77, 29);
-            this.tbH_SZA.TabIndex = 119;
+            this.tbSpousePersonalIdentifierNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpousePersonalIdentifierNumber.Location = new System.Drawing.Point(253, 392);
+            this.tbSpousePersonalIdentifierNumber.MaxLength = 4;
+            this.tbSpousePersonalIdentifierNumber.Name = "tbSpousePersonalIdentifierNumber";
+            this.tbSpousePersonalIdentifierNumber.Size = new System.Drawing.Size(77, 29);
+            this.tbSpousePersonalIdentifierNumber.TabIndex = 119;
             // 
-            // tbH_SZA_SZ
+            // tbSpousePersonalIdentifierNumberBirthDate
             // 
-            this.tbH_SZA_SZ.Enabled = false;
-            this.tbH_SZA_SZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbH_SZA_SZ.Location = new System.Drawing.Point(168, 392);
-            this.tbH_SZA_SZ.Name = "tbH_SZA_SZ";
-            this.tbH_SZA_SZ.Size = new System.Drawing.Size(77, 29);
-            this.tbH_SZA_SZ.TabIndex = 120;
+            this.tbSpousePersonalIdentifierNumberBirthDate.Enabled = false;
+            this.tbSpousePersonalIdentifierNumberBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSpousePersonalIdentifierNumberBirthDate.Location = new System.Drawing.Point(168, 392);
+            this.tbSpousePersonalIdentifierNumberBirthDate.Name = "tbSpousePersonalIdentifierNumberBirthDate";
+            this.tbSpousePersonalIdentifierNumberBirthDate.Size = new System.Drawing.Size(77, 29);
+            this.tbSpousePersonalIdentifierNumberBirthDate.TabIndex = 120;
             // 
-            // FormHazastars
+            // Spouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 699);
-            this.Controls.Add(this.tbH_SZA_SZ);
-            this.Controls.Add(this.tbH_SZA);
-            this.Controls.Add(this.checkBoxLAKOHELYTARTOZKODASI);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET);
+            this.Controls.Add(this.tbSpousePersonalIdentifierNumberBirthDate);
+            this.Controls.Add(this.tbSpousePersonalIdentifierNumber);
+            this.Controls.Add(this.cbHomeEqualsResidence);
+            this.Controls.Add(this.tbSpouseResidenceDistrict);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label39);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_KERULET);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_VAROS);
-            this.Controls.Add(this.cbE_K_N);
-            this.Controls.Add(this.cbE_K_H);
-            this.Controls.Add(this.cbE_K_E);
-            this.Controls.Add(this.cbE_K_SZ_N);
-            this.Controls.Add(this.cbE_K_SZ_H);
-            this.Controls.Add(this.cbE_K_SZ_E);
+            this.Controls.Add(this.tbSpouseResidenceCity);
+            this.Controls.Add(this.tbSpouseHomeDistrict);
+            this.Controls.Add(this.tbSpouseHomeCity);
+            this.Controls.Add(this.tbPlaceOfMarriageDistrict);
+            this.Controls.Add(this.tbPlaceOfMarriageCity);
+            this.Controls.Add(this.cmbDateOfMarriageDay);
+            this.Controls.Add(this.cmbDateOfMarriageMonth);
+            this.Controls.Add(this.cmbDateOfMarriageYear);
+            this.Controls.Add(this.cmbSpouseDateOfBirthDay);
+            this.Controls.Add(this.cmbSpouseDateOfBirthMonth);
+            this.Controls.Add(this.cmbSpouseDateOfBirthYear);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG);
-            this.Controls.Add(this.tbH_SZA_N);
-            this.Controls.Add(this.btnTovabbBejelento);
-            this.Controls.Add(this.btnVisszaElhunyt);
+            this.Controls.Add(this.tbSpouseNationality);
+            this.Controls.Add(this.tbSpousePersonalIdentifierNumberGender);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ);
+            this.Controls.Add(this.tbSpouseHomeAddress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG);
+            this.Controls.Add(this.tbSpousePlaceOfBirthCountry);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE);
+            this.Controls.Add(this.tbSpouseMarriageName);
+            this.Controls.Add(this.tbSpouseBirthForename);
+            this.Controls.Add(this.tbSpouseBirthSurname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.tbELHUNYT_KAPCSOLAT_ORSZAG);
-            this.Name = "FormHazastars";
+            this.Controls.Add(this.tbPlaceOfMarriageCountry);
+            this.Name = "Spouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Házastárs / Élettárs adatai";
-            this.Activated += new System.EventHandler(this.FormHazastars_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormHazastars_FormClosing);
+            this.Activated += new System.EventHandler(this.Spouse_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Spouse_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,46 +571,46 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_ORSZAG;
+        private System.Windows.Forms.TextBox tbPlaceOfMarriageCountry;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE;
+        private System.Windows.Forms.TextBox tbSpouseMarriageName;
+        private System.Windows.Forms.TextBox tbSpouseBirthForename;
+        private System.Windows.Forms.TextBox tbSpouseBirthSurname;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG;
+        private System.Windows.Forms.TextBox tbSpousePlaceOfBirthCountry;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ;
-        private System.Windows.Forms.Button btnVisszaElhunyt;
-        private System.Windows.Forms.Button btnTovabbBejelento;
+        private System.Windows.Forms.TextBox tbSpouseHomeAddress;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG;
-        private System.Windows.Forms.TextBox tbH_SZA_N;
-        private System.Windows.Forms.ComboBox cbE_K_SZ_N;
-        private System.Windows.Forms.ComboBox cbE_K_SZ_H;
-        private System.Windows.Forms.ComboBox cbE_K_SZ_E;
-        private System.Windows.Forms.ComboBox cbE_K_N;
-        private System.Windows.Forms.ComboBox cbE_K_H;
-        private System.Windows.Forms.ComboBox cbE_K_E;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_KERULET;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_VAROS;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS;
-        private System.Windows.Forms.CheckBox checkBoxLAKOHELYTARTOZKODASI;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET;
+        private System.Windows.Forms.TextBox tbSpouseNationality;
+        private System.Windows.Forms.TextBox tbSpousePersonalIdentifierNumberGender;
+        private System.Windows.Forms.ComboBox cmbSpouseDateOfBirthDay;
+        private System.Windows.Forms.ComboBox cmbSpouseDateOfBirthMonth;
+        private System.Windows.Forms.ComboBox cmbSpouseDateOfBirthYear;
+        private System.Windows.Forms.ComboBox cmbDateOfMarriageDay;
+        private System.Windows.Forms.ComboBox cmbDateOfMarriageMonth;
+        private System.Windows.Forms.ComboBox cmbDateOfMarriageYear;
+        private System.Windows.Forms.TextBox tbPlaceOfMarriageDistrict;
+        private System.Windows.Forms.TextBox tbPlaceOfMarriageCity;
+        private System.Windows.Forms.TextBox tbSpouseHomeDistrict;
+        private System.Windows.Forms.TextBox tbSpouseHomeCity;
+        private System.Windows.Forms.CheckBox cbHomeEqualsResidence;
+        private System.Windows.Forms.TextBox tbSpouseResidenceDistrict;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS;
-        private System.Windows.Forms.TextBox tbH_SZA;
-        private System.Windows.Forms.TextBox tbH_SZA_SZ;
+        private System.Windows.Forms.TextBox tbSpouseResidenceCity;
+        private System.Windows.Forms.TextBox tbSpousePersonalIdentifierNumber;
+        private System.Windows.Forms.TextBox tbSpousePersonalIdentifierNumberBirthDate;
     }
 }

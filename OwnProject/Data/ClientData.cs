@@ -8,24 +8,26 @@ namespace OwnProject
 {
    public class ClientData
     {
-        public string ClientSurname { get; set; }
+        public string ClientName { get; set; }
 
-        public string ClientForename { get; set; }
+        public string Surname { get; set; }
 
-        public string ClientRelative { get; set; }
+        public string Forename { get; set; }
 
-        public string ClientIdentifierDocumentNumber { get; set; }
+        public string Relative { get; set; }
 
-        public string ClientHomeCountry { get; set; }
+        public string IdentifierDocumentNumber { get; set; }
 
-        public string ClientHomePostcode { get; set; }
+        public string HomeCountry { get; set; }
 
-        public string ClientHomeCity { get; set; }
+        public string HomePostcode { get; set; }
 
-        public string ClientHomeAddress { get; set; }
+        public string HomeCity { get; set; }
 
-        public string ClientHomeDistrict { get; set; }
+        public string HomeAddress { get; set; }
 
-        public string ClientReach { get; set; }
+        public string HomeDistrict { get; set; }
+
+        public string Reach { get; set; }
     }
 }

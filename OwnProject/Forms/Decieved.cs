@@ -17,36 +17,22 @@ namespace OwnProject
             InitializeComponent();
             Forms.DeceivedForm = this;
 
-            CbFill(cbE_SZ_E, 1900, DateTime.Now.Year);
-            cbE_SZ_E.SelectedIndex = 0;
-            CbFill(cbE_SZ_H, 1, 12);
-            cbE_SZ_H.SelectedIndex = 0;
-            CbFill(cbE_SZ_N, 1, 31);
-            cbE_SZ_N.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDeceivedDateOfBirthYear, 1900, DateTime.Now.Year);
+            cmbDeceivedDateOfBirthYear.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDeceivedDateOfBirthMonth, 1, 12);
+            cmbDeceivedDateOfBirthMonth.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDeceivedDateOfBirthDay, 1, 31);
+            cmbDeceivedDateOfBirthDay.SelectedIndex = 0;
 
 
-            tbE_H_E.Text = DateTime.Now.Year.ToString();
-            CbFill(cbE_H_H, 1, 12);
-            cbE_H_H.SelectedIndex = 0;
-            CbFill(cbE_H_N, 1, 31);
-            cbE_H_N.SelectedIndex = 0;
-
-
-            cbE_O_E.Items.Add("Hat. Nélk.");
-            CbFill(cbE_O_E, DateTime.Now.Year, DateTime.Now.Year + 30);
-            cbE_O_E.SelectedIndex = 0;
-
-            CbFill(cbE_O_H, 1, 12);
-            cbE_O_H.SelectedIndex = 0;
-
-            CbFill(cbE_O_N, 1, 31);
-            cbE_O_N.SelectedIndex = 0;
+            tbDeceivedDateOfDeathYear.Text = DateTime.Now.Year.ToString();
+            ComboBoxItemFiller(cmbDeceivedDateOfDeathMonth, 1, 12);
+            cmbDeceivedDateOfDeathMonth.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDeceivedDateOfDeathDay, 1, 31);
+            cmbDeceivedDateOfDeathDay.SelectedIndex = 0;
         }
 
-
-        //----------
-
-        private void btnVisszaMain_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             updateData();
 
@@ -55,16 +41,16 @@ namespace OwnProject
 
         }
 
-        private void buttonTovabbHazastars_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            if(tbELHUNYT_NEVE_SZULETESI_CSALADI_NEVE.Text == "" || tbELHUNYT_NEVE_SZULETESI_UTONEVE.Text == "")
+            if(tbDeceivedBirthSurname.Text == "" || tbDeceivedBirthForename.Text == "")
             {
                 MessageBox.Show("Nincs megadott név");
             }
             else
             {
-                Forms.isMarried = checkBox_VoltHazastarsa.Checked;
-                if (checkBox_VoltHazastarsa.Checked == true)
+                Forms.isMarried = cbIsMarried.Checked;
+                if (cbIsMarried.Checked == true)
                 {
                     Forms.SpouseForm.Show();
                     this.Hide();
@@ -79,252 +65,196 @@ namespace OwnProject
             }
         }
 
-        private void FormElhunyt_FormClosing(object sender, FormClosingEventArgs e)
+        private void Decieved_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClosingDialog(e);
         }
 
-
-        //---------
-
-        private void cbSzemelyazonositoTipus_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbKidsFromOtherMarriage_CheckedChanged(object sender, EventArgs e)
         {
             bool visible;
 
-            if (cbELHUNYT_SZ_OKMANY_TIPUS.SelectedIndex == 1)
-            {
-                visible = false;
-                tbELHUNYT_ALLAMPOLGARSAG.Text = "Magyar";
-            } else
-            {
-                visible = true;
-                tbELHUNYT_ALLAMPOLGARSAG.Text = "";
-            }
-
-            tbELHUNYT_ALLAMPOLGARSAG.Enabled = visible;
-            labelAllampolgarsagElhunyt.Enabled = visible;
-        }
-
-        private void checkBox_GyermekMasHazassabol_CheckedChanged(object sender, EventArgs e)
-        {
-            bool visible;
-
-            if (checkBox_GyermekMasHazassabol.Checked)
+            if (cbKidsFromOtherMarriage.Checked)
             {
                 visible = true;
 
-                tbOSSZ_O.Text = "";
-                tbOSSZ_ESZ.Text = "";
-                tbOSSZ_EV.Text = "";
+                tbKidsAlltogetherAll.Text = "";
+                tbKidsAlltogetherBornAlive.Text = "";
+                tbKidsAlltogetherAlive.Text = "";
             }
             else
             {
                 visible = false;
 
-                tbOSSZ_O.Text = tbUH_O.Text;
-                tbOSSZ_ESZ.Text = tbUH_ESZ.Text;
-                tbOSSZ_EV.Text = tbUH_EV.Text;
+                tbKidsAlltogetherAll.Text = tbKidsFromLastMarriageAll.Text;
+                tbKidsAlltogetherBornAlive.Text = tbKidsFromLastMarriageBornAlive.Text;
+                tbKidsAlltogetherAlive.Text = tbKidsFromLastMarriageAlive.Text;
             }
 
-            labelTH_O.Enabled = visible;
-            labelTH_ESZ.Enabled = visible;
-            labelTH_EV.Enabled = visible;
+            lblKidsAlltogetherAll.Enabled = visible;
+            lblKidsAlltogetherBornAlive.Enabled = visible;
+            lblKidsAlltogetherAlive.Enabled = visible;
             labelOsszesen_Szuletett_Gyermekek.Enabled = visible;
 
-            tbOSSZ_O.Enabled = visible;
-            tbOSSZ_ESZ.Enabled = visible;
-            tbOSSZ_EV.Enabled = visible;
+            tbKidsAlltogetherAll.Enabled = visible;
+            tbKidsAlltogetherBornAlive.Enabled = visible;
+            tbKidsAlltogetherAlive.Enabled = visible;
         }
 
-        private void checkBox_VoltHazastarsa_CheckedChanged(object sender, EventArgs e)
+        private void cbIsMarried_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_VoltHazastarsa.Checked == false)
-            {
-                buttonTovabbHazastars.Text = "Tovább: Bejelentő";
-            }
-            else
-            {
-                buttonTovabbHazastars.Text = "Tovább: Házastárs / Élettárs";
-            }
+            btnNext.Text = cbIsMarried.Checked ? "Tovább: Bejelentő" : "Tovább: Házastárs / Élettárs";
         }
 
-        private void checkBoxLAKOHELYTARTOZKODASI_CheckedChanged(object sender, EventArgs e)
+        private void cbIsHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxLAKOHELYTARTOZKODASI.Checked)
+            if (cbIsHomeEqualsResidence.Checked)
             {
-                tbELHUNYT_TARTOZKODASI_VAROS.Enabled = false;
-                tbELHUNYT_TARTOZKODASI_KERULET.Enabled = false;
+                tbDeceivedResidenceCity.Enabled = false;
+                tbDeceivedResidenceDistrict.Enabled = false;
 
-                tbELHUNYT_TARTOZKODASI_VAROS.Text = tbELHUNYT_LAKOHELY_VAROS.Text;
+                tbDeceivedResidenceCity.Text = tbDeceivedHomeCity.Text;
 
-                if (tbELHUNYT_LAKOHELY_VAROS.Text == "BUDAPEST")
+                if (tbDeceivedHomeCity.Text == "BUDAPEST")
                 {
-                    tbELHUNYT_TARTOZKODASI_KERULET.Text = tbELHUNYT_LAKOHELY_KERULET.Text;
+                    tbDeceivedResidenceDistrict.Text = tbDeceivedHomeDistrict.Text;
                 }
                 else
                 {
-                    tbELHUNYT_TARTOZKODASI_KERULET.Text = "";
+                    tbDeceivedResidenceDistrict.Text = "";
                 }
             }
             else
             {
-                tbELHUNYT_TARTOZKODASI_VAROS.Enabled = true;
-                tbELHUNYT_TARTOZKODASI_KERULET.Enabled = true;
+                tbDeceivedResidenceCity.Enabled = true;
+                tbDeceivedResidenceDistrict.Enabled = true;
             }
         }
 
-        private void tbELHUNYT_LAKOHELY_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbDeceivedHomeCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible = tbELHUNYT_LAKOHELY_VAROS.Text == "BUDAPEST" ? true : false;
-            tbELHUNYT_LAKOHELY_KERULET.Enabled = visible;
+            bool visible = tbDeceivedHomeCity.Text == "BUDAPEST" ? true : false;
+            tbDeceivedHomeDistrict.Enabled = visible;
         }
 
-        private void tbELHUNYT_SZULETESI_HELYE_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbDeceivedPlaceOfBirthCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible = tbELHUNYT_SZULETESI_HELYE_VAROS.Text == "BUDAPEST" ? true : false;
-            tbELHUNYT_SZULETESI_HELYE_VAROS.Enabled = visible;
+            bool visible = tbDeceivedPlaceOfBirthCity.Text == "BUDAPEST" ? true : false;
+            tbDeceivedPlaceOfBirthCity.Enabled = visible;
         }
 
-        private void tbELHUNYT_HALALESET_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbDeceivedPlaceOfDeathCity_TextChanged(object sender, EventArgs e)
         {
             bool visible;
-            if (tbELHUNYT_HALALESET_VAROS.Text == "BUDAPEST")
+            if (tbDeceivedPlaceOfDeathCity.Text == "BUDAPEST")
             {
                 visible = true;
             }
             else
             {
                 visible = false;
-                tbELHUNYT_HALALESET_KERULET.Text = "";
+                tbDeceivedPlaceOfDeathDistrict.Text = "";
             }
 
-            tbELHUNYT_HALALESET_KERULET.Enabled = visible;
+            tbDeceivedPlaceOfDeathDistrict.Enabled = visible;
         }
 
-        private void tbELHUNYT_TARTOZKODASI_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbDeceivedResidenceCity_TextChanged(object sender, EventArgs e)
         {
             bool visible;
-            if (tbELHUNYT_TARTOZKODASI_VAROS.Text == "BUDAPEST")
+            if (tbDeceivedResidenceCity.Text == "BUDAPEST")
             {
                 visible = true;
             }
             else
             {
                 visible = false;
-                tbELHUNYT_TARTOZKODASI_KERULET.Text = "";
+                tbDeceivedResidenceDistrict.Text = "";
             }
 
-            tbELHUNYT_TARTOZKODASI_KERULET.Enabled = visible;
+            tbDeceivedResidenceDistrict.Enabled = visible;
         }
-        private void tbUH_O_TextChanged(object sender, EventArgs e)
+        private void tbKidsFromLastMarriageAll_TextChanged(object sender, EventArgs e)
         {
-            if (!checkBox_GyermekMasHazassabol.Checked)
-            {
-                tbOSSZ_O.Text = tbUH_O.Text;
-            }
+            if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherAll.Text = tbKidsFromLastMarriageAll.Text;
         }
 
-        private void tbUH_ESZ_TextChanged(object sender, EventArgs e)
+        private void tbKidsFromLastMarriageBornAlive_TextChanged(object sender, EventArgs e)
         {
-            if (!checkBox_GyermekMasHazassabol.Checked)
-            {
-                tbOSSZ_ESZ.Text = tbUH_ESZ.Text;
-            }
+            if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherBornAlive.Text = tbKidsFromLastMarriageBornAlive.Text;
         }
 
-        private void tbUH_EV_TextChanged(object sender, EventArgs e)
+        private void tbKidsFromLastMarriageAlive_TextChanged(object sender, EventArgs e)
         {
-            if (!checkBox_GyermekMasHazassabol.Checked)
-            {
-                tbOSSZ_EV.Text = tbUH_EV.Text;
-            }
+            if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherAlive.Text = tbKidsFromLastMarriageAlive.Text;
         }
 
-        private void cbElhunytNeme_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeceivedGender_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbElhunytNeme.SelectedIndex == 0) tbE_SZA_N.Text = "2"; else tbE_SZA_N.Text = "1";
+            if (cmbDeceivedGender.SelectedIndex == 0) tbDeceivedPersonalIdentifierNumberGender.Text = "2"; else tbDeceivedPersonalIdentifierNumberGender.Text = "1";
         }
 
-        private void cbE_SZ_E_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeceivedDateOfBirthYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbE_SZA_SZ.Text = (cbE_SZ_E.Text.Substring(2, cbE_SZ_E.Text.Length - 2) + cbE_SZ_H.Text + cbE_SZ_N.Text);
+            tbDeceivedPersonalIdentifierNumberBirthDate.Text = (cmbDeceivedDateOfBirthYear.Text.Substring(2, cmbDeceivedDateOfBirthYear.Text.Length - 2) + cmbDeceivedDateOfBirthMonth.Text + cmbDeceivedDateOfBirthDay.Text);
         }
 
-        private void cbE_SZ_H_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeceivedDateOfBirthMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbE_SZA_SZ.Text = (cbE_SZ_E.Text.Substring(2, cbE_SZ_E.Text.Length - 2) + cbE_SZ_H.Text + cbE_SZ_N.Text);
+            tbDeceivedPersonalIdentifierNumberBirthDate.Text = (cmbDeceivedDateOfBirthYear.Text.Substring(2, cmbDeceivedDateOfBirthYear.Text.Length - 2) + cmbDeceivedDateOfBirthMonth.Text + cmbDeceivedDateOfBirthDay.Text);
         }
 
-        private void cbE_SZ_N_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeceivedDateOfBirthDay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbE_SZA_SZ.Text = (cbE_SZ_E.Text.Substring(2, cbE_SZ_E.Text.Length - 2) + cbE_SZ_H.Text + cbE_SZ_N.Text);
+            tbDeceivedPersonalIdentifierNumberBirthDate.Text = (cmbDeceivedDateOfBirthYear.Text.Substring(2, cmbDeceivedDateOfBirthYear.Text.Length - 2) + cmbDeceivedDateOfBirthMonth.Text + cmbDeceivedDateOfBirthDay.Text);
         }
-
-
-        private void cbE_O_E_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bool visible;
-
-            if (cbE_O_E.SelectedIndex == 0)
-            {
-                visible = false;
-                cbE_O_H.SelectedIndex = 0;
-                cbE_O_N.SelectedIndex = 0;
-            }
-            else visible = true;
-
-            cbE_O_H.Enabled = visible;
-            cbE_O_N.Enabled = visible;
-        }
-
-        //UpdateData
 
         private void updateData()
         {
             var elhunytData = Forms.deceivedData;
 
-            elhunytData.BirthSurname = tbELHUNYT_NEVE_SZULETESI_CSALADI_NEVE.Text;
-            elhunytData.BirthForename = tbELHUNYT_NEVE_SZULETESI_UTONEVE.Text;
-            elhunytData.MarriageName = tbELHUNYT_NEVE_HAZASSAGI_NEVE.Text;
-            elhunytData.Gender = cbElhunytNeme.Text;
-            elhunytData.PlaceOfBirthCountry = tbELHUNYT_SZULETESI_HELYE_ORSZAG.Text;
-            elhunytData.PlaceOfBirthCity = tbELHUNYT_SZULETESI_HELYE_VAROS.Text;
-            elhunytData.PlaceOfBrithDistrict = tbELHUNYT_SZULETESI_HELYE_KERULET.Text;
-            elhunytData.DateOfBirthYear = cbE_SZ_E.Text;
-            elhunytData.DateOfBirthMonth = cbE_SZ_H.Text;
-            elhunytData.DateOfBirthDay = cbE_SZ_N.Text;
-            elhunytData.DateOfDeathYear = tbE_H_E.Text;
-            elhunytData.DateOfDeathMonth = cbE_H_H.Text;
-            elhunytData.DateOfDeathDay = cbE_H_N.Text;
-            elhunytData.HomeCardNumber = tbELHUNYT_LAKCIM_KARTYASZAM.Text;
-            elhunytData.IdentifierDocumentNumber = tbELHUNYT_SZ_OKMANY_AZONOSITO.Text;
-            elhunytData.Nationality = tbELHUNYT_ALLAMPOLGARSAG.Text;
-            elhunytData.PlaceOfDeathCity = tbELHUNYT_HALALESET_VAROS.Text;
-            elhunytData.PlaceOfDeathDistrict = tbELHUNYT_HALALESET_KERULET.Text;
-            elhunytData.HomeCountry = tbELHUNYT_LAKOHELY_ORSZAG.Text;
-            elhunytData.HomeCity = tbELHUNYT_LAKOHELY_VAROS.Text;
-            elhunytData.HomeDistrict = tbELHUNYT_LAKOHELY_KERULET.Text;
-            elhunytData.HomeAddress = tbELHUNYT_LAKOHELY_UTCA_HSZ.Text;
-            elhunytData.ResidenceCity = tbELHUNYT_TARTOZKODASI_VAROS.Text;
-            elhunytData.ResidenceDistrict = tbELHUNYT_TARTOZKODASI_KERULET.Text;
-            elhunytData.FatherBirthSurname = tbELHUNYT_APJA_SZULETESI_CSALADI_NEVE.Text;
-            elhunytData.FatherBirthForename = tbELHUNYT_APJA_SZULETESI_UTONEVE.Text;
-            elhunytData.MotherBirthSurname = tbELHUNYT_ANYJA_SZULETESI_CSALADI_NEVE.Text;
-            elhunytData.MotherBirthForename = tbELHUNYT_ANYJA_SZULETESI_UTONEVE.Text;
+            elhunytData.BirthSurname = tbDeceivedBirthSurname.Text;
+            elhunytData.BirthForename = tbDeceivedBirthForename.Text;
+            elhunytData.MarriageName = tbDeceivedMarriageName.Text;
+            elhunytData.Gender = cmbDeceivedGender.Text;
+            elhunytData.PlaceOfBirthCountry = tbDeceivedPlaceOfBirthCountry.Text;
+            elhunytData.PlaceOfBirthCity = tbDeceivedPlaceOfBirthCity.Text;
+            elhunytData.PlaceOfBrithDistrict = tbDeceivedPlaceOfBrithDistrict.Text;
+            elhunytData.DateOfBirthYear = cmbDeceivedDateOfBirthYear.Text;
+            elhunytData.DateOfBirthMonth = cmbDeceivedDateOfBirthMonth.Text;
+            elhunytData.DateOfBirthDay = cmbDeceivedDateOfBirthDay.Text;
+            elhunytData.DateOfDeathYear = tbDeceivedDateOfDeathYear.Text;
+            elhunytData.DateOfDeathMonth = cmbDeceivedDateOfDeathMonth.Text;
+            elhunytData.DateOfDeathDay = cmbDeceivedDateOfDeathDay.Text;
+            elhunytData.HomeCardNumber = tbDeceivedHomeCardNumber.Text;
+            elhunytData.IdentifierDocumentNumber = tbDeceivedIdentifierDocumentNumber.Text;
+            elhunytData.Nationality = tbDeceivedNationality.Text;
+            elhunytData.PlaceOfDeathCity = tbDeceivedPlaceOfDeathCity.Text;
+            elhunytData.PlaceOfDeathDistrict = tbDeceivedPlaceOfDeathDistrict.Text;
+            elhunytData.HomeCountry = tbDeceivedHomeCountry.Text;
+            elhunytData.HomeCity = tbDeceivedHomeCity.Text;
+            elhunytData.HomeDistrict = tbDeceivedHomeDistrict.Text;
+            elhunytData.HomeAddress = tbDeceivedHomeAddress.Text;
+            elhunytData.ResidenceCity = tbDeceivedResidenceCity.Text;
+            elhunytData.ResidenceDistrict = tbDeceivedResidenceDistrict.Text;
+            elhunytData.FatherBirthSurname = tbDeceivedFatherBirthSurname.Text;
+            elhunytData.FatherBirthForename = tbDeceivedFatherBirthForename.Text;
+            elhunytData.MotherBirthSurname = tbDeceivedMotherBirthSurname.Text;
+            elhunytData.MotherBirthForename = tbDeceivedMotherBirthForename.Text;
 
-            elhunytData.KidsFromLastMarriageAll = tbUH_O.Text;
-            elhunytData.KidsFromLastMarriageBornAlive = tbUH_ESZ.Text;
-            elhunytData.KidsFromLastMarriageAlive = tbUH_EV.Text;
-            elhunytData.KidsAlltogetherAll = tbOSSZ_O.Text;
-            elhunytData.KidsAlltogetherBornAlive = tbOSSZ_ESZ.Text;
-            elhunytData.KidsAlltogetherAlive = tbOSSZ_EV.Text;
+            elhunytData.KidsFromLastMarriageAll = tbKidsFromLastMarriageAll.Text;
+            elhunytData.KidsFromLastMarriageBornAlive = tbKidsFromLastMarriageBornAlive.Text;
+            elhunytData.KidsFromLastMarriageAlive = tbKidsFromLastMarriageAlive.Text;
+            elhunytData.KidsAlltogetherAll = tbKidsAlltogetherAll.Text;
+            elhunytData.KidsAlltogetherBornAlive = tbKidsAlltogetherBornAlive.Text;
+            elhunytData.KidsAlltogetherAlive = tbKidsAlltogetherAlive.Text;
 
-            elhunytData.Qualification = tbELHUNYT_VEGZETTSEG.Text;
-            elhunytData.Profession = tbELHUNYT_FOGLALKOZAS.Text;
-            elhunytData.PersonalIdentifierNumber = (tbE_SZA_N.Text + " " + tbE_SZA_SZ.Text + " " + tbE_SZA.Text);
+            elhunytData.Qualification = tbDeceivedQualification.Text;
+            elhunytData.Profession = tbDeceivedProfession.Text;
+            elhunytData.PersonalIdentifierNumber = (tbDeceivedPersonalIdentifierNumberGender.Text + " " + tbDeceivedPersonalIdentifierNumberBirthDate.Text + " " + tbDeceivedPersonalIdentifierNumber.Text);
 
-            string TimeOfBirth = cbE_SZ_E.Text + "/" + cbE_SZ_H.Text + "/" + cbE_SZ_N.Text;
-            string TimeOfDeath = tbE_H_E.Text + "/" + cbE_H_H.Text + "/" + cbE_H_N.Text;
+            string TimeOfBirth = cmbDeceivedDateOfBirthYear.Text + "/" + cmbDeceivedDateOfBirthMonth.Text + "/" + cmbDeceivedDateOfBirthDay.Text;
+            string TimeOfDeath = tbDeceivedDateOfDeathYear.Text + "/" + cmbDeceivedDateOfDeathMonth.Text + "/" + cmbDeceivedDateOfDeathDay.Text;
             elhunytData.Age = Convert.ToInt32(HelperMethods.CalculateAge(TimeOfBirth, TimeOfDeath)).ToString();
         }
     }

@@ -17,28 +17,28 @@ namespace OwnProject
             InitializeComponent();
             Forms.SpouseForm = this;
 
-            CbFill(cbE_K_E, 1900, DateTime.Now.Year);
-            cbE_K_E.SelectedIndex = 0;
-            CbFill(cbE_K_H, 1, 12);
-            cbE_K_H.SelectedIndex = 0;
-            CbFill(cbE_K_N, 1, 31);
-            cbE_K_N.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDateOfMarriageYear, 1900, DateTime.Now.Year);
+            cmbDateOfMarriageYear.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDateOfMarriageMonth, 1, 12);
+            cmbDateOfMarriageMonth.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbDateOfMarriageDay, 1, 31);
+            cmbDateOfMarriageDay.SelectedIndex = 0;
 
-            CbFill(cbE_K_SZ_E, 1900, DateTime.Now.Year);
-            cbE_K_SZ_E.SelectedIndex = 0;
-            CbFill(cbE_K_SZ_H, 1, 12);
-            cbE_K_SZ_H.SelectedIndex = 0;
-            CbFill(cbE_K_SZ_N, 1, 31);
-            cbE_K_SZ_N.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbSpouseDateOfBirthYear, 1900, DateTime.Now.Year);
+            cmbSpouseDateOfBirthYear.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbSpouseDateOfBirthMonth, 1, 12);
+            cmbSpouseDateOfBirthMonth.SelectedIndex = 0;
+            ComboBoxItemFiller(cmbSpouseDateOfBirthDay, 1, 31);
+            cmbSpouseDateOfBirthDay.SelectedIndex = 0;
         }
 
-        private void FormHazastars_Activated(object sender, EventArgs e)
+        private void Spouse_Activated(object sender, EventArgs e)
         {
             var elhunytData = Forms.deceivedData;
-            if (elhunytData.Gender == "Férfi") tbH_SZA_N.Text = "2"; else if (elhunytData.Gender == "Nő") tbH_SZA_N.Text = "1"; else tbH_SZA_N.Text = "";
+            if (elhunytData.Gender == "Férfi") tbSpousePersonalIdentifierNumberGender.Text = "2"; else if (elhunytData.Gender == "Nő") tbSpousePersonalIdentifierNumberGender.Text = "1"; else tbSpousePersonalIdentifierNumberGender.Text = "";
         }
 
-        private void btnVisszaElhunyt_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             updateData();
 
@@ -46,7 +46,7 @@ namespace OwnProject
             this.Hide();
         }
 
-        private void btnTovabbBejelento_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             updateData();
 
@@ -54,123 +54,123 @@ namespace OwnProject
             this.Hide();
         }
 
-        private void FormHazastars_FormClosing(object sender, FormClosingEventArgs e)
+        private void Spouse_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClosingDialog(e);
         }
 
-        private void tbELHUNYT_KAPCSOLAT_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbPlaceOfMarriageCity_TextChanged(object sender, EventArgs e)
         {
             bool visible;
-            if (tbELHUNYT_KAPCSOLAT_VAROS.Text == "BUDAPEST")
+            if (tbPlaceOfMarriageCity.Text == "BUDAPEST")
             {
                 visible = true;
             }
             else
             {
                 visible = false;
-                tbELHUNYT_KAPCSOLAT_KERULET.Text = "";
+                tbPlaceOfMarriageDistrict.Text = "";
             }
 
-            tbELHUNYT_KAPCSOLAT_KERULET.Enabled = visible;
+            tbPlaceOfMarriageDistrict.Enabled = visible;
         }
 
-        private void tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbSpouseHomeCity_TextChanged(object sender, EventArgs e)
         {
             bool visible;
-            if (tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Text == "BUDAPEST")
+            if (tbSpouseHomeCity.Text == "BUDAPEST")
             {
                 visible = true;
             }
             else
             {
                 visible = false;
-                tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Text = "";
+                tbSpouseHomeDistrict.Text = "";
             }
 
-            tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Enabled = visible;
+            tbSpouseHomeDistrict.Enabled = visible;
         }
 
-        private void tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS_TextChanged(object sender, EventArgs e)
+        private void tbSpouseResidenceCity_TextChanged(object sender, EventArgs e)
         {
             bool visible;
-            if (tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Text == "BUDAPEST")
+            if (tbSpouseResidenceCity.Text == "BUDAPEST")
             {
                 visible = true;
             }
             else
             {
                 visible = false;
-                tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Text = "";
+                tbSpouseResidenceDistrict.Text = "";
             }
 
-            tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Enabled = visible;
+            tbSpouseResidenceDistrict.Enabled = visible;
         }
 
-        private void checkBoxLAKOHELYTARTOZKODASI_CheckedChanged(object sender, EventArgs e)
+        private void cbHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxLAKOHELYTARTOZKODASI.Checked)
+            if (cbHomeEqualsResidence.Checked)
             {
-                tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Enabled = false;
-                tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Enabled = false;
+                tbSpouseResidenceCity.Enabled = false;
+                tbSpouseResidenceDistrict.Enabled = false;
 
-                tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Text = tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Text;
+                tbSpouseResidenceCity.Text = tbSpouseHomeCity.Text;
 
-                if (tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Text == "BUDAPEST")
+                if (tbSpouseHomeCity.Text == "BUDAPEST")
                 {
-                    tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Text = tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Text;
+                    tbSpouseResidenceDistrict.Text = tbSpouseHomeDistrict.Text;
                 }
                 else
                 {
-                    tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Text = "";
+                    tbSpouseResidenceDistrict.Text = "";
                 }
             }
             else
             {
-                tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Enabled = true;
-                tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Enabled = true;
+                tbSpouseResidenceCity.Enabled = true;
+                tbSpouseResidenceDistrict.Enabled = true;
             }
         }
 
-        private void cbE_K_SZ_E_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSpouseDateOfBirthYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbH_SZA_SZ.Text = (cbE_K_SZ_E.Text.Substring(2, cbE_K_SZ_E.Text.Length - 2) + cbE_K_SZ_H.Text + cbE_K_SZ_N.Text);
+            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2, cmbSpouseDateOfBirthYear.Text.Length - 2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
         }
 
-        private void cbE_K_SZ_H_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSpouseDateOfBirthMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbH_SZA_SZ.Text = (cbE_K_SZ_E.Text.Substring(2, cbE_K_SZ_E.Text.Length - 2) + cbE_K_SZ_H.Text + cbE_K_SZ_N.Text);
+            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2, cmbSpouseDateOfBirthYear.Text.Length - 2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
         }
 
-        private void cbE_K_SZ_N_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSpouseDateOfBirthDay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbH_SZA_SZ.Text = (cbE_K_SZ_E.Text.Substring(2, cbE_K_SZ_E.Text.Length - 2) + cbE_K_SZ_H.Text + cbE_K_SZ_N.Text);
+            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2, cmbSpouseDateOfBirthYear.Text.Length - 2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
         }
 
         private void updateData()
         {
             var spouseData = Forms.spouseData;
 
-            spouseData.PlaceOfMarriageCountry = tbELHUNYT_KAPCSOLAT_ORSZAG.Text;
-            spouseData.PlaceOfMarriageCity = tbELHUNYT_KAPCSOLAT_VAROS.Text;
-            spouseData.PlaceOfMarriageDistrict = tbELHUNYT_KAPCSOLAT_KERULET.Text;
-            spouseData.BirthSurname = tbELHUNYT_KAPCSOLAT_SZULETESI_CSALADI_NEVE.Text;
-            spouseData.BirthForename = tbELHUNYT_KAPCSOLAT_SZULETESI_UTONEVE.Text;
-            spouseData.MarriageName = tbELHUNYT_KAPCSOLAT_HAZASSAGI_NEVE.Text;
-            spouseData.Nationality = tbELHUNYT_KAPCSOLAT_ALLAMPOLGARSAG.Text;
-            spouseData.PlaceOfBirthCountry = tbELHUNYT_KAPCSOLAT_SZULETESI_HELYE_ORSZAG.Text;
-            spouseData.HomeCity = tbELHUNYT_KAPCSOLAT_LAKOHELY_VAROS.Text;
-            spouseData.HomeDistrict = tbELHUNYT_KAPCSOLAT_LAKOHELY_KERULET.Text;
-            spouseData.HomeAddress = tbELHUNYT_KAPCSOLAT_LAKOHELY_UTCA_HSZ.Text;
-            spouseData.ResidenceCity = tbELHUNYT_KAPCSOLAT_TARTOZKODASI_VAROS.Text;
-            spouseData.ResidenceDistrict = tbELHUNYT_KAPCSOLAT_TARTOZKODASI_KERULET.Text;
-            spouseData.DateOfMarriageYear = cbE_K_E.Text;
-            spouseData.DateOfMarriageMonth = cbE_K_H.Text;
-            spouseData.DateOfMarriageDay = cbE_K_N.Text;
-            spouseData.DateOfBirthYear = cbE_K_SZ_E.Text;
-            spouseData.DateOfBirthMonth = cbE_K_SZ_H.Text;
-            spouseData.DateOfBirthDay = cbE_K_SZ_N.Text;
-            spouseData.PersonalIdentifierNumber = (tbH_SZA_N.Text + " " + tbH_SZA_SZ.Text + " " + tbH_SZA.Text);
+            spouseData.PlaceOfMarriageCountry = tbPlaceOfMarriageCountry.Text;
+            spouseData.PlaceOfMarriageCity = tbPlaceOfMarriageCity.Text;
+            spouseData.PlaceOfMarriageDistrict = tbPlaceOfMarriageDistrict.Text;
+            spouseData.BirthSurname = tbSpouseBirthSurname.Text;
+            spouseData.BirthForename = tbSpouseBirthForename.Text;
+            spouseData.MarriageName = tbSpouseMarriageName.Text;
+            spouseData.Nationality = tbSpouseNationality.Text;
+            spouseData.PlaceOfBirthCountry = tbSpousePlaceOfBirthCountry.Text;
+            spouseData.HomeCity = tbSpouseHomeCity.Text;
+            spouseData.HomeDistrict = tbSpouseHomeDistrict.Text;
+            spouseData.HomeAddress = tbSpouseHomeAddress.Text;
+            spouseData.ResidenceCity = tbSpouseResidenceCity.Text;
+            spouseData.ResidenceDistrict = tbSpouseResidenceDistrict.Text;
+            spouseData.DateOfMarriageYear = cmbDateOfMarriageYear.Text;
+            spouseData.DateOfMarriageMonth = cmbDateOfMarriageMonth.Text;
+            spouseData.DateOfMarriageDay = cmbDateOfMarriageDay.Text;
+            spouseData.DateOfBirthYear = cmbSpouseDateOfBirthYear.Text;
+            spouseData.DateOfBirthMonth = cmbSpouseDateOfBirthMonth.Text;
+            spouseData.DateOfBirthDay = cmbSpouseDateOfBirthDay.Text;
+            spouseData.PersonalIdentifierNumber = (tbSpousePersonalIdentifierNumberGender.Text + " " + tbSpousePersonalIdentifierNumberBirthDate.Text + " " + tbSpousePersonalIdentifierNumber.Text);
         }
     }
 }

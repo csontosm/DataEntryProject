@@ -23,7 +23,7 @@ namespace OwnProject
                 e.Cancel = true;
             }
         }
-        public void CbFill(ComboBox cb, int x, int i)
+        public void ComboBoxItemFiller(ComboBox cb, int x, int i)
         {
             int j = x;
             while (j - 1 < i)

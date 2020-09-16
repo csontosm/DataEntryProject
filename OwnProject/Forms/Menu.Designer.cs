@@ -31,7 +31,6 @@
             this.buttonPath = new System.Windows.Forms.Button();
             this.btnElhunyt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonPath
@@ -70,33 +69,21 @@
             this.panel1.Size = new System.Drawing.Size(255, 1);
             this.panel1.TabIndex = 18;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 43);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Immopax Kft";
-            // 
-            // Form1
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(314, 389);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnElhunyt);
             this.Controls.Add(this.buttonPath);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adatfelvétel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -104,7 +91,6 @@
         private System.Windows.Forms.Button buttonPath;
         private System.Windows.Forms.Button btnElhunyt;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
     }
 }
 

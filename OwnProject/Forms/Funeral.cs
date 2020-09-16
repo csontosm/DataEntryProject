@@ -20,12 +20,12 @@ namespace OwnProject
             Forms.FuneralForm = this;
         }
 
-        private void KiegAdatok_FormClosing(object sender, FormClosingEventArgs e)
+        private void Funeral_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClosingDialog(e);
         }
 
-        private void btnBefejezesVisszaFomenu_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             updateData();
 
@@ -33,7 +33,7 @@ namespace OwnProject
             this.Hide();
         }
 
-        private void btnVisszaBejelento_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             updateData();
 
@@ -41,335 +41,332 @@ namespace OwnProject
             this.Hide();
         }
 
-
-        //UpdateData
-
-        private void updateData()
+        private void cmbFuneralMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var temetesData = Forms.funeralData;
-            var bejelentoData = Forms.clientData;
+            cmbGraveOrCrypt.Text = "";
 
-            string sirko;
-            if (cbSirkoKripta.SelectedIndex == 0) sirko = "van sirkő"; else if (cbSirkoKripta.SelectedIndex == 1) sirko = "kripta"; else sirko = "nincs sirkő";
-            temetesData.Method = cbTemetesModja.Text + ", " + sirko;
-
-            temetesData.Type = cbTemetesTipusa.Text;
-
-            temetesData.Date = (tbT_I_E.Text + " " + cbT_I_H.Text + " " + cbT_I_N.Text + "  " + cbT_I_ORA.Text + ":" + cbT_I_PERC.Text);
-
-            temetesData.Catafalque = cbRavatalozo.Text;
-            temetesData.UrnCloth = checkBoxUrnaterito.Checked;
-
-            temetesData.Grave = tbSirhelyKolombariumSzam.Text;
-
-            temetesData.GarveDigging = cbSirasas.Text;
-            temetesData.GraveMarker = cbSirjelzo.Text;
-            temetesData.Music = tbZene.Text;
-            
-            if (cbTemetesModja.SelectedIndex == 0)
+            if(cmbFuneralMethod.SelectedIndex == 0)
             {
-                temetesData.CoffinOrUrnType = cbUrnaTipus.Text;
-                temetesData.CryptOrCaissionType = "";
-            }
-            else if (cbTemetesModja.SelectedIndex == 2)
-            {
-                temetesData.CoffinOrUrnType = cbUrnaTipus.Text;
-                temetesData.CryptOrCaissionType = cbKeszon.Text;
-            }
-            else if (cbTemetesModja.SelectedIndex == 1)
-            {
-                temetesData.CoffinOrUrnType = cbKoporsoTipus.Text;
-                temetesData.CryptOrCaissionType = cbVakkripta.Text;
-            }
-            else
-            {
-                temetesData.CoffinOrUrnType = "";
-                temetesData.CryptOrCaissionType = "";
-            }
-
-            temetesData.isIDCardTaken = checkBoxA_E_SZ_I.Checked;
-            temetesData.isAddressCardTaken = checkBoxA_E_L.Checked;
-            temetesData.isDeathCertificateTaken = checkBoxA_E_H_B.Checked;
-            temetesData.isBirthCertificateTaken = checkBoxA_E_SZ_A_K.Checked;
-            temetesData.isMarriageCertificateTaken = checkBoxA_H_A_K.Checked;
-            temetesData.isSpouseDeathCertificateTaken = checkBoxA_H_H_A_K.Checked;
-
-            temetesData.isIDCardNeededByClient = checkBoxELHUNYT_SZEMELYI_VISSZAIGENYLES.Checked;
-
-            bejelentoData.ClientReach = tbELERHETOSEG.Text;
-        }
-
-        private void cbTemetesModja_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbSirkoKripta.Text = "";
-
-            if(cbTemetesModja.SelectedIndex == 0)
-            {
-                cbSirkoKripta.Items.Clear();
+                cmbGraveOrCrypt.Items.Clear();
 
 
                 cbTemetesHelye.Enabled = false;
 
-                tbT_I_E.Enabled = false;
-                cbT_I_H.Enabled = false;
-                cbT_I_N.Enabled = false;
-                cbT_I_ORA.Enabled = false;
-                cbT_I_PERC.Enabled = false;
+                tbFuneralDateYear.Enabled = false;
+                cmbFuneralDateMonth.Enabled = false;
+                cmbFuneralDateDay.Enabled = false;
+                cmbFuneralDateHour.Enabled = false;
+                cmbFuneralDateMinute.Enabled = false;
 
-                cbTemetesTipusa.Enabled = false;
+                cmbFuneralType.Enabled = false;
 
-                tbSirhelyKolombariumSzam.Enabled = false;
+                tbFuneralGrave.Enabled = false;
 
-                cbRavatalozo.Enabled = false;
+                cmbFuneralCatafalque.Enabled = false;
 
-                tbZene.Enabled = false;
+                tbMusic.Enabled = false;
 
-                cbSirkoKripta.Enabled = false;
+                cmbGraveOrCrypt.Enabled = false;
 
-                cbUrnaTipus.Enabled = true;
-                cbUrnaTipus.Visible = true;
+                cmbFuneralCoffinOrUrnType.Enabled = true;
+                cmbFuneralCoffinOrUrnType.Visible = true;
                 cbKoporsoTipus.Enabled = false;
                 cbKoporsoTipus.Visible = false;
 
-                checkBoxUrnaterito.Enabled = true;
+                cbFuneralUrnCloth.Enabled = true;
 
 
                 cbTemetesHelye.Text = "";
-                tbT_I_E.Text = "";
-                cbT_I_H.Items.Clear();
-                cbT_I_N.Items.Clear();
-                cbT_I_ORA.Items.Clear();
-                cbT_I_PERC.Items.Clear();
-                cbTemetesTipusa.Text = "";
-                cbSirkoKripta.Text = "";
-                tbSirhelyKolombariumSzam.Text = "";
-                cbRavatalozo.Text = "";
-                tbZene.Text = "";
-                cbKeszon.Text = "";
-                cbVakkripta.Text = "";
-                cbSirasas.Text = "";
-                cbSirjelzo.Text = "";
+                tbFuneralDateYear.Text = "";
+                cmbFuneralDateMonth.Items.Clear();
+                cmbFuneralDateDay.Items.Clear();
+                cmbFuneralDateHour.Items.Clear();
+                cmbFuneralDateMinute.Items.Clear();
+                cmbFuneralType.Text = "";
+                cmbGraveOrCrypt.Text = "";
+                tbFuneralGrave.Text = "";
+                cmbFuneralCatafalque.Text = "";
+                tbMusic.Text = "";
+                cmbFuneralCaissionType.Text = "";
+                cmbFuneralCrypt.Text = "";
+                cmbFuneralGarveDigging.Text = "";
+                cmbFuneralGraveMarker.Text = "";
             }
-            else if(cbTemetesModja.SelectedIndex == 1)
+            else if(cmbFuneralMethod.SelectedIndex == 1)
             {
-                labelSirkoKripta.Text = "Sirkő/Kripta";
+                lblGraveOrCrypt.Text = "Sirkő/Kripta";
 
-                labelKoporsoUrnaTipus.Text = "Koporso tipus";
+                lblFuneralCoffinOrUrnType.Text = "Koporso tipus";
 
 
-                tbT_I_E.Text = DateTime.Now.Year.ToString();
-                CbFill(cbT_I_H, 1, 12);
-                cbT_I_H.SelectedIndex = 0;
-                CbFill(cbT_I_N, 1, 31);
-                cbT_I_N.SelectedIndex = 0;
-                CbFill(cbT_I_ORA, 9, 17);
-                cbT_I_ORA.SelectedIndex = 0;
-                cbT_I_PERC.Items.Add("00");
-                cbT_I_PERC.Items.Add("30");
-                cbT_I_PERC.SelectedIndex = 0;
+                tbFuneralDateYear.Text = DateTime.Now.Year.ToString();
+                ComboBoxItemFiller(cmbFuneralDateMonth, 1, 12);
+                cmbFuneralDateMonth.SelectedIndex = 0;
+                ComboBoxItemFiller(cmbFuneralDateDay, 1, 31);
+                cmbFuneralDateDay.SelectedIndex = 0;
+                ComboBoxItemFiller(cmbFuneralDateHour, 9, 17);
+                cmbFuneralDateHour.SelectedIndex = 0;
+                cmbFuneralDateMinute.Items.Add("00");
+                cmbFuneralDateMinute.Items.Add("30");
+                cmbFuneralDateMinute.SelectedIndex = 0;
 
-                cbSirkoKripta.Items.Clear();
-                cbSirkoKripta.Items.Add("Sirkő");
-                cbSirkoKripta.Items.Add("Kripta");
-                cbSirkoKripta.Items.Add("Nincs sirkő");
+                cmbGraveOrCrypt.Items.Clear();
+                cmbGraveOrCrypt.Items.Add("Sirkő");
+                cmbGraveOrCrypt.Items.Add("Kripta");
+                cmbGraveOrCrypt.Items.Add("Nincs sirkő");
 
 
                 cbTemetesHelye.Enabled = true;
 
-                tbT_I_E.Enabled = true;
-                cbT_I_H.Enabled = true;
-                cbT_I_N.Enabled = true;
-                cbT_I_ORA.Enabled = true;
-                cbT_I_PERC.Enabled = true;
+                tbFuneralDateYear.Enabled = true;
+                cmbFuneralDateMonth.Enabled = true;
+                cmbFuneralDateDay.Enabled = true;
+                cmbFuneralDateHour.Enabled = true;
+                cmbFuneralDateMinute.Enabled = true;
 
-                cbTemetesTipusa.Enabled = true;
+                cmbFuneralType.Enabled = true;
 
-                tbSirhelyKolombariumSzam.Enabled = true;
+                tbFuneralGrave.Enabled = true;
 
-                cbRavatalozo.Enabled = true;
+                cmbFuneralCatafalque.Enabled = true;
 
-                tbZene.Enabled = true;
+                tbMusic.Enabled = true;
 
-                cbSirkoKripta.Enabled = true;
+                cmbGraveOrCrypt.Enabled = true;
 
-                cbUrnaTipus.Enabled = false;
-                cbUrnaTipus.Visible = false;
+                cmbFuneralCoffinOrUrnType.Enabled = false;
+                cmbFuneralCoffinOrUrnType.Visible = false;
                 cbKoporsoTipus.Enabled = true;
                 cbKoporsoTipus.Visible = true;
 
-                checkBoxUrnaterito.Enabled = false;
+                cbFuneralUrnCloth.Enabled = false;
 
-                labelVakkriptaKeszon.Text = "Vakkripta";
+                lblFuneralCaissionType.Text = "Vakkripta";
             }
-            else if (cbTemetesModja.SelectedIndex == 2)
+            else if (cmbFuneralMethod.SelectedIndex == 2)
             {
-                labelSirkoKripta.Text = "Sirkő/Kripta/Kolomb.";
+                lblGraveOrCrypt.Text = "Sirkő/Kripta/Kolomb.";
 
-                labelKoporsoUrnaTipus.Text = "Urna tipus";
+                lblFuneralCoffinOrUrnType.Text = "Urna tipus";
 
 
-                tbT_I_E.Text = DateTime.Now.Year.ToString();
-                CbFill(cbT_I_H, 1, 12);
-                cbT_I_H.SelectedIndex = 0;
-                CbFill(cbT_I_N, 1, 31);
-                cbT_I_N.SelectedIndex = 0;
-                CbFill(cbT_I_ORA, 9, 17);
-                cbT_I_ORA.SelectedIndex = 0;
-                cbT_I_PERC.Items.Add("00");
-                cbT_I_PERC.Items.Add("30");
-                cbT_I_PERC.SelectedIndex = 0;
+                tbFuneralDateYear.Text = DateTime.Now.Year.ToString();
+                ComboBoxItemFiller(cmbFuneralDateMonth, 1, 12);
+                cmbFuneralDateMonth.SelectedIndex = 0;
+                ComboBoxItemFiller(cmbFuneralDateDay, 1, 31);
+                cmbFuneralDateDay.SelectedIndex = 0;
+                ComboBoxItemFiller(cmbFuneralDateHour, 9, 17);
+                cmbFuneralDateHour.SelectedIndex = 0;
+                cmbFuneralDateMinute.Items.Add("00");
+                cmbFuneralDateMinute.Items.Add("30");
+                cmbFuneralDateMinute.SelectedIndex = 0;
 
-                cbSirkoKripta.Items.Clear();
-                cbSirkoKripta.Items.Add("Sirkő");
-                cbSirkoKripta.Items.Add("Kripta");
-                cbSirkoKripta.Items.Add("Kolombárium");
-                cbSirkoKripta.Items.Add("Nincs sirkő");
+                cmbGraveOrCrypt.Items.Clear();
+                cmbGraveOrCrypt.Items.Add("Sirkő");
+                cmbGraveOrCrypt.Items.Add("Kripta");
+                cmbGraveOrCrypt.Items.Add("Kolombárium");
+                cmbGraveOrCrypt.Items.Add("Nincs sirkő");
 
 
                 cbTemetesHelye.Enabled = true;
 
-                tbT_I_E.Enabled = true;
-                cbT_I_H.Enabled = true;
-                cbT_I_N.Enabled = true;
-                cbT_I_ORA.Enabled = true;
-                cbT_I_PERC.Enabled = true;
+                tbFuneralDateYear.Enabled = true;
+                cmbFuneralDateMonth.Enabled = true;
+                cmbFuneralDateDay.Enabled = true;
+                cmbFuneralDateHour.Enabled = true;
+                cmbFuneralDateMinute.Enabled = true;
 
-                cbTemetesTipusa.Enabled = true;
+                cmbFuneralType.Enabled = true;
 
-                tbSirhelyKolombariumSzam.Enabled = true;
+                tbFuneralGrave.Enabled = true;
 
-                cbRavatalozo.Enabled = true;
+                cmbFuneralCatafalque.Enabled = true;
 
-                tbZene.Enabled = true;
+                tbMusic.Enabled = true;
 
-                cbSirkoKripta.Enabled = true;
+                cmbGraveOrCrypt.Enabled = true;
 
-                cbUrnaTipus.Enabled = true;
-                cbUrnaTipus.Visible = true;
+                cmbFuneralCoffinOrUrnType.Enabled = true;
+                cmbFuneralCoffinOrUrnType.Visible = true;
                 cbKoporsoTipus.Enabled = false;
                 cbKoporsoTipus.Visible = false;
 
-                checkBoxUrnaterito.Enabled = true;
+                cbFuneralUrnCloth.Enabled = true;
 
-                labelVakkriptaKeszon.Text = "Keszon";
+                lblFuneralCaissionType.Text = "Keszon";
             }
         }
 
-        private void cbSirkoKripta_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbGraveOrCrypt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbRavatalozo.Items.Clear();
-            cbRavatalozo.Items.Add("Máriabesnyő");
-            cbRavatalozo.Items.Add("Pax");
-            cbRavatalozo.Items.Add("Városi");
-            cbRavatalozo.Items.Add("Sirnál");
+            cmbFuneralCatafalque.Items.Clear();
+            cmbFuneralCatafalque.Items.Add("Máriabesnyő");
+            cmbFuneralCatafalque.Items.Add("Pax");
+            cmbFuneralCatafalque.Items.Add("Városi");
+            cmbFuneralCatafalque.Items.Add("Sirnál");
 
-            if (cbTemetesModja.SelectedIndex == 2)
+            if (cmbFuneralMethod.SelectedIndex == 2)
             {
-                cbSirasas.Enabled = false;
+                cmbFuneralGarveDigging.Enabled = false;
 
-                if (cbSirkoKripta.SelectedIndex == 0)
+                if (cmbGraveOrCrypt.SelectedIndex == 0)
                 {
-                    labelSirhelyKolombariumSzam.Text = "Sirhely szám";
+                    lblFuneralGrave.Text = "Sirhely szám";
 
-                    cbVakkripta.Enabled = false;
-                    cbVakkripta.Visible = false;
-                    cbKeszon.Enabled = true;
-                    cbKeszon.Visible = true;
+                    cmbFuneralCrypt.Enabled = false;
+                    cmbFuneralCrypt.Visible = false;
+                    cmbFuneralCaissionType.Enabled = true;
+                    cmbFuneralCaissionType.Visible = true;
 
-                    cbSirjelzo.Enabled = false;
+                    cmbFuneralGraveMarker.Enabled = false;
                 }
-                else if (cbSirkoKripta.SelectedIndex == 1)
+                else if (cmbGraveOrCrypt.SelectedIndex == 1)
                 {
-                    labelSirhelyKolombariumSzam.Text = "Sirhely szám";
+                    lblFuneralGrave.Text = "Sirhely szám";
 
-                    cbVakkripta.Enabled = false;
-                    cbVakkripta.Visible = true;
-                    cbKeszon.Enabled = false;
-                    cbKeszon.Visible = true;
+                    cmbFuneralCrypt.Enabled = false;
+                    cmbFuneralCrypt.Visible = true;
+                    cmbFuneralCaissionType.Enabled = false;
+                    cmbFuneralCaissionType.Visible = true;
 
-                    cbSirjelzo.Enabled = false;
+                    cmbFuneralGraveMarker.Enabled = false;
                 }
-                else if (cbSirkoKripta.SelectedIndex == 2)
+                else if (cmbGraveOrCrypt.SelectedIndex == 2)
                 {
-                    labelSirhelyKolombariumSzam.Text = "Kolombárium szám";
+                    lblFuneralGrave.Text = "Kolombárium szám";
 
-                    cbVakkripta.Enabled = false;
-                    cbVakkripta.Visible = true;
-                    cbKeszon.Enabled = false;
-                    cbKeszon.Visible = true;
+                    cmbFuneralCrypt.Enabled = false;
+                    cmbFuneralCrypt.Visible = true;
+                    cmbFuneralCaissionType.Enabled = false;
+                    cmbFuneralCaissionType.Visible = true;
 
-                    cbSirjelzo.Enabled = false;
+                    cmbFuneralGraveMarker.Enabled = false;
 
-                    cbRavatalozo.Items.Remove("Sirnál");
-                    cbRavatalozo.Items.Add("Falnál");
+                    cmbFuneralCatafalque.Items.Remove("Sirnál");
+                    cmbFuneralCatafalque.Items.Add("Falnál");
                 }
-                else if (cbSirkoKripta.SelectedIndex == 3)
+                else if (cmbGraveOrCrypt.SelectedIndex == 3)
                 {
-                    labelSirhelyKolombariumSzam.Text = "Sirhely szám";
+                    lblFuneralGrave.Text = "Sirhely szám";
 
-                    cbVakkripta.Enabled = false;
-                    cbVakkripta.Visible = false;
-                    cbKeszon.Enabled = true;
-                    cbKeszon.Visible = true;
+                    cmbFuneralCrypt.Enabled = false;
+                    cmbFuneralCrypt.Visible = false;
+                    cmbFuneralCaissionType.Enabled = true;
+                    cmbFuneralCaissionType.Visible = true;
 
-                    cbSirjelzo.Enabled = true;
+                    cmbFuneralGraveMarker.Enabled = true;
                 }
             }
 
-            if (cbTemetesModja.SelectedIndex == 1)
+            if (cmbFuneralMethod.SelectedIndex == 1)
             {
-                labelSirhelyKolombariumSzam.Text = "Sirhely szám";
+                lblFuneralGrave.Text = "Sirhely szám";
 
-                if (cbSirkoKripta.SelectedIndex == 0)
+                if (cmbGraveOrCrypt.SelectedIndex == 0)
                 {
-                    cbVakkripta.Enabled = true;
-                    cbVakkripta.Visible = true;
-                    cbKeszon.Enabled = false;
-                    cbKeszon.Visible = false;
+                    cmbFuneralCrypt.Enabled = true;
+                    cmbFuneralCrypt.Visible = true;
+                    cmbFuneralCaissionType.Enabled = false;
+                    cmbFuneralCaissionType.Visible = false;
 
-                    cbSirasas.Enabled = true;
+                    cmbFuneralGarveDigging.Enabled = true;
 
-                    cbSirjelzo.Enabled = true;
+                    cmbFuneralGraveMarker.Enabled = true;
                 }
-                else if (cbSirkoKripta.SelectedIndex == 1)
+                else if (cmbGraveOrCrypt.SelectedIndex == 1)
                 {
-                    cbVakkripta.Enabled = false;
-                    cbVakkripta.Visible = true;
-                    cbKeszon.Enabled = false;
-                    cbKeszon.Visible = true;
+                    cmbFuneralCrypt.Enabled = false;
+                    cmbFuneralCrypt.Visible = true;
+                    cmbFuneralCaissionType.Enabled = false;
+                    cmbFuneralCaissionType.Visible = true;
 
-                    cbSirasas.Enabled = false;
+                    cmbFuneralGarveDigging.Enabled = false;
 
-                    cbSirjelzo.Enabled = false;
+                    cmbFuneralGraveMarker.Enabled = false;
                 }
-                else if (cbSirkoKripta.SelectedIndex == 2)
+                else if (cmbGraveOrCrypt.SelectedIndex == 2)
                 {
-                    cbVakkripta.Enabled = true;
-                    cbVakkripta.Visible = true;
-                    cbKeszon.Enabled = false;
-                    cbKeszon.Visible = false;
+                    cmbFuneralCrypt.Enabled = true;
+                    cmbFuneralCrypt.Visible = true;
+                    cmbFuneralCaissionType.Enabled = false;
+                    cmbFuneralCaissionType.Visible = false;
 
-                    cbSirasas.Enabled = true;
+                    cmbFuneralGarveDigging.Enabled = true;
 
-                    cbSirjelzo.Enabled = true;
+                    cmbFuneralGraveMarker.Enabled = true;
                 }
             }
         }
 
-        private void cbVakkripta_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbFuneralCrypt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbVakkripta.SelectedIndex == 0)
+            if(cmbFuneralCrypt.SelectedIndex == 0)
             {
-                cbSirasas.Items.Clear();
-                cbSirasas.Items.Add("Sima");
-                cbSirasas.Items.Add("Mélyitett");
+                cmbFuneralGarveDigging.Items.Clear();
+                cmbFuneralGarveDigging.Items.Add("Sima");
+                cmbFuneralGarveDigging.Items.Add("Mélyitett");
             }
-            else if (cbVakkripta.SelectedIndex == 1)
+            else if (cmbFuneralCrypt.SelectedIndex == 1)
             {
-                cbSirasas.Items.Clear();
-                cbSirasas.Items.Add("Sima bővitett");
-                cbSirasas.Items.Add("Mélyitett bővitett");
+                cmbFuneralGarveDigging.Items.Clear();
+                cmbFuneralGarveDigging.Items.Add("Sima bővitett");
+                cmbFuneralGarveDigging.Items.Add("Mélyitett bővitett");
             }
+        }
+
+        private void updateData()
+        {
+            var funeral = Forms.funeralData;
+            var client = Forms.clientData;
+
+            string sirko;
+            if (cmbGraveOrCrypt.SelectedIndex == 0) sirko = "van sirkő"; else if (cmbGraveOrCrypt.SelectedIndex == 1) sirko = "kripta"; else sirko = "nincs sirkő";
+            funeral.Method = cmbFuneralMethod.Text + ", " + sirko;
+
+            funeral.Type = cmbFuneralType.Text;
+
+            funeral.Date = (tbFuneralDateYear.Text + " " + cmbFuneralDateMonth.Text + " " + cmbFuneralDateDay.Text + "  " + cmbFuneralDateHour.Text + ":" + cmbFuneralDateMinute.Text);
+
+            funeral.Catafalque = cmbFuneralCatafalque.Text;
+            funeral.UrnCloth = cbFuneralUrnCloth.Checked;
+
+            funeral.Grave = tbFuneralGrave.Text;
+
+            funeral.GarveDigging = cmbFuneralGarveDigging.Text;
+            funeral.GraveMarker = cmbFuneralGraveMarker.Text;
+            funeral.Music = tbMusic.Text;
+
+            if (cmbFuneralMethod.SelectedIndex == 0)
+            {
+                funeral.CoffinOrUrnType = cmbFuneralCoffinOrUrnType.Text;
+                funeral.CryptOrCaissionType = "";
+            }
+            else if (cmbFuneralMethod.SelectedIndex == 2)
+            {
+                funeral.CoffinOrUrnType = cmbFuneralCoffinOrUrnType.Text;
+                funeral.CryptOrCaissionType = cmbFuneralCaissionType.Text;
+            }
+            else if (cmbFuneralMethod.SelectedIndex == 1)
+            {
+                funeral.CoffinOrUrnType = cbKoporsoTipus.Text;
+                funeral.CryptOrCaissionType = cmbFuneralCrypt.Text;
+            }
+            else
+            {
+                funeral.CoffinOrUrnType = "";
+                funeral.CryptOrCaissionType = "";
+            }
+
+            funeral.isIDCardTaken = cbFuneralIsIDCardTaken.Checked;
+            funeral.isAddressCardTaken = cbFuneralIsAddressCardTaken.Checked;
+            funeral.isDeathCertificateTaken = cbFuneralIsDeathCertificateTaken.Checked;
+            funeral.isBirthCertificateTaken = cbFuneralIsBirthCertificateTaken.Checked;
+            funeral.isMarriageCertificateTaken = cbFuneralIsMarriageCertificateTaken.Checked;
+            funeral.isSpouseDeathCertificateTaken = cbFuneralIsSpouseDeathCertificateTaken.Checked;
+
+            funeral.isIDCardNeededByClient = cbFuneralIsIDCardNeededByClient.Checked;
+
+            client.Reach = cmbClientReach.Text;
         }
     }
 }
