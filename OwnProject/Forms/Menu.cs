@@ -17,9 +17,9 @@ namespace OwnProject
         public Menu()
         {
             InitializeComponent();
-            Forms.MenuForm = this;
 
-            Forms.loadAllForms();
+           Forms.MenuForm = this;
+           Forms.loadAllForms();
 
             Settings.templateDocFolderPath = paths()[0];
             Settings.outputDocFolderPath = paths()[1];

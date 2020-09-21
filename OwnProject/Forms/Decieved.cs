@@ -94,7 +94,7 @@ namespace OwnProject
             lblKidsAlltogetherAll.Enabled = visible;
             lblKidsAlltogetherBornAlive.Enabled = visible;
             lblKidsAlltogetherAlive.Enabled = visible;
-            labelOsszesen_Szuletett_Gyermekek.Enabled = visible;
+            lblKidsAlltogether.Enabled = visible;
 
             tbKidsAlltogetherAll.Enabled = visible;
             tbKidsAlltogetherBornAlive.Enabled = visible;
