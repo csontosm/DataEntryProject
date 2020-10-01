@@ -18,13 +18,10 @@ namespace OwnProject
         {
             InitializeComponent();
 
-           Forms.MenuForm = this;
-           Forms.loadAllForms();
-
             Settings.templateDocFolderPath = paths()[0];
             Settings.outputDocFolderPath = paths()[1];
 
-            var elhunytData = Forms.deceivedData;
+            //var elhunytData = Forms.deceivedData;
         }
 
         public string[] paths()
@@ -70,13 +67,26 @@ namespace OwnProject
             }
         }
 
-        public void buttonPath_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Forms.SettingsForm.Show();
+            ClosingDialog(e);
+        }
+
+        private void btnSettings_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Forms.SettingsForm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
             this.Hide();
         }
 
-        private void btnAdatbevitel_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             if (checkPaths())
             {
@@ -87,16 +97,6 @@ namespace OwnProject
             {
                 MessageBox.Show("Nincsenek kiválasztott mappák");
             }
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ClosingDialog(e);
-        }
-
-        private void btnPrint_Click_1(object sender, EventArgs e)
-        {
-            Save();
         }
     }
 }

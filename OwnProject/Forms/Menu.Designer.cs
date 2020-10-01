@@ -28,56 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonPath = new System.Windows.Forms.Button();
-            this.btnElhunyt = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // buttonPath
+            // btnNext
             // 
-            this.buttonPath.BackColor = System.Drawing.Color.Silver;
-            this.buttonPath.FlatAppearance.BorderSize = 0;
-            this.buttonPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPath.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPath.Location = new System.Drawing.Point(114, 349);
-            this.buttonPath.Name = "buttonPath";
-            this.buttonPath.Size = new System.Drawing.Size(75, 28);
-            this.buttonPath.TabIndex = 16;
-            this.buttonPath.Text = "Beállitások";
-            this.buttonPath.UseVisualStyleBackColor = false;
-            this.buttonPath.Click += new System.EventHandler(this.buttonPath_Click);
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(32, 30);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(242, 45);
+            this.btnNext.TabIndex = 69;
+            this.btnNext.Text = "Adatfelvétel";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // btnElhunyt
+            // btnSettings
             // 
-            this.btnElhunyt.BackColor = System.Drawing.Color.Sienna;
-            this.btnElhunyt.FlatAppearance.BorderSize = 0;
-            this.btnElhunyt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElhunyt.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElhunyt.Location = new System.Drawing.Point(58, 156);
-            this.btnElhunyt.Name = "btnElhunyt";
-            this.btnElhunyt.Size = new System.Drawing.Size(197, 46);
-            this.btnElhunyt.TabIndex = 17;
-            this.btnElhunyt.Text = "Adatok felvétele";
-            this.btnElhunyt.UseVisualStyleBackColor = false;
-            this.btnElhunyt.Click += new System.EventHandler(this.btnAdatbevitel_Click);
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Location = new System.Drawing.Point(89, 145);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(133, 35);
+            this.btnSettings.TabIndex = 70;
+            this.btnSettings.Text = "Beállitások";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click_1);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(27, 119);
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Location = new System.Drawing.Point(129, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 1);
-            this.panel1.TabIndex = 18;
+            this.panel1.Size = new System.Drawing.Size(50, 1);
+            this.panel1.TabIndex = 71;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(314, 389);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.ClientSize = new System.Drawing.Size(312, 192);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnElhunyt);
-            this.Controls.Add(this.buttonPath);
+            this.Controls.Add(this.btnSettings);
+            this.Controls.Add(this.btnNext);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -88,8 +88,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonPath;
-        private System.Windows.Forms.Button btnElhunyt;
+
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel panel1;
     }
 }

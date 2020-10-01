@@ -15,7 +15,7 @@ namespace OwnProject
         public Decieved()
         {
             InitializeComponent();
-            Forms.DeceivedForm = this;
+           // Forms.DeceivedForm = this;
 
             ComboBoxItemFiller(cmbDeceivedDateOfBirthYear, 1900, DateTime.Now.Year);
             cmbDeceivedDateOfBirthYear.SelectedIndex = 0;
