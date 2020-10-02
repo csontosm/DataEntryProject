@@ -93,7 +93,7 @@ namespace OwnProject
                 new TextReplacementRule("{SpouseBirthSurname}", spouse.BirthSurname, "", ()=>Forms.isMarried),
                 new TextReplacementRule("{SpouseBirthForename}", spouse.BirthForename, "", ()=>Forms.isMarried),
                 new TextReplacementRule("{SpouseMarriageName}", spouse.MarriageName, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseMaidenName}", spouse.BirthSurname + " " + spouse.BirthForename, "", ()=>spouse.PersonalIdentifierNumber.Substring(0, 1) == "2"), //!!!implement ()=>Forms.isMarried
+                new TextReplacementRule("{SpouseMaidenName}", spouse.BirthSurname + " " + spouse.BirthForename, "", ()=>spouse.PersonalIdentifierNumber?.Substring(0, 1) == "2"), //!!!implement ()=>Forms.isMarried
 
                 new TextReplacementRule("{SpouseDateOfBirthYear}", spouse.DateOfBirthYear, "", ()=>Forms.isMarried),
                 new TextReplacementRule("{SpouseDateOfBirthMonth}", spouse.DateOfBirthMonth, "", ()=>Forms.isMarried),
