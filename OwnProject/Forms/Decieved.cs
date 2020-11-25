@@ -31,14 +31,12 @@ namespace OwnProject
             ComboBoxItemFiller(cmbDeceivedDateOfDeathDay, 1, 31);
             cmbDeceivedDateOfDeathDay.SelectedIndex = 0;
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             updateData();
 
             Forms.MenuForm.Show();
             this.Hide();
-
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -103,7 +101,7 @@ namespace OwnProject
 
         private void cbIsMarried_CheckedChanged(object sender, EventArgs e)
         {
-            btnNext.Text = cbIsMarried.Checked ? "Tovább: Bejelentő" : "Tovább: Házastárs / Élettárs";
+            btnNext.Text = cbIsMarried.Checked ? "Tovább: Házastárs" : "Tovább: Bejelentő";
         }
 
         private void cbIsHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
@@ -131,49 +129,34 @@ namespace OwnProject
             }
         }
 
-        private void tbDeceivedHomeCity_TextChanged(object sender, EventArgs e)
-        {
-            bool visible = tbDeceivedHomeCity.Text == "BUDAPEST" ? true : false;
-            tbDeceivedHomeDistrict.Enabled = visible;
-        }
-
         private void tbDeceivedPlaceOfBirthCity_TextChanged(object sender, EventArgs e)
         {
             bool visible = tbDeceivedPlaceOfBirthCity.Text == "BUDAPEST" ? true : false;
-            tbDeceivedPlaceOfBirthCity.Enabled = visible;
+            tbDeceivedPlaceOfBrithDistrict.Enabled = visible;
+            lblDeceivedPlaceOfBrithDistrict.Enabled = visible;
         }
 
         private void tbDeceivedPlaceOfDeathCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible;
-            if (tbDeceivedPlaceOfDeathCity.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbDeceivedPlaceOfDeathDistrict.Text = "";
-            }
-
+            bool visible = tbDeceivedPlaceOfDeathCity.Text == "BUDAPEST" ? true : false;
             tbDeceivedPlaceOfDeathDistrict.Enabled = visible;
+            lblDeceivedPlaceOfDeathDistrict.Enabled = visible;
+        }
+
+        private void tbDeceivedHomeCity_TextChanged(object sender, EventArgs e)
+        {
+            bool visible = tbDeceivedHomeCity.Text == "BUDAPEST" ? true : false;
+            tbDeceivedHomeDistrict.Enabled = visible;
+            lblDeceivedHomeDistrict.Enabled = visible;
         }
 
         private void tbDeceivedResidenceCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible;
-            if (tbDeceivedResidenceCity.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbDeceivedResidenceDistrict.Text = "";
-            }
-
+            bool visible = tbDeceivedResidenceCity.Text == "BUDAPEST" ? true : false;
             tbDeceivedResidenceDistrict.Enabled = visible;
+            lblDeceivedResidenceDistrict.Enabled = visible;
         }
+
         private void tbKidsFromLastMarriageAll_TextChanged(object sender, EventArgs e)
         {
             if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherAll.Text = tbKidsFromLastMarriageAll.Text;

@@ -82,6 +82,7 @@ namespace OwnProject
                 new TextReplacementRule("{KidsAlltogetherAll}", deceived.KidsAlltogetherAll),
                 new TextReplacementRule("{KidsAlltogetherBornAlive}", deceived.KidsAlltogetherBornAlive),
                 new TextReplacementRule("{KidsAlltogetherAlive}", deceived.KidsAlltogetherAlive),
+
                 //Spouse
                 new TextReplacementRule("{DateOfMarriageYear}", spouse.DateOfMarriageYear, "", ()=>Forms.isMarried),
                 new TextReplacementRule("{DateOfMarriageMonth}", spouse.DateOfMarriageMonth, "", ()=>Forms.isMarried),
