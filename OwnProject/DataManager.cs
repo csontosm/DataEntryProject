@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OwnProject.Data;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace OwnProject
     {
         public DataManager()
         {
-            deceived = Forms.deceivedData;
+            deceived = Forms.decievedData;
             spouse = Forms.spouseData;
             client = Forms.clientData;
             funeral = Forms.funeralData;
@@ -84,31 +85,31 @@ namespace OwnProject
                 new TextReplacementRule("{KidsAlltogetherAlive}", deceived.KidsAlltogetherAlive),
 
                 //Spouse
-                new TextReplacementRule("{DateOfMarriageYear}", spouse.DateOfMarriageYear, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{DateOfMarriageMonth}", spouse.DateOfMarriageMonth, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{DateOfMarriageDay}", spouse.DateOfMarriageDay, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{PlaceOfMarriageCountry}", spouse.PlaceOfMarriageCountry, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{PlaceOfMarriageCity}", spouse.PlaceOfMarriageCity, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{PlaceOfMarriageDistrict}", spouse.PlaceOfMarriageDistrict, "", ()=>Forms.isMarried),
+                new TextReplacementRule("{DateOfMarriageYear}", spouse.DateOfMarriageYear, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{DateOfMarriageMonth}", spouse.DateOfMarriageMonth, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{DateOfMarriageDay}", spouse.DateOfMarriageDay, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{PlaceOfMarriageCountry}", spouse.PlaceOfMarriageCountry, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{PlaceOfMarriageCity}", spouse.PlaceOfMarriageCity, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{PlaceOfMarriageDistrict}", spouse.PlaceOfMarriageDistrict, "", ()=>deceived.IsMarried),
 
-                new TextReplacementRule("{SpouseBirthSurname}", spouse.BirthSurname, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseBirthForename}", spouse.BirthForename, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseMarriageName}", spouse.MarriageName, "", ()=>Forms.isMarried),
+                new TextReplacementRule("{SpouseBirthSurname}", spouse.BirthSurname, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseBirthForename}", spouse.BirthForename, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseMarriageName}", spouse.MarriageName, "", ()=>deceived.IsMarried),
                 new TextReplacementRule("{SpouseMaidenName}", spouse.BirthSurname + " " + spouse.BirthForename, "", ()=>spouse.PersonalIdentifierNumber?.Substring(0, 1) == "2"), //!!!implement ()=>Forms.isMarried
 
-                new TextReplacementRule("{SpouseDateOfBirthYear}", spouse.DateOfBirthYear, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseDateOfBirthMonth}", spouse.DateOfBirthMonth, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseDateOfBirthDay}", spouse.DateOfBirthDay, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpousePlaceOfBirthCountry}", spouse.PlaceOfBirthCountry, "", ()=>Forms.isMarried),
+                new TextReplacementRule("{SpouseDateOfBirthYear}", spouse.DateOfBirthYear, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseDateOfBirthMonth}", spouse.DateOfBirthMonth, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseDateOfBirthDay}", spouse.DateOfBirthDay, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpousePlaceOfBirthCountry}", spouse.PlaceOfBirthCountry, "", ()=>deceived.IsMarried),
 
-                new TextReplacementRule("{SpouseHomeCity}", spouse.HomeCity, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseHomeDistrict}", spouse.HomeDistrict, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseHomeAddress}", spouse.HomeAddress, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseResidenceCity}", spouse.ResidenceCity, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpouseResidenceDistrict}", spouse.ResidenceDistrict, "", ()=>Forms.isMarried),
+                new TextReplacementRule("{SpouseHomeCity}", spouse.HomeCity, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseHomeDistrict}", spouse.HomeDistrict, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseHomeAddress}", spouse.HomeAddress, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseResidenceCity}", spouse.ResidenceCity, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpouseResidenceDistrict}", spouse.ResidenceDistrict, "", ()=>deceived.IsMarried),
 
-                new TextReplacementRule("{SpouseNationality}", spouse.Nationality, "", ()=>Forms.isMarried),
-                new TextReplacementRule("{SpousePersonalIdentifierNumber}", spouse.PersonalIdentifierNumber, "", ()=>Forms.isMarried),
+                new TextReplacementRule("{SpouseNationality}", spouse.Nationality, "", ()=>deceived.IsMarried),
+                new TextReplacementRule("{SpousePersonalIdentifierNumber}", spouse.PersonalIdentifierNumber, "", ()=>deceived.IsMarried),
 
                 //Client
                 new TextReplacementRule("{ClientName}", client.Surname + " " + client.Forename),

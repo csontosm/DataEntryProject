@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwnProject
+namespace OwnProject.Data
 {
-    public class DecievedData
+    public class DecievedData: AbstractData
     {
-        public string DateOfDeathYear { get; set; }
+        public string DateOfDeathYear { get { return dateOfDeathYear; } set { dateOfDeathYear = value; OnPropertyChanged(); } }
 
-        public string DateOfDeathMonth { get; set; }
+        public string DateOfDeathMonth { get { return dateOfDeathMonth; } set { dateOfDeathMonth = value; OnPropertyChanged(); } }
 
-        public string DateOfDeathDay { get; set; }
+        public string DateOfDeathDay { get { return dateOfDeathDay; } set { dateOfDeathDay = value; OnPropertyChanged(); } }
 
-        public string PlaceOfDeathCity { get; set; }
+        public string PlaceOfDeathCity { get { return placeOfDeathCity; } set { placeOfDeathCity = value; OnPropertyChanged(); } }
 
-        public string BirthSurname { get; set; }
+        public string BirthSurname { get { return birthSurname; } set { birthSurname = value; OnPropertyChanged(); } }
 
         public string BirthForename { get; set; }
 
@@ -85,5 +86,19 @@ namespace OwnProject
         public string ResidenceDistrict { get; set; }
 
         public string Qualification { get; set; }
+
+        public bool IsMarried { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private string dateOfDeathYear;
+
+        private string dateOfDeathMonth;
+
+        private string dateOfDeathDay;
+
+        private string placeOfDeathCity;
+
+        private string birthSurname;
     }
 }

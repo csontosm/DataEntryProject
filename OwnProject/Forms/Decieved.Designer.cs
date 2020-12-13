@@ -146,6 +146,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbDeceivedBirthSurname = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnBack
@@ -253,7 +255,7 @@
             this.cmbDeceivedDateOfDeathDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbDeceivedDateOfDeathDay.ForeColor = System.Drawing.Color.White;
             this.cmbDeceivedDateOfDeathDay.FormattingEnabled = true;
-            this.cmbDeceivedDateOfDeathDay.Location = new System.Drawing.Point(203, 837);
+            this.cmbDeceivedDateOfDeathDay.Location = new System.Drawing.Point(203, 838);
             this.cmbDeceivedDateOfDeathDay.Name = "cmbDeceivedDateOfDeathDay";
             this.cmbDeceivedDateOfDeathDay.Size = new System.Drawing.Size(59, 28);
             this.cmbDeceivedDateOfDeathDay.TabIndex = 230;
@@ -266,7 +268,7 @@
             this.cmbDeceivedDateOfDeathMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbDeceivedDateOfDeathMonth.ForeColor = System.Drawing.Color.White;
             this.cmbDeceivedDateOfDeathMonth.FormattingEnabled = true;
-            this.cmbDeceivedDateOfDeathMonth.Location = new System.Drawing.Point(138, 837);
+            this.cmbDeceivedDateOfDeathMonth.Location = new System.Drawing.Point(138, 838);
             this.cmbDeceivedDateOfDeathMonth.Name = "cmbDeceivedDateOfDeathMonth";
             this.cmbDeceivedDateOfDeathMonth.Size = new System.Drawing.Size(59, 28);
             this.cmbDeceivedDateOfDeathMonth.TabIndex = 229;
@@ -1232,6 +1234,7 @@
             this.tbDeceivedBirthForename.Name = "tbDeceivedBirthForename";
             this.tbDeceivedBirthForename.Size = new System.Drawing.Size(250, 22);
             this.tbDeceivedBirthForename.TabIndex = 125;
+            this.tbDeceivedBirthForename.TextChanged += new System.EventHandler(this.tbDeceivedBirthForename_TextChanged);
             // 
             // panel1
             // 
@@ -1394,6 +1397,26 @@
             this.tbDeceivedBirthSurname.Name = "tbDeceivedBirthSurname";
             this.tbDeceivedBirthSurname.Size = new System.Drawing.Size(250, 22);
             this.tbDeceivedBirthSurname.TabIndex = 1;
+            this.tbDeceivedBirthSurname.TextChanged += new System.EventHandler(this.tbDeceivedBirthSurname_TextChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(269, 20);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 240;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(386, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 241;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Decieved
             // 
@@ -1401,7 +1424,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(720, 642);
+            this.ClientSize = new System.Drawing.Size(778, 642);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.tbDeceivedDateOfDeathYear);
             this.Controls.Add(this.label25);
@@ -1525,6 +1550,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Elhunyt adatai";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Decieved_FormClosing);
+            this.Load += new System.EventHandler(this.Decieved_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1649,5 +1675,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tbDeceivedDateOfDeathYear;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

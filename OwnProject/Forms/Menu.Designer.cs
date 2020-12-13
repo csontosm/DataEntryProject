@@ -65,7 +65,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(242, 45);
             this.btnNext.TabIndex = 69;
-            this.btnNext.Text = "Adatfelvétel";
+            this.btnNext.Text = "Új adatfelvétel";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 

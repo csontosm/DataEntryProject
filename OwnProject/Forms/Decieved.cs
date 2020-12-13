@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OwnProject.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,11 @@ namespace OwnProject
 {
     public partial class Decieved : FormBase
     {
+        DecievedData decievedData;
         public Decieved()
         {
             InitializeComponent();
-           // Forms.DeceivedForm = this;
+            // Forms.DeceivedForm = this;
 
             ComboBoxItemFiller(cmbDeceivedDateOfBirthYear, 1900, DateTime.Now.Year);
             cmbDeceivedDateOfBirthYear.SelectedIndex = 0;
@@ -31,6 +33,13 @@ namespace OwnProject
             ComboBoxItemFiller(cmbDeceivedDateOfDeathDay, 1, 31);
             cmbDeceivedDateOfDeathDay.SelectedIndex = 0;
         }
+
+        private void Decieved_Load(object sender, EventArgs e)
+        {
+            decievedData = Forms.decievedData;
+            tbDeceivedBirthSurname.DataBindings.Add("Text", Forms.decievedData, nameof(DecievedData.BirthSurname));
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             updateData();
@@ -47,7 +56,7 @@ namespace OwnProject
             }
             else
             {
-                Forms.isMarried = cbIsMarried.Checked;
+                decievedData.IsMarried = cbIsMarried.Checked;
                 if (cbIsMarried.Checked == true)
                 {
                     Forms.SpouseForm.Show();
@@ -97,11 +106,6 @@ namespace OwnProject
             tbKidsAlltogetherAll.Enabled = visible;
             tbKidsAlltogetherBornAlive.Enabled = visible;
             tbKidsAlltogetherAlive.Enabled = visible;
-        }
-
-        private void cbIsMarried_CheckedChanged(object sender, EventArgs e)
-        {
-            btnNext.Text = cbIsMarried.Checked ? "Tovább: Házastárs" : "Tovább: Bejelentő";
         }
 
         private void cbIsHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
@@ -194,51 +198,74 @@ namespace OwnProject
 
         private void updateData()
         {
-            var elhunytData = Forms.deceivedData;
+            var decievedData = Forms.decievedData;
 
-            elhunytData.BirthSurname = tbDeceivedBirthSurname.Text;
-            elhunytData.BirthForename = tbDeceivedBirthForename.Text;
-            elhunytData.MarriageName = tbDeceivedMarriageName.Text;
-            elhunytData.Gender = cmbDeceivedGender.Text;
-            elhunytData.PlaceOfBirthCountry = tbDeceivedPlaceOfBirthCountry.Text;
-            elhunytData.PlaceOfBirthCity = tbDeceivedPlaceOfBirthCity.Text;
-            elhunytData.PlaceOfBrithDistrict = tbDeceivedPlaceOfBrithDistrict.Text;
-            elhunytData.DateOfBirthYear = cmbDeceivedDateOfBirthYear.Text;
-            elhunytData.DateOfBirthMonth = cmbDeceivedDateOfBirthMonth.Text;
-            elhunytData.DateOfBirthDay = cmbDeceivedDateOfBirthDay.Text;
-            elhunytData.DateOfDeathYear = tbDeceivedDateOfDeathYear.Text;
-            elhunytData.DateOfDeathMonth = cmbDeceivedDateOfDeathMonth.Text;
-            elhunytData.DateOfDeathDay = cmbDeceivedDateOfDeathDay.Text;
-            elhunytData.HomeCardNumber = tbDeceivedHomeCardNumber.Text;
-            elhunytData.IdentifierDocumentNumber = tbDeceivedIdentifierDocumentNumber.Text;
-            elhunytData.Nationality = tbDeceivedNationality.Text;
-            elhunytData.PlaceOfDeathCity = tbDeceivedPlaceOfDeathCity.Text;
-            elhunytData.PlaceOfDeathDistrict = tbDeceivedPlaceOfDeathDistrict.Text;
-            elhunytData.HomeCountry = tbDeceivedHomeCountry.Text;
-            elhunytData.HomeCity = tbDeceivedHomeCity.Text;
-            elhunytData.HomeDistrict = tbDeceivedHomeDistrict.Text;
-            elhunytData.HomeAddress = tbDeceivedHomeAddress.Text;
-            elhunytData.ResidenceCity = tbDeceivedResidenceCity.Text;
-            elhunytData.ResidenceDistrict = tbDeceivedResidenceDistrict.Text;
-            elhunytData.FatherBirthSurname = tbDeceivedFatherBirthSurname.Text;
-            elhunytData.FatherBirthForename = tbDeceivedFatherBirthForename.Text;
-            elhunytData.MotherBirthSurname = tbDeceivedMotherBirthSurname.Text;
-            elhunytData.MotherBirthForename = tbDeceivedMotherBirthForename.Text;
+            decievedData.BirthSurname = tbDeceivedBirthSurname.Text;
+            decievedData.BirthForename = tbDeceivedBirthForename.Text;
+            decievedData.MarriageName = tbDeceivedMarriageName.Text;
+            decievedData.Gender = cmbDeceivedGender.Text;
+            decievedData.PlaceOfBirthCountry = tbDeceivedPlaceOfBirthCountry.Text;
+            decievedData.PlaceOfBirthCity = tbDeceivedPlaceOfBirthCity.Text;
+            decievedData.PlaceOfBrithDistrict = tbDeceivedPlaceOfBrithDistrict.Text;
+            decievedData.DateOfBirthYear = cmbDeceivedDateOfBirthYear.Text;
+            decievedData.DateOfBirthMonth = cmbDeceivedDateOfBirthMonth.Text;
+            decievedData.DateOfBirthDay = cmbDeceivedDateOfBirthDay.Text;
+            decievedData.DateOfDeathYear = tbDeceivedDateOfDeathYear.Text;
+            decievedData.DateOfDeathMonth = cmbDeceivedDateOfDeathMonth.Text;
+            decievedData.DateOfDeathDay = cmbDeceivedDateOfDeathDay.Text;
+            decievedData.HomeCardNumber = tbDeceivedHomeCardNumber.Text;
+            decievedData.IdentifierDocumentNumber = tbDeceivedIdentifierDocumentNumber.Text;
+            decievedData.Nationality = tbDeceivedNationality.Text;
+            decievedData.PlaceOfDeathCity = tbDeceivedPlaceOfDeathCity.Text;
+            decievedData.PlaceOfDeathDistrict = tbDeceivedPlaceOfDeathDistrict.Text;
+            decievedData.HomeCountry = tbDeceivedHomeCountry.Text;
+            decievedData.HomeCity = tbDeceivedHomeCity.Text;
+            decievedData.HomeDistrict = tbDeceivedHomeDistrict.Text;
+            decievedData.HomeAddress = tbDeceivedHomeAddress.Text;
+            decievedData.ResidenceCity = tbDeceivedResidenceCity.Text;
+            decievedData.ResidenceDistrict = tbDeceivedResidenceDistrict.Text;
+            decievedData.FatherBirthSurname = tbDeceivedFatherBirthSurname.Text;
+            decievedData.FatherBirthForename = tbDeceivedFatherBirthForename.Text;
+            decievedData.MotherBirthSurname = tbDeceivedMotherBirthSurname.Text;
+            decievedData.MotherBirthForename = tbDeceivedMotherBirthForename.Text;
 
-            elhunytData.KidsFromLastMarriageAll = tbKidsFromLastMarriageAll.Text;
-            elhunytData.KidsFromLastMarriageBornAlive = tbKidsFromLastMarriageBornAlive.Text;
-            elhunytData.KidsFromLastMarriageAlive = tbKidsFromLastMarriageAlive.Text;
-            elhunytData.KidsAlltogetherAll = tbKidsAlltogetherAll.Text;
-            elhunytData.KidsAlltogetherBornAlive = tbKidsAlltogetherBornAlive.Text;
-            elhunytData.KidsAlltogetherAlive = tbKidsAlltogetherAlive.Text;
+            decievedData.KidsFromLastMarriageAll = tbKidsFromLastMarriageAll.Text;
+            decievedData.KidsFromLastMarriageBornAlive = tbKidsFromLastMarriageBornAlive.Text;
+            decievedData.KidsFromLastMarriageAlive = tbKidsFromLastMarriageAlive.Text;
+            decievedData.KidsAlltogetherAll = tbKidsAlltogetherAll.Text;
+            decievedData.KidsAlltogetherBornAlive = tbKidsAlltogetherBornAlive.Text;
+            decievedData.KidsAlltogetherAlive = tbKidsAlltogetherAlive.Text;
 
-            elhunytData.Qualification = tbDeceivedQualification.Text;
-            elhunytData.Profession = tbDeceivedProfession.Text;
-            elhunytData.PersonalIdentifierNumber = (tbDeceivedPersonalIdentifierNumberGender.Text + " " + tbDeceivedPersonalIdentifierNumberBirthDate.Text + " " + tbDeceivedPersonalIdentifierNumber.Text);
+            decievedData.Qualification = tbDeceivedQualification.Text;
+            decievedData.Profession = tbDeceivedProfession.Text;
+            decievedData.PersonalIdentifierNumber = (tbDeceivedPersonalIdentifierNumberGender.Text + " " + tbDeceivedPersonalIdentifierNumberBirthDate.Text + " " + tbDeceivedPersonalIdentifierNumber.Text);
 
             string TimeOfBirth = cmbDeceivedDateOfBirthYear.Text + "/" + cmbDeceivedDateOfBirthMonth.Text + "/" + cmbDeceivedDateOfBirthDay.Text;
             string TimeOfDeath = tbDeceivedDateOfDeathYear.Text + "/" + cmbDeceivedDateOfDeathMonth.Text + "/" + cmbDeceivedDateOfDeathDay.Text;
-            elhunytData.Age = Convert.ToInt32(HelperMethods.CalculateAge(TimeOfBirth, TimeOfDeath)).ToString();
+            decievedData.Age = Convert.ToInt32(HelperMethods.CalculateAge(TimeOfBirth, TimeOfDeath)).ToString();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            decievedData.IsMarried = checkBox1.Checked;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void tbDeceivedBirthSurname_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "string";
+        }
+
+        private void tbDeceivedBirthForename_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbIsMarried_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox1.Checked = decievedData.IsMarried;
         }
     }
 }

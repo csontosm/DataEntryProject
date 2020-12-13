@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwnProject
+namespace OwnProject.Data
 {
-   public class FuneralData
+   public class FuneralData: AbstractData
     {
         public string Method { get; set; }
 

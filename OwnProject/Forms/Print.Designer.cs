@@ -163,11 +163,11 @@
             this.checkBoxHamvasztasSzolnok.Text = "Hamvasztás - Szolnok";
             this.checkBoxHamvasztasSzolnok.UseVisualStyleBackColor = true;
             // 
-            // FormPrint
+            // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 369);
+            this.ClientSize = new System.Drawing.Size(248, 375);
             this.Controls.Add(this.checkBoxHamvasztasSzolnok);
             this.Controls.Add(this.checkBoxMeghatalmazas);
             this.Controls.Add(this.button2);
@@ -180,7 +180,7 @@
             this.Controls.Add(this.checkBoxKatolikusTemetes);
             this.Controls.Add(this.checkBoxANTSZKerelem);
             this.Controls.Add(this.checkBoxGodolloiTemeto);
-            this.Name = "FormPrint";
+            this.Name = "Print";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nyomtatás";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrint_FormClosing);
