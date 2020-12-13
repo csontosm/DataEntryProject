@@ -28,24 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnNext
+            // panel1
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(32, 30);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(242, 45);
-            this.btnNext.TabIndex = 69;
-            this.btnNext.Text = "Adatfelvétel";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Location = new System.Drawing.Point(129, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(50, 1);
+            this.panel1.TabIndex = 71;
             // 
             // btnSettings
             // 
@@ -61,13 +55,19 @@
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click_1);
             // 
-            // panel1
+            // btnNext
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(129, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(50, 1);
-            this.panel1.TabIndex = 71;
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(32, 30);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(242, 45);
+            this.btnNext.TabIndex = 69;
+            this.btnNext.Text = "Új adatfelvétel";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // Menu
             // 

@@ -90,7 +90,7 @@ namespace OwnProject
         {
             if (checkPaths())
             {
-                Forms.DeceivedForm.Show();
+                Forms.DecievedForm.Show();
                 this.Hide();
             }
             else

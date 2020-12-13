@@ -23,36 +23,11 @@ namespace OwnProject
             ClosingDialog(e);
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            updateData();
-
-            if (Forms.isMarried == true)
-            {
-                Forms.SpouseForm.Show();
-                this.Hide();
-            }
-            else if (Forms.isMarried == false)
-            {
-                Forms.DeceivedForm.Show();
-                this.Hide();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            updateData();
-
-            Forms.FuneralForm.Show();
-            this.Hide();
-        }
-
         private void cbIsClientEqualsSpouse_CheckedChanged(object sender, EventArgs e)
         {
             var spouseData = Forms.spouseData;
             bool hazastars = cbIsClientEqualsSpouse.Checked;
 
-            cmbClientRelative.Visible = hazastars;
             tbClientRelative.Visible = !hazastars;
 
             tbClientSurname.Enabled = !hazastars;
@@ -73,24 +48,7 @@ namespace OwnProject
                 tbClientForename.Text = "";
                 tbClientHomeCity.Text = "";
                 tbClientHomeAddress.Text = "";
-                cmbClientRelative.SelectedIndex = -1;
             }
-        }
-
-        private void tbClientHomeCity_TextChanged(object sender, EventArgs e)
-        {
-            bool visible;
-            if (tbClientHomeCity.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbClientHomeDistrict.Text = "";
-            }
-
-            tbClientHomeDistrict.Enabled = visible;
         }
 
         private void updateData()
@@ -99,7 +57,7 @@ namespace OwnProject
             bool hazastars = cbIsClientEqualsSpouse.Checked;
 
             Forms.isSpouseTheClient = hazastars;
-            client.Relative = hazastars ? cmbClientRelative.Text : tbClientRelative.Text;
+            client.Relative = tbClientRelative.Text;
             client.Surname = tbClientSurname.Text;
             client.Forename = tbClientForename.Text;
             client.IdentifierDocumentNumber = tbClientIdentifierDocumentNumber.Text;
@@ -109,6 +67,38 @@ namespace OwnProject
             client.HomeAddress = tbClientHomeAddress.Text;
             client.HomePostcode = tbClientHomePostcode.Text;
             client.ClientName = (tbClientSurname.Text + " " + tbClientForename.Text);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            updateData();
+            var decieved = Forms.decievedData;
+
+            if (decieved.IsMarried == true)
+            {
+                Forms.SpouseForm.Show();
+                this.Hide();
+            }
+            else if (decieved.IsMarried == false)
+            {
+                Forms.DecievedForm.Show();
+                this.Hide();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            updateData();
+
+            Forms.FuneralForm.Show();
+            this.Hide();
+        }
+
+        private void tbClientHomeCity_TextChanged(object sender, EventArgs e)
+        {
+            bool visible = tbClientHomeCity.Text == "BUDAPEST" ? true : false;
+            tbClientHomeDistrict.Enabled = visible;
+            lblClientHomeDistrict.Enabled = visible;
         }
     }
 }

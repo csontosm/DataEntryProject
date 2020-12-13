@@ -51,7 +51,7 @@ namespace OwnProject
         {
             for (int i = 0; i < list.Count(); i++)
             {
-                var filePath = (Settings.outputDocFolderPath + $@"\{Forms.deceivedData.Name}\{Forms.deceivedData.Name}_{list[i]}.docx");
+                var filePath = (Settings.outputDocFolderPath + $@"\{Forms.decievedData.Name}\{Forms.decievedData.Name}_{list[i]}.docx");
 
                 var startInfo = new ProcessStartInfo(filePath);
                 startInfo.Verb = "print";

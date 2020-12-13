@@ -45,7 +45,7 @@ namespace OwnProject
         {
             string[] docTemplateFilesArray = Forms.dataManager.getDocFiles(Settings.templateDocFolderPath);
 
-            string name = Forms.deceivedData.Name;
+            string name = Forms.decievedData.Name;
 
             for (int i = 0; i < docTemplateFilesArray.Count(); i++)
             {

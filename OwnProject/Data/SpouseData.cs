@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwnProject
+namespace OwnProject.Data
 {
-   public class SpouseData
+   public class SpouseData: AbstractData
     {
         public string DateOfMarriageYear { get; set; }
 

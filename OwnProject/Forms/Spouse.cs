@@ -34,7 +34,7 @@ namespace OwnProject
 
         private void Spouse_Activated(object sender, EventArgs e)
         {
-            var elhunytData = Forms.deceivedData;
+            var elhunytData = Forms.decievedData;
             if (elhunytData.Gender == "Férfi") tbSpousePersonalIdentifierNumberGender.Text = "2"; else if (elhunytData.Gender == "Nő") tbSpousePersonalIdentifierNumberGender.Text = "1"; else tbSpousePersonalIdentifierNumberGender.Text = "";
         }
 
@@ -42,7 +42,7 @@ namespace OwnProject
         {
             updateData();
 
-            Forms.DeceivedForm.Show();
+            Forms.DecievedForm.Show();
             this.Hide();
         }
 
@@ -171,6 +171,11 @@ namespace OwnProject
             spouseData.DateOfBirthMonth = cmbSpouseDateOfBirthMonth.Text;
             spouseData.DateOfBirthDay = cmbSpouseDateOfBirthDay.Text;
             spouseData.PersonalIdentifierNumber = (tbSpousePersonalIdentifierNumberGender.Text + " " + tbSpousePersonalIdentifierNumberBirthDate.Text + " " + tbSpousePersonalIdentifierNumber.Text);
+        }
+
+        private void cmbDeceivedDateOfBirthYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

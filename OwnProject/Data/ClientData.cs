@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwnProject
+namespace OwnProject.Data
 {
-   public class ClientData
+   public class ClientData: AbstractData
     {
         public string ClientName { get; set; }
 

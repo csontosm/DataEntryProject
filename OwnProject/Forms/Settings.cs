@@ -56,14 +56,6 @@ namespace OwnProject
             }
         }
 
-        private void btnVisszaFormMain_Click(object sender, EventArgs e)
-        {
-            savePaths();
-
-            Forms.MenuForm.Show();
-            this.Hide();
-        }
-
         private void loadPaths()
         {
             string line;
@@ -116,6 +108,14 @@ namespace OwnProject
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClosingDialog(e);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            savePaths();
+
+            Forms.MenuForm.Show();
+            this.Hide();
         }
     }
 }
