@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OwnProject.Data
+﻿namespace OwnProject.Data
 {
-    public class DecievedData: AbstractData
+    public class DecievedData : AbstractData
     {
         public string DateOfDeathYear { get { return dateOfDeathYear; } set { dateOfDeathYear = value; OnPropertyChanged(); } }
 
@@ -19,77 +12,75 @@ namespace OwnProject.Data
 
         public string BirthSurname { get { return birthSurname; } set { birthSurname = value; OnPropertyChanged(); } }
 
-        public string BirthForename { get; set; }
+        public string BirthForename { get { return birthForename; } set { birthForename = value; OnPropertyChanged(); } }
 
-        public string MarriageName { get; set; }
+        public string MarriageName { get { return marriageName; } set { marriageName = value; OnPropertyChanged(); } }
 
-        public string DateOfBirthYear { get; set; }
+        public string DateOfBirthYear { get { return dateOfBirthYear; } set { dateOfBirthYear = value; OnPropertyChanged(); } }
 
-        public string DateOfBirthMonth { get; set; }
+        public string DateOfBirthMonth { get { return dateOfBirthMonth; } set { dateOfBirthMonth = value; OnPropertyChanged(); } }
 
-        public string DateOfBirthDay { get; set; }
+        public string DateOfBirthDay { get { return dateOfBirthDay; } set { dateOfBirthDay = value; OnPropertyChanged(); } }
 
-        public string PlaceOfBirthCountry { get; set; }
+        public string PlaceOfBirthCountry { get { return placeOfBirthCountry; } set { placeOfBirthCountry = value; OnPropertyChanged(); } }
 
-        public string PlaceOfBirthCity { get; set; }
+        public string PlaceOfBirthCity { get { return placeOfBirthCity; } set { placeOfBirthCity = value; OnPropertyChanged(); } }
 
-        public string PersonalIdentifierNumber { get; set; }
+        public string PersonalIdentifierNumber { get { return personalIdentifierNumber; } set { personalIdentifierNumber = value; OnPropertyChanged(); } }
 
-        public string HomeCardNumber { get; set; }
+        public string HomeCardNumber { get { return homeCardNumber; } set { homeCardNumber = value; OnPropertyChanged(); } }
 
-        public string IdentifierDocumentNumber { get; set; }
+        public string IdentifierDocumentNumber { get { return identifierDocumentNumber; } set { identifierDocumentNumber = value; OnPropertyChanged(); } }
 
-        public string Nationality { get; set; }
+        public string Nationality { get { return nationality; } set { nationality = value; OnPropertyChanged(); } }
 
-        public string HomeCountry { get; set; }
+        public string HomeCountry { get { return homeCountry; } set { homeCountry = value; OnPropertyChanged(); } }
 
-        public string HomeCity { get; set; }
+        public string HomeCity { get { return homeCity; } set { homeCity = value; OnPropertyChanged(); } }
 
-        public string HomeAddress { get; set; }
+        public string HomeAddress { get { return homeAddress; } set { homeAddress = value; OnPropertyChanged(); } }
 
-        public string FatherBirthSurname { get; set; }
+        public string FatherBirthSurname { get { return fatherBirthSurname; } set { fatherBirthSurname = value; OnPropertyChanged(); } }
 
-        public string FatherBirthForename { get; set; }
+        public string FatherBirthForename { get { return fatherBirthForename; } set { fatherBirthForename = value; OnPropertyChanged(); } }
 
-        public string MotherBirthSurname { get; set; }
+        public string MotherBirthSurname { get { return motherBirthSurname; } set { motherBirthSurname = value; OnPropertyChanged(); } }
 
-        public string MotherBirthForename { get; set; }
+        public string MotherBirthForename { get { return motherBirthForename; } set { motherBirthForename = value; OnPropertyChanged(); } }
 
-        public string KidsFromLastMarriageAll { get; set; }
+        public string KidsFromLastMarriageAll { get { return kidsFromLastMarriageAll; } set { kidsFromLastMarriageAll = value; OnPropertyChanged(); } }
 
-        public string KidsFromLastMarriageBornAlive { get; set; }
+        public string KidsFromLastMarriageBornAlive { get { return kidsFromLastMarriageBornAlive; } set { kidsFromLastMarriageBornAlive = value; OnPropertyChanged(); } }
 
-        public string KidsFromLastMarriageAlive { get; set; }
+        public string KidsFromLastMarriageAlive { get { return kidsFromLastMarriageAlive; } set { kidsFromLastMarriageAlive = value; OnPropertyChanged(); } }
 
-        public string KidsAlltogetherAll { get; set; }
+        public string KidsAlltogetherAll { get { return kidsAlltogetherAll; } set { kidsAlltogetherAll = value; OnPropertyChanged(); } }
 
-        public string KidsAlltogetherBornAlive { get; set; }
+        public string KidsAlltogetherBornAlive { get { return kidsAlltogetherBornAlive; } set { kidsAlltogetherBornAlive = value; OnPropertyChanged(); } }
 
-        public string KidsAlltogetherAlive { get; set; }
+        public string KidsAlltogetherAlive { get { return kidsAlltogetherAlive; } set { kidsAlltogetherAlive = value; OnPropertyChanged(); } }
 
-        public string Profession { get; set; }
+        public string Profession { get { return profession; } set { profession = value; OnPropertyChanged(); } }
 
-        public string Name { get; set; }
+        public string Name { get { return name; } set { name = value; OnPropertyChanged(); } }
 
-        public string Age { get; set; }
+        public string Age { get { return age; } set { age = value; OnPropertyChanged(); } }
 
-        public string Gender { get; set; }
+        public string Gender { get { return gender; } set { gender = value; OnPropertyChanged(); } }
 
-        public string PlaceOfBrithDistrict { get; set; }
+        public string PlaceOfBrithDistrict { get { return placeOfBrithDistrict; } set { placeOfBrithDistrict = value; OnPropertyChanged(); } }
 
-        public string PlaceOfDeathDistrict { get; set; }
+        public string PlaceOfDeathDistrict { get { return placeOfDeathDistrict; } set { placeOfDeathDistrict = value; OnPropertyChanged(); } }
 
-        public string HomeDistrict { get; set; }
+        public string HomeDistrict { get { return homeDistrict; } set { homeDistrict = value; OnPropertyChanged(); } }
 
-        public string ResidenceCity { get; set; }
+        public string ResidenceCity { get { return residenceCity; } set { residenceCity = value; OnPropertyChanged(); } }
 
-        public string ResidenceDistrict { get; set; }
+        public string ResidenceDistrict { get { return residenceDistrict; } set { residenceDistrict = value; OnPropertyChanged(); } }
 
-        public string Qualification { get; set; }
+        public string Qualification { get { return qualification; } set { qualification = value; OnPropertyChanged(); } }
 
-        public bool IsMarried { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public bool IsMarried { get { return isMarried; } set { isMarried = value; OnPropertyChanged(); } }
 
         private string dateOfDeathYear;
 
@@ -100,5 +91,75 @@ namespace OwnProject.Data
         private string placeOfDeathCity;
 
         private string birthSurname;
+
+        private string birthForename;
+
+        private string marriageName;
+
+        private string dateOfBirthYear;
+
+        private string dateOfBirthMonth;
+
+        private string dateOfBirthDay;
+
+        private string placeOfBirthCountry;
+
+        private string placeOfBirthCity;
+
+        private string personalIdentifierNumber;
+
+        private string homeCardNumber;
+
+        private string identifierDocumentNumber;
+
+        private string nationality;
+
+        private string homeCountry;
+
+        private string homeCity;
+
+        private string homeAddress;
+
+        private string fatherBirthSurname;
+
+        private string fatherBirthForename;
+
+        private string motherBirthSurname;
+
+        private string motherBirthForename;
+
+        private string kidsFromLastMarriageAll;
+
+        private string kidsFromLastMarriageBornAlive;
+
+        private string kidsFromLastMarriageAlive;
+
+        private string kidsAlltogetherAll;
+
+        private string kidsAlltogetherBornAlive;
+
+        private string kidsAlltogetherAlive;
+
+        private string profession;
+
+        private string name;
+
+        private string age;
+
+        private string gender;
+
+        private string placeOfBrithDistrict;
+
+        private string placeOfDeathDistrict;
+
+        private string homeDistrict;
+
+        private string residenceCity;
+
+        private string residenceDistrict;
+
+        private string qualification;
+
+        private bool isMarried;
     }
 }
