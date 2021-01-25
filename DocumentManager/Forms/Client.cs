@@ -47,8 +47,6 @@ namespace DocumentManager
             var spouseData = Forms.spouseData;
             bool hazastars = cbIsClientEqualsSpouse.Checked;
 
-            tbClientRelative.Visible = !hazastars;
-
             tbClientSurname.Enabled = !hazastars;
             tbClientForename.Enabled = !hazastars;
             tbClientHomeCity.Enabled = !hazastars;
@@ -56,17 +54,17 @@ namespace DocumentManager
 
             if (hazastars)
             {
-                tbClientSurname.Text = spouseData.BirthSurname;
-                tbClientForename.Text = spouseData.BirthForename;
-                tbClientHomeCity.Text = spouseData.HomeCity;
-                tbClientHomeAddress.Text = spouseData.HomeAddress;
+                clientData.Surname = spouseData.BirthSurname;
+                clientData.Forename = spouseData.BirthForename;
+                clientData.HomeCity = spouseData.HomeCity;
+                clientData.HomeAddress = spouseData.HomeAddress;
             }
             else
             {
-                tbClientSurname.Text = "";
-                tbClientForename.Text = "";
-                tbClientHomeCity.Text = "";
-                tbClientHomeAddress.Text = "";
+                clientData.Surname = "";
+                clientData.Forename = "";
+                clientData.HomeCity = "";
+                clientData.HomeAddress = "";
             }
         }
 

@@ -32,6 +32,28 @@
 
         public string IdentifierDocumentNumber { get { return identifierDocumentNumber; } set { identifierDocumentNumber = value; OnPropertyChanged(); } }
 
+        public string IdentifierDocumentExpireYear
+        {
+            get
+            {
+                return identifierDocumentExpireYear;
+            }
+            set
+            {
+                identifierDocumentExpireYear = value;
+                OnPropertyChanged();
+                if (value == "Hat.Nélk.")
+                {
+                    IdentifierDocumentExpireMonth = "";
+                    IdentifierDocumentExpireDay = "";
+                }
+            }
+        }
+
+        public string IdentifierDocumentExpireMonth { get { return identifierDocumentExpireMonth; } set { identifierDocumentExpireMonth = value; OnPropertyChanged(); } }
+
+        public string IdentifierDocumentExpireDay { get { return identifierDocumentExpireDay; } set { identifierDocumentExpireDay = value; OnPropertyChanged(); } }
+
         public string Nationality { get { return nationality; } set { nationality = value; OnPropertyChanged(); } }
 
         public string HomeCountry { get { return homeCountry; } set { homeCountry = value; OnPropertyChanged(); } }
@@ -48,11 +70,47 @@
 
         public string MotherBirthForename { get { return motherBirthForename; } set { motherBirthForename = value; OnPropertyChanged(); } }
 
-        public string KidsFromLastMarriageAll { get { return kidsFromLastMarriageAll; } set { kidsFromLastMarriageAll = value; OnPropertyChanged(); } }
+        public string KidsFromLastMarriageAll
+        {
+            get
+            {
+                return kidsFromLastMarriageAll;
+            }
+            set
+            {
+                kidsFromLastMarriageAll = value;
+                OnPropertyChanged();
+                if (!HasKidsFromOtherMarriage) KidsAlltogetherAll = value;
+            }
+        }
 
-        public string KidsFromLastMarriageBornAlive { get { return kidsFromLastMarriageBornAlive; } set { kidsFromLastMarriageBornAlive = value; OnPropertyChanged(); } }
+        public string KidsFromLastMarriageBornAlive
+        {
+            get
+            {
+                return kidsFromLastMarriageBornAlive;
+            }
+            set
+            {
+                kidsFromLastMarriageBornAlive = value;
+                OnPropertyChanged();
+                if (!HasKidsFromOtherMarriage) KidsAlltogetherBornAlive = value;
+            }
+        }
 
-        public string KidsFromLastMarriageAlive { get { return kidsFromLastMarriageAlive; } set { kidsFromLastMarriageAlive = value; OnPropertyChanged(); } }
+        public string KidsFromLastMarriageAlive
+        {
+            get
+            {
+                return kidsFromLastMarriageAlive;
+            }
+            set
+            {
+                kidsFromLastMarriageAlive = value;
+                OnPropertyChanged();
+                if (!HasKidsFromOtherMarriage) KidsAlltogetherAlive = value;
+            }
+        }
 
         public string KidsAlltogetherAll { get { return kidsAlltogetherAll; } set { kidsAlltogetherAll = value; OnPropertyChanged(); } }
 
@@ -79,6 +137,55 @@
         public string Qualification { get { return qualification; } set { qualification = value; OnPropertyChanged(); } }
 
         public bool IsMarried { get { return isMarried; } set { isMarried = value; OnPropertyChanged(); } }
+
+        public bool HasKidsFromOtherMarriage
+        {
+            get
+            {
+                return hasKidsFromOtherMarriage;
+            }
+            set
+            {
+                hasKidsFromOtherMarriage = value;
+                OnPropertyChanged();
+                if (value)
+                {
+                    KidsAlltogetherAll = "";
+                    KidsAlltogetherBornAlive = "";
+                    KidsAlltogetherAlive = "";
+
+                }
+                else
+                {
+                    KidsAlltogetherAll = KidsFromLastMarriageAll;
+                    KidsAlltogetherBornAlive = KidsFromLastMarriageBornAlive;
+                    KidsAlltogetherAlive = KidsFromLastMarriageAlive;
+                }
+            }
+        }
+
+        public bool IsDeceasedHomeEqualsResidence
+        {
+            get
+            {
+                return isDeceasedHomeEqualsResidence;
+            }
+            set
+            {
+                isDeceasedHomeEqualsResidence = value;
+                OnPropertyChanged();
+                if (value)
+                {
+                    ResidenceCity = HomeCity;
+                    ResidenceDistrict = HomeDistrict;
+                }
+                else
+                {
+                    ResidenceCity = "";
+                    ResidenceDistrict = "";
+                }
+            }
+        }
 
         private string dateOfDeathYear;
 
@@ -109,6 +216,12 @@
         private string homeCardNumber;
 
         private string identifierDocumentNumber;
+
+        private string identifierDocumentExpireYear;
+
+        private string identifierDocumentExpireMonth;
+
+        private string identifierDocumentExpireDay;
 
         private string nationality;
 
@@ -157,5 +270,9 @@
         private string qualification;
 
         private bool isMarried;
+
+        private bool hasKidsFromOtherMarriage;
+
+        private bool isDeceasedHomeEqualsResidence;
     }
 }

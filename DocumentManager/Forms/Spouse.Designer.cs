@@ -34,7 +34,7 @@
             this.cmbDateOfMarriageYear = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.lblDeceasedHomeDistrict = new System.Windows.Forms.Label();
+            this.lblPlaceOfMarriageDistrict = new System.Windows.Forms.Label();
             this.tbPlaceOfMarriageDistrict = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.lblDeceasedResidenceDistrict = new System.Windows.Forms.Label();
+            this.lblSpouseResidenceDistrict = new System.Windows.Forms.Label();
             this.tbSpouseResidenceDistrict = new System.Windows.Forms.TextBox();
             this.panel24 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,13 +71,13 @@
             this.label45 = new System.Windows.Forms.Label();
             this.tbSpouseHomeAddress = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblSpouseHomeDistrict = new System.Windows.Forms.Label();
             this.tbSpouseHomeDistrict = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.tbSpouseHomeCity = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.cbHomeEqualsResidence = new System.Windows.Forms.CheckBox();
+            this.cbIsSpouseHomeEqualsResidence = new System.Windows.Forms.CheckBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.tbSpousePersonalIdentifierNumber = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -160,16 +160,16 @@
             this.panel19.Size = new System.Drawing.Size(59, 1);
             this.panel19.TabIndex = 204;
             // 
-            // lblDeceasedHomeDistrict
+            // lblPlaceOfMarriageDistrict
             // 
-            this.lblDeceasedHomeDistrict.AutoSize = true;
-            this.lblDeceasedHomeDistrict.Enabled = false;
-            this.lblDeceasedHomeDistrict.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDeceasedHomeDistrict.Location = new System.Drawing.Point(200, 223);
-            this.lblDeceasedHomeDistrict.Name = "lblDeceasedHomeDistrict";
-            this.lblDeceasedHomeDistrict.Size = new System.Drawing.Size(40, 13);
-            this.lblDeceasedHomeDistrict.TabIndex = 203;
-            this.lblDeceasedHomeDistrict.Text = "Kerület";
+            this.lblPlaceOfMarriageDistrict.AutoSize = true;
+            this.lblPlaceOfMarriageDistrict.Enabled = false;
+            this.lblPlaceOfMarriageDistrict.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblPlaceOfMarriageDistrict.Location = new System.Drawing.Point(200, 223);
+            this.lblPlaceOfMarriageDistrict.Name = "lblPlaceOfMarriageDistrict";
+            this.lblPlaceOfMarriageDistrict.Size = new System.Drawing.Size(40, 13);
+            this.lblPlaceOfMarriageDistrict.TabIndex = 203;
+            this.lblPlaceOfMarriageDistrict.Text = "Kerület";
             // 
             // tbPlaceOfMarriageDistrict
             // 
@@ -213,6 +213,7 @@
             this.tbPlaceOfMarriageCity.Name = "tbPlaceOfMarriageCity";
             this.tbPlaceOfMarriageCity.Size = new System.Drawing.Size(178, 22);
             this.tbPlaceOfMarriageCity.TabIndex = 199;
+            this.tbPlaceOfMarriageCity.TextChanged += new System.EventHandler(this.tbPlaceOfMarriageCity_TextChanged);
             // 
             // panel21
             // 
@@ -396,6 +397,7 @@
             this.cmbSpouseDateOfBirthDay.Name = "cmbSpouseDateOfBirthDay";
             this.cmbSpouseDateOfBirthDay.Size = new System.Drawing.Size(59, 28);
             this.cmbSpouseDateOfBirthDay.TabIndex = 219;
+            this.cmbSpouseDateOfBirthDay.SelectedIndexChanged += new System.EventHandler(this.cmbSpouseDateOfBirthDay_SelectedIndexChanged);
             // 
             // cmbSpouseDateOfBirthMonth
             // 
@@ -409,6 +411,7 @@
             this.cmbSpouseDateOfBirthMonth.Name = "cmbSpouseDateOfBirthMonth";
             this.cmbSpouseDateOfBirthMonth.Size = new System.Drawing.Size(59, 28);
             this.cmbSpouseDateOfBirthMonth.TabIndex = 218;
+            this.cmbSpouseDateOfBirthMonth.SelectedIndexChanged += new System.EventHandler(this.cmbSpouseDateOfBirthMonth_SelectedIndexChanged);
             // 
             // cmbSpouseDateOfBirthYear
             // 
@@ -422,6 +425,7 @@
             this.cmbSpouseDateOfBirthYear.Name = "cmbSpouseDateOfBirthYear";
             this.cmbSpouseDateOfBirthYear.Size = new System.Drawing.Size(119, 28);
             this.cmbSpouseDateOfBirthYear.TabIndex = 217;
+            this.cmbSpouseDateOfBirthYear.SelectedIndexChanged += new System.EventHandler(this.cmbSpouseDateOfBirthYear_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -451,16 +455,16 @@
             this.panel23.Size = new System.Drawing.Size(59, 1);
             this.panel23.TabIndex = 243;
             // 
-            // lblDeceasedResidenceDistrict
+            // lblSpouseResidenceDistrict
             // 
-            this.lblDeceasedResidenceDistrict.AutoSize = true;
-            this.lblDeceasedResidenceDistrict.Enabled = false;
-            this.lblDeceasedResidenceDistrict.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDeceasedResidenceDistrict.Location = new System.Drawing.Point(571, 549);
-            this.lblDeceasedResidenceDistrict.Name = "lblDeceasedResidenceDistrict";
-            this.lblDeceasedResidenceDistrict.Size = new System.Drawing.Size(40, 13);
-            this.lblDeceasedResidenceDistrict.TabIndex = 242;
-            this.lblDeceasedResidenceDistrict.Text = "Kerület";
+            this.lblSpouseResidenceDistrict.AutoSize = true;
+            this.lblSpouseResidenceDistrict.Enabled = false;
+            this.lblSpouseResidenceDistrict.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblSpouseResidenceDistrict.Location = new System.Drawing.Point(571, 549);
+            this.lblSpouseResidenceDistrict.Name = "lblSpouseResidenceDistrict";
+            this.lblSpouseResidenceDistrict.Size = new System.Drawing.Size(40, 13);
+            this.lblSpouseResidenceDistrict.TabIndex = 242;
+            this.lblSpouseResidenceDistrict.Text = "Kerület";
             // 
             // tbSpouseResidenceDistrict
             // 
@@ -504,6 +508,7 @@
             this.tbSpouseResidenceCity.Name = "tbSpouseResidenceCity";
             this.tbSpouseResidenceCity.Size = new System.Drawing.Size(178, 22);
             this.tbSpouseResidenceCity.TabIndex = 238;
+            this.tbSpouseResidenceCity.TextChanged += new System.EventHandler(this.tbSpouseResidenceCity_TextChanged);
             // 
             // panel22
             // 
@@ -543,16 +548,16 @@
             this.panel5.Size = new System.Drawing.Size(59, 1);
             this.panel5.TabIndex = 234;
             // 
-            // label7
+            // lblSpouseHomeDistrict
             // 
-            this.label7.AutoSize = true;
-            this.label7.Enabled = false;
-            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(571, 370);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 233;
-            this.label7.Text = "Kerület";
+            this.lblSpouseHomeDistrict.AutoSize = true;
+            this.lblSpouseHomeDistrict.Enabled = false;
+            this.lblSpouseHomeDistrict.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblSpouseHomeDistrict.Location = new System.Drawing.Point(571, 370);
+            this.lblSpouseHomeDistrict.Name = "lblSpouseHomeDistrict";
+            this.lblSpouseHomeDistrict.Size = new System.Drawing.Size(40, 13);
+            this.lblSpouseHomeDistrict.TabIndex = 233;
+            this.lblSpouseHomeDistrict.Text = "Kerület";
             // 
             // tbSpouseHomeDistrict
             // 
@@ -596,6 +601,7 @@
             this.tbSpouseHomeCity.Name = "tbSpouseHomeCity";
             this.tbSpouseHomeCity.Size = new System.Drawing.Size(178, 22);
             this.tbSpouseHomeCity.TabIndex = 229;
+            this.tbSpouseHomeCity.TextChanged += new System.EventHandler(this.tbSpouseHomeCity_TextChanged);
             // 
             // label43
             // 
@@ -607,17 +613,18 @@
             this.label43.TabIndex = 225;
             this.label43.Text = "Lakóhelye";
             // 
-            // cbHomeEqualsResidence
+            // cbIsSpouseHomeEqualsResidence
             // 
-            this.cbHomeEqualsResidence.AutoSize = true;
-            this.cbHomeEqualsResidence.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbHomeEqualsResidence.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.cbHomeEqualsResidence.Location = new System.Drawing.Point(383, 485);
-            this.cbHomeEqualsResidence.Name = "cbHomeEqualsResidence";
-            this.cbHomeEqualsResidence.Size = new System.Drawing.Size(229, 17);
-            this.cbHomeEqualsResidence.TabIndex = 224;
-            this.cbHomeEqualsResidence.Text = "Lakóhely megegyezik a tartózkodási hellyel";
-            this.cbHomeEqualsResidence.UseVisualStyleBackColor = true;
+            this.cbIsSpouseHomeEqualsResidence.AutoSize = true;
+            this.cbIsSpouseHomeEqualsResidence.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbIsSpouseHomeEqualsResidence.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.cbIsSpouseHomeEqualsResidence.Location = new System.Drawing.Point(383, 485);
+            this.cbIsSpouseHomeEqualsResidence.Name = "cbIsSpouseHomeEqualsResidence";
+            this.cbIsSpouseHomeEqualsResidence.Size = new System.Drawing.Size(229, 17);
+            this.cbIsSpouseHomeEqualsResidence.TabIndex = 224;
+            this.cbIsSpouseHomeEqualsResidence.Text = "Lakóhely megegyezik a tartózkodási hellyel";
+            this.cbIsSpouseHomeEqualsResidence.UseVisualStyleBackColor = true;
+            this.cbIsSpouseHomeEqualsResidence.CheckedChanged += new System.EventHandler(this.cbIsSpouseHomeEqualsResidence_CheckedChanged);
             // 
             // panel10
             // 
@@ -744,6 +751,7 @@
             this.btnBack.TabIndex = 257;
             this.btnBack.Text = "Vissza";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnNext
             // 
@@ -757,6 +765,7 @@
             this.btnNext.TabIndex = 256;
             this.btnNext.Text = "Tovább";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // Spouse
             // 
@@ -779,7 +788,7 @@
             this.Controls.Add(this.tbSpouseNationality);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.panel23);
-            this.Controls.Add(this.lblDeceasedResidenceDistrict);
+            this.Controls.Add(this.lblSpouseResidenceDistrict);
             this.Controls.Add(this.tbSpouseResidenceDistrict);
             this.Controls.Add(this.panel24);
             this.Controls.Add(this.label2);
@@ -788,13 +797,13 @@
             this.Controls.Add(this.label45);
             this.Controls.Add(this.tbSpouseHomeAddress);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblSpouseHomeDistrict);
             this.Controls.Add(this.tbSpouseHomeDistrict);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbSpouseHomeCity);
             this.Controls.Add(this.label43);
-            this.Controls.Add(this.cbHomeEqualsResidence);
+            this.Controls.Add(this.cbIsSpouseHomeEqualsResidence);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbSpousePlaceOfBirthCountry);
@@ -814,7 +823,7 @@
             this.Controls.Add(this.tbSpouseBirthSurname);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel19);
-            this.Controls.Add(this.lblDeceasedHomeDistrict);
+            this.Controls.Add(this.lblPlaceOfMarriageDistrict);
             this.Controls.Add(this.tbPlaceOfMarriageDistrict);
             this.Controls.Add(this.panel20);
             this.Controls.Add(this.label41);
@@ -846,7 +855,7 @@
         private System.Windows.Forms.ComboBox cmbDateOfMarriageYear;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Label lblDeceasedHomeDistrict;
+        private System.Windows.Forms.Label lblPlaceOfMarriageDistrict;
         private System.Windows.Forms.TextBox tbPlaceOfMarriageDistrict;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label41;
@@ -874,7 +883,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Label lblDeceasedResidenceDistrict;
+        private System.Windows.Forms.Label lblSpouseResidenceDistrict;
         private System.Windows.Forms.TextBox tbSpouseResidenceDistrict;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label label2;
@@ -883,13 +892,13 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox tbSpouseHomeAddress;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblSpouseHomeDistrict;
         private System.Windows.Forms.TextBox tbSpouseHomeDistrict;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbSpouseHomeCity;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.CheckBox cbHomeEqualsResidence;
+        private System.Windows.Forms.CheckBox cbIsSpouseHomeEqualsResidence;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox tbSpousePersonalIdentifierNumber;
         private System.Windows.Forms.Panel panel9;

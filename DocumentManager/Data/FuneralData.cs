@@ -6,7 +6,13 @@
 
         public string Type { get { return type; } set { type = value; OnPropertyChanged(); } }
 
-        public string Date { get { return date; } set { date = value; OnPropertyChanged(); } }
+        public string DateYear { get { return dateYear; } set { dateYear = value; OnPropertyChanged(); } }
+
+        public string DateMonth { get { return dateMonth; } set { dateMonth = value; OnPropertyChanged(); } }
+
+        public string DateDay { get { return dateDay; } set { dateDay = value; OnPropertyChanged(); } }
+
+        public string GraveOrCrypt { get { return graveOrCrypt; } set { graveOrCrypt = value; OnPropertyChanged(); } }
 
         public string Catafalque { get { return catafalque; } set { catafalque = value; OnPropertyChanged(); } }
 
@@ -23,6 +29,8 @@
         public string GraveMarker { get { return graveMarker; } set { graveMarker = value; OnPropertyChanged(); } }
 
         public string Music { get { return music; } set { music = value; OnPropertyChanged(); } }
+
+        public string Reach { get { return reach; } set { reach = value; OnPropertyChanged(); } }
 
 
 
@@ -46,7 +54,13 @@
 
         private string type;
 
-        private string date;
+        private string dateYear;
+
+        private string dateMonth;
+
+        private string dateDay;
+
+        private string graveOrCrypt;
 
         private string catafalque;
 
@@ -63,6 +77,8 @@
         private string graveMarker;
 
         private string music;
+
+        private string reach;
 
         private bool isIDCardTaken;
 

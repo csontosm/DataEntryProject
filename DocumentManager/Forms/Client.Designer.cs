@@ -339,9 +339,9 @@
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label6.Location = new System.Drawing.Point(10, 259);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 132;
-            this.label6.Text = "Születési utóneve";
+            this.label6.Text = "Utóneve";
             // 
             // tbClientForename
             // 
@@ -369,9 +369,9 @@
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label7.Location = new System.Drawing.Point(10, 211);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 13);
+            this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 129;
-            this.label7.Text = "Születési családi neve";
+            this.label7.Text = "Családi neve";
             // 
             // tbClientSurname
             // 

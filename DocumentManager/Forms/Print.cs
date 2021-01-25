@@ -36,6 +36,7 @@ namespace DocumentManager
             if (checkBoxHamvasztasBudapest.Checked) Print.Add("HamvasztasBudapest");
             if (checkBoxHamvasztasSzolnok.Checked) Print.Add("HamvasztasSzolnok");
             if (checkBoxRegisztraciosLap.Checked) Print.Add("RegLap");
+            if (checkBoxUrnaelvitel.Checked) Print.Add("Urnaelvitel");
             if (checkBoxStatlap.Checked)
             {
                 Print.Add("Statlap1");
@@ -43,15 +44,15 @@ namespace DocumentManager
             }
 
             Save();
-            //Thread.Sleep(3000);
-            //printSheet(Print);
+            Thread.Sleep(3000);
+            printSheet(Print);
         }
 
         public void printSheet(List<string> list)
         {
             for (int i = 0; i < list.Count(); i++)
             {
-                var filePath = (Settings.outputDocFolderPath + $@"\{Forms.deceasedData.Name}\{Forms.deceasedData.Name}_{list[i]}.docx");
+                var filePath = (Settings.outputDocFolderPath + $@"\{Forms.deceasedData.BirthSurname + " " + Forms.deceasedData.BirthForename}\{Forms.deceasedData.BirthSurname + " " + Forms.deceasedData.BirthForename}_{list[i]}.docx");
 
                 var startInfo = new ProcessStartInfo(filePath);
                 startInfo.Verb = "print";

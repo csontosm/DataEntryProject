@@ -10,13 +10,13 @@ namespace DocumentManager
 {
     public static class Forms
     {
-        public static Form MenuForm = new Menu();
-        public static Form DeceasedForm = new Deceased();
-        public static Form SpouseForm = new Spouse();
-        public static Form ClientForm = new Client();
-        public static Form FuneralForm = new Funeral();
-        public static Form PrintForm = new Print();
-        public static Form SettingsForm = new Settings();
+        public static Menu MenuForm = new Menu();
+        public static Deceased DeceasedForm = new Deceased();
+        public static Spouse SpouseForm = new Spouse();
+        public static Client ClientForm = new Client();
+        public static Funeral FuneralForm = new Funeral();
+        public static Print PrintForm = new Print();
+        public static Settings SettingsForm = new Settings();
 
         public static DeceasedData deceasedData = new DeceasedData();
         public static ClientData clientData = new ClientData();

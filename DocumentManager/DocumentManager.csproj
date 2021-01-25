@@ -55,6 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ComboboxConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComboboxConfigurationForm.Designer.cs">
+      <DependentUpon>ComboboxConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="Data\AbstractData.cs" />
     <Compile Include="Data\SpouseData.cs" />
     <Compile Include="Forms\FormBase.cs">
@@ -111,6 +118,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextReplacementRule.cs" />
+    <EmbeddedResource Include="Forms\ComboboxConfigurationForm.resx">
+      <DependentUpon>ComboboxConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

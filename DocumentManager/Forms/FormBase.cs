@@ -45,7 +45,7 @@ namespace DocumentManager
         {
             string[] docTemplateFilesArray = Forms.dataManager.getDocFiles(Settings.templateDocFolderPath);
 
-            string name = Forms.deceasedData.Name;
+            string name = Forms.deceasedData.BirthSurname + " " + Forms.deceasedData.BirthForename;
 
             for (int i = 0; i < docTemplateFilesArray.Count(); i++)
             {
@@ -62,6 +62,33 @@ namespace DocumentManager
                     Forms.dataManager.saveFile(outputFilePath, templateDoc);
                 }
             }
+        }
+
+        public List<string> readFile(string filePath)
+        {
+            string line;
+            List<string> items = new List<string>();
+
+            StreamReader file = new StreamReader(filePath);
+            while ((line = file.ReadLine()) != null)
+            {
+                items.Add(line);
+            }
+            file.Close();
+
+            return items;
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FormBase
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FormBase";
+            this.ResumeLayout(false);
+
         }
     }
 }

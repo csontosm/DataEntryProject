@@ -40,6 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.checkBoxMeghatalmazas = new System.Windows.Forms.CheckBox();
             this.checkBoxHamvasztasSzolnok = new System.Windows.Forms.CheckBox();
+            this.checkBoxUrnaelvitel = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBoxGodolloiTemeto
@@ -163,11 +164,22 @@
             this.checkBoxHamvasztasSzolnok.Text = "Hamvasztás - Szolnok";
             this.checkBoxHamvasztasSzolnok.UseVisualStyleBackColor = true;
             // 
+            // checkBoxUrnaelvitel
+            // 
+            this.checkBoxUrnaelvitel.AutoSize = true;
+            this.checkBoxUrnaelvitel.Location = new System.Drawing.Point(33, 244);
+            this.checkBoxUrnaelvitel.Name = "checkBoxUrnaelvitel";
+            this.checkBoxUrnaelvitel.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxUrnaelvitel.TabIndex = 13;
+            this.checkBoxUrnaelvitel.Text = "Úrnaelvitel";
+            this.checkBoxUrnaelvitel.UseVisualStyleBackColor = true;
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(248, 375);
+            this.Controls.Add(this.checkBoxUrnaelvitel);
             this.Controls.Add(this.checkBoxHamvasztasSzolnok);
             this.Controls.Add(this.checkBoxMeghatalmazas);
             this.Controls.Add(this.button2);
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBoxMeghatalmazas;
         private System.Windows.Forms.CheckBox checkBoxHamvasztasSzolnok;
+        private System.Windows.Forms.CheckBox checkBoxUrnaelvitel;
     }
 }

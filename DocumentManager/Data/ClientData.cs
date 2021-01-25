@@ -22,8 +22,6 @@
 
         public string HomeDistrict { get { return homeDistrict; } set { homeDistrict = value; OnPropertyChanged(); } }
 
-        public string Reach { get { return reach; } set { reach = value; OnPropertyChanged(); } }
-
         private string clientName;
 
         private string surname;
@@ -43,7 +41,5 @@
         private string homeAddress;
 
         private string homeDistrict;
-
-        private string reach;
     }
 }

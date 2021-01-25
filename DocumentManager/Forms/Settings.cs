@@ -18,7 +18,27 @@ namespace DocumentManager
             InitializeComponent();
 
             Forms.SettingsForm = this;
+
+            lbCoffinTypes.Items.AddRange(readFile(Constants.pathCoffinTypes).ToArray());
+            lbUrnTypes.Items.AddRange(readFile(Constants.pathUrnTypes).ToArray());
         }
+
+        private void editFile(string filePath, List<string> itemsList)
+        {
+            List<string> itemsFile = readFile(filePath);
+
+            if (itemsFile != itemsList)
+            {
+                TextWriter tw = new StreamWriter(filePath);
+
+                foreach (String s in itemsList)
+                    tw.WriteLine(s);
+
+                tw.Close();
+            }
+        }
+
+
 
         public static string templateDocFolderPath;
         public static string outputDocFolderPath;
@@ -59,7 +79,7 @@ namespace DocumentManager
         private void loadPaths()
         {
             string line;
-            string path = @"D:\Settings.txt";
+            string path = Constants.pathSettings;
             List<string> paths = new List<string>();
 
             StreamReader file = new StreamReader(path);
@@ -83,7 +103,7 @@ namespace DocumentManager
 
         private void savePaths()
         {
-            string path = @"D:\Settings.txt";
+            string path = Constants.pathSettings;
             File.WriteAllText(path, String.Empty);
             if (!File.Exists(path))
             {
@@ -112,10 +132,65 @@ namespace DocumentManager
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            savePaths();
+            List<string> coffinTypes = lbCoffinTypes.Items.Cast<String>().ToList();
+            List<string> urnTypes = lbUrnTypes.Items.Cast<String>().ToList();
 
+            editFile(Constants.pathCoffinTypes, coffinTypes);
+            editFile(Constants.pathUrnTypes, urnTypes);
+
+            savePaths();
             Forms.MenuForm.Show();
             this.Hide();
+        }
+
+        private void btnCoffinAdd_Click(object sender, EventArgs e)
+        {
+            ComboboxConfigurationForm addForm = new ComboboxConfigurationForm();
+            addForm.lbName = lbCoffinTypes;
+            addForm.Show();
+            this.Hide();
+        }
+
+        private void btnCoffinDelete_Click(object sender, EventArgs e)
+        {
+            if (lbCoffinTypes.SelectedItem != null)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Biztosan törölni szeretnéd ?", "Törlés", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    lbCoffinTypes.Items.Remove(lbCoffinTypes.SelectedItem);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nincs semmi kiválasztva.", "Hiba");
+            }
+        }
+
+        private void btnUrnAdd_Click(object sender, EventArgs e)
+        {
+            ComboboxConfigurationForm addForm = new ComboboxConfigurationForm();
+            addForm.lbName = lbUrnTypes;
+            addForm.Show();
+            this.Hide();
+        }
+
+        private void btnUrnDelete_Click(object sender, EventArgs e)
+        {
+            if (lbUrnTypes.SelectedItem != null)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Biztosan törölni szeretnéd ?", "Törlés", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    lbUrnTypes.Items.Remove(lbUrnTypes.SelectedItem);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nincs semmi kiválasztva.", "Hiba");
+            }
         }
     }
 }

@@ -1,0 +1,2 @@
+C:\Users\Csontos\Source\Repos\DataEntryProject\Input
+C:\Users\Csontos\Source\Repos\DataEntryProject\Output

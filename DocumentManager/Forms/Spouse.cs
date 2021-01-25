@@ -20,18 +20,12 @@ namespace DocumentManager
             Forms.SpouseForm = this;
 
             ComboBoxItemFiller(cmbDateOfMarriageYear, 1900, DateTime.Now.Year);
-            cmbDateOfMarriageYear.SelectedIndex = 0;
             ComboBoxItemFiller(cmbDateOfMarriageMonth, 1, 12);
-            cmbDateOfMarriageMonth.SelectedIndex = 0;
             ComboBoxItemFiller(cmbDateOfMarriageDay, 1, 31);
-            cmbDateOfMarriageDay.SelectedIndex = 0;
 
             ComboBoxItemFiller(cmbSpouseDateOfBirthYear, 1900, DateTime.Now.Year);
-            cmbSpouseDateOfBirthYear.SelectedIndex = 0;
             ComboBoxItemFiller(cmbSpouseDateOfBirthMonth, 1, 12);
-            cmbSpouseDateOfBirthMonth.SelectedIndex = 0;
             ComboBoxItemFiller(cmbSpouseDateOfBirthDay, 1, 31);
-            cmbSpouseDateOfBirthDay.SelectedIndex = 0;
         }
 
         private void Spouse_Load(object sender, EventArgs e)
@@ -58,12 +52,18 @@ namespace DocumentManager
             tbSpouseNationality.DataBindings.Add("Text", Forms.spouseData, nameof(SpouseData.Nationality));
             tbSpouseResidenceCity.DataBindings.Add("Text", Forms.spouseData, nameof(SpouseData.ResidenceCity));
             tbSpouseResidenceDistrict.DataBindings.Add("Text", Forms.spouseData, nameof(SpouseData.ResidenceDistrict));
+            cbIsSpouseHomeEqualsResidence.DataBindings.Add("Checked", Forms.spouseData, nameof(SpouseData.IsSpouseHomeEqualsResidence));
         }
 
         private void Spouse_Activated(object sender, EventArgs e)
         {
             var elhunytData = Forms.deceasedData;
             if (elhunytData.Gender == "Férfi") tbSpousePersonalIdentifierNumberGender.Text = "2"; else if (elhunytData.Gender == "Nő") tbSpousePersonalIdentifierNumberGender.Text = "1"; else tbSpousePersonalIdentifierNumberGender.Text = "";
+        }
+
+        private void Spouse_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ClosingDialog(e);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -78,76 +78,33 @@ namespace DocumentManager
             this.Hide();
         }
 
-        private void Spouse_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ClosingDialog(e);
-        }
-
         private void tbPlaceOfMarriageCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible;
-            if (tbPlaceOfMarriageCity.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbPlaceOfMarriageDistrict.Text = "";
-            }
-
+            bool visible = tbPlaceOfMarriageCity.Text == "BUDAPEST" ? true : false;
             tbPlaceOfMarriageDistrict.Enabled = visible;
+            lblPlaceOfMarriageDistrict.Enabled = visible;
         }
 
         private void tbSpouseHomeCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible;
-            if (tbSpouseHomeCity.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbSpouseHomeDistrict.Text = "";
-            }
-
+            bool visible = tbSpouseHomeCity.Text == "BUDAPEST" ? true : false;
             tbSpouseHomeDistrict.Enabled = visible;
+            lblSpouseHomeDistrict.Enabled = visible;
         }
 
         private void tbSpouseResidenceCity_TextChanged(object sender, EventArgs e)
         {
-            bool visible;
-            if (tbSpouseResidenceCity.Text == "BUDAPEST")
-            {
-                visible = true;
-            }
-            else
-            {
-                visible = false;
-                tbSpouseResidenceDistrict.Text = "";
-            }
-
+            bool visible = tbSpouseResidenceCity.Text == "BUDAPEST" ? true : false;
             tbSpouseResidenceDistrict.Enabled = visible;
+            lblSpouseResidenceDistrict.Enabled = visible;
         }
 
-        private void cbHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
+        private void cbIsSpouseHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbHomeEqualsResidence.Checked)
+            if (cbIsSpouseHomeEqualsResidence.Checked)
             {
                 tbSpouseResidenceCity.Enabled = false;
                 tbSpouseResidenceDistrict.Enabled = false;
-
-                tbSpouseResidenceCity.Text = tbSpouseHomeCity.Text;
-
-                if (tbSpouseHomeCity.Text == "BUDAPEST")
-                {
-                    tbSpouseResidenceDistrict.Text = tbSpouseHomeDistrict.Text;
-                }
-                else
-                {
-                    tbSpouseResidenceDistrict.Text = "";
-                }
             }
             else
             {
@@ -158,17 +115,23 @@ namespace DocumentManager
 
         private void cmbSpouseDateOfBirthYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2, cmbSpouseDateOfBirthYear.Text.Length - 2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
+            UpdatePersonalIdentifierNumber();
         }
 
         private void cmbSpouseDateOfBirthMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2, cmbSpouseDateOfBirthYear.Text.Length - 2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
+            UpdatePersonalIdentifierNumber();
         }
 
         private void cmbSpouseDateOfBirthDay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2, cmbSpouseDateOfBirthYear.Text.Length - 2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
+            UpdatePersonalIdentifierNumber();
+        }
+
+        private void UpdatePersonalIdentifierNumber()
+        {
+            if (string.IsNullOrEmpty(cmbSpouseDateOfBirthYear.Text) || string.IsNullOrEmpty(cmbSpouseDateOfBirthMonth.Text) || string.IsNullOrEmpty(cmbSpouseDateOfBirthDay.Text)) return;
+            tbSpousePersonalIdentifierNumberBirthDate.Text = (cmbSpouseDateOfBirthYear.Text.Substring(2) + cmbSpouseDateOfBirthMonth.Text + cmbSpouseDateOfBirthDay.Text);
         }
     }
 }

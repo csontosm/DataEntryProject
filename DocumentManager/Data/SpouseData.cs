@@ -42,6 +42,29 @@
 
         public string ResidenceDistrict { get { return residenceDistrict; } set { residenceDistrict = value; OnPropertyChanged(); } }
 
+        public bool IsSpouseHomeEqualsResidence
+        {
+            get
+            {
+                return isSpouseHomeEqualsResidence;
+            }
+            set
+            {
+                isSpouseHomeEqualsResidence = value;
+                OnPropertyChanged();
+                if (value)
+                {
+                    ResidenceCity = HomeCity;
+                    ResidenceDistrict = HomeDistrict;
+                }
+                else
+                {
+                    ResidenceCity = "";
+                    ResidenceDistrict = "";
+                }
+            }
+        }
+
         private string dateOfMarriageYear;
 
         private string dateOfMarriageMonth;
@@ -81,5 +104,7 @@
         private string residenceCity;
 
         private string residenceDistrict;
+
+        private bool isSpouseHomeEqualsResidence;
     }
 }

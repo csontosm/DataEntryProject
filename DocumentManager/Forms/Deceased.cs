@@ -17,21 +17,19 @@ namespace DocumentManager
         public Deceased()
         {
             InitializeComponent();
-            // Forms.DeceasedForm = this;
+            Forms.DeceasedForm = this;
 
             ComboBoxItemFiller(cmbDeceasedDateOfBirthYear, 1900, DateTime.Now.Year);
-            cmbDeceasedDateOfBirthYear.SelectedIndex = 0;
             ComboBoxItemFiller(cmbDeceasedDateOfBirthMonth, 1, 12);
-            cmbDeceasedDateOfBirthMonth.SelectedIndex = 0;
             ComboBoxItemFiller(cmbDeceasedDateOfBirthDay, 1, 31);
-            cmbDeceasedDateOfBirthDay.SelectedIndex = 0;
 
-
-            tbDeceasedDateOfDeathYear.Text = DateTime.Now.Year.ToString();
             ComboBoxItemFiller(cmbDeceasedDateOfDeathMonth, 1, 12);
-            cmbDeceasedDateOfDeathMonth.SelectedIndex = 0;
             ComboBoxItemFiller(cmbDeceasedDateOfDeathDay, 1, 31);
-            cmbDeceasedDateOfDeathDay.SelectedIndex = 0;
+
+            ComboBoxItemFiller(cmbDeceasedIdentifierDocumentExpireYear, DateTime.Now.Year, 2099);
+            cmbDeceasedIdentifierDocumentExpireYear.Items.Add("Hat.Nélk.");
+            ComboBoxItemFiller(cmbDeceasedIdentifierDocumentExpireMonth, 1, 12);
+            ComboBoxItemFiller(cmbDeceasedIdentifierDocumentExpireDay, 1, 31);
         }
 
         private void Deceased_Load(object sender, EventArgs e)
@@ -53,6 +51,9 @@ namespace DocumentManager
             tbDeceasedPersonalIdentifierNumber.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.PersonalIdentifierNumber));
             tbDeceasedHomeCardNumber.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.HomeCardNumber));
             tbDeceasedIdentifierDocumentNumber.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.IdentifierDocumentNumber));
+            cmbDeceasedIdentifierDocumentExpireYear.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.IdentifierDocumentExpireYear));
+            cmbDeceasedIdentifierDocumentExpireMonth.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.IdentifierDocumentExpireMonth));
+            cmbDeceasedIdentifierDocumentExpireDay.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.IdentifierDocumentExpireDay));
             tbDeceasedNationality.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.Nationality));
             tbDeceasedHomeCountry.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.HomeCountry));
             tbDeceasedHomeCity.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.HomeCity));
@@ -76,6 +77,10 @@ namespace DocumentManager
             tbDeceasedResidenceDistrict.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.ResidenceDistrict));
             tbDeceasedQualification.DataBindings.Add("Text", Forms.deceasedData, nameof(DeceasedData.Qualification));
             cbIsMarried.DataBindings.Add("Checked", Forms.deceasedData, nameof(DeceasedData.IsMarried));
+            cbKidsFromOtherMarriage.DataBindings.Add("Checked", Forms.deceasedData, nameof(DeceasedData.HasKidsFromOtherMarriage));
+            cbIsDeceasedHomeEqualsResidence.DataBindings.Add("Checked", Forms.deceasedData, nameof(DeceasedData.IsDeceasedHomeEqualsResidence));
+
+            deceasedData.DateOfDeathYear = DateTime.Now.Year.ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -111,54 +116,12 @@ namespace DocumentManager
             ClosingDialog(e);
         }
 
-        private void cbKidsFromOtherMarriage_CheckedChanged(object sender, EventArgs e)
-        {
-            bool visible;
-
-            if (cbKidsFromOtherMarriage.Checked)
-            {
-                visible = true;
-
-                tbKidsAlltogetherAll.Text = "";
-                tbKidsAlltogetherBornAlive.Text = "";
-                tbKidsAlltogetherAlive.Text = "";
-            }
-            else
-            {
-                visible = false;
-
-                tbKidsAlltogetherAll.Text = tbKidsFromLastMarriageAll.Text;
-                tbKidsAlltogetherBornAlive.Text = tbKidsFromLastMarriageBornAlive.Text;
-                tbKidsAlltogetherAlive.Text = tbKidsFromLastMarriageAlive.Text;
-            }
-
-            lblKidsAlltogetherAll.Enabled = visible;
-            lblKidsAlltogetherBornAlive.Enabled = visible;
-            lblKidsAlltogetherAlive.Enabled = visible;
-            lblKidsAlltogether.Enabled = visible;
-
-            tbKidsAlltogetherAll.Enabled = visible;
-            tbKidsAlltogetherBornAlive.Enabled = visible;
-            tbKidsAlltogetherAlive.Enabled = visible;
-        }
-
         private void cbIsHomeEqualsResidence_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbIsHomeEqualsResidence.Checked)
+            if (cbIsDeceasedHomeEqualsResidence.Checked)
             {
                 tbDeceasedResidenceCity.Enabled = false;
                 tbDeceasedResidenceDistrict.Enabled = false;
-
-                tbDeceasedResidenceCity.Text = tbDeceasedHomeCity.Text;
-
-                if (tbDeceasedHomeCity.Text == "BUDAPEST")
-                {
-                    tbDeceasedResidenceDistrict.Text = tbDeceasedHomeDistrict.Text;
-                }
-                else
-                {
-                    tbDeceasedResidenceDistrict.Text = "";
-                }
             }
             else
             {
@@ -195,21 +158,6 @@ namespace DocumentManager
             lblDeceasedResidenceDistrict.Enabled = visible;
         }
 
-        private void tbKidsFromLastMarriageAll_TextChanged(object sender, EventArgs e)
-        {
-            if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherAll.Text = tbKidsFromLastMarriageAll.Text;
-        }
-
-        private void tbKidsFromLastMarriageBornAlive_TextChanged(object sender, EventArgs e)
-        {
-            if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherBornAlive.Text = tbKidsFromLastMarriageBornAlive.Text;
-        }
-
-        private void tbKidsFromLastMarriageAlive_TextChanged(object sender, EventArgs e)
-        {
-            if (!cbKidsFromOtherMarriage.Checked) tbKidsAlltogetherAlive.Text = tbKidsFromLastMarriageAlive.Text;
-        }
-
         private void cmbDeceasedGender_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDeceasedGender.SelectedIndex == 0) tbDeceasedPersonalIdentifierNumberGender.Text = "2"; else tbDeceasedPersonalIdentifierNumberGender.Text = "1";
@@ -217,17 +165,35 @@ namespace DocumentManager
 
         private void cmbDeceasedDateOfBirthYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbDeceasedPersonalIdentifierNumberBirthDate.Text = (cmbDeceasedDateOfBirthYear.Text.Substring(2, cmbDeceasedDateOfBirthYear.Text.Length - 2) + cmbDeceasedDateOfBirthMonth.Text + cmbDeceasedDateOfBirthDay.Text);
+            UpdatePersonalIdentifierNumber();
         }
 
         private void cmbDeceasedDateOfBirthMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbDeceasedPersonalIdentifierNumberBirthDate.Text = (cmbDeceasedDateOfBirthYear.Text.Substring(2, cmbDeceasedDateOfBirthYear.Text.Length - 2) + cmbDeceasedDateOfBirthMonth.Text + cmbDeceasedDateOfBirthDay.Text);
+            UpdatePersonalIdentifierNumber();
         }
 
         private void cmbDeceasedDateOfBirthDay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbDeceasedPersonalIdentifierNumberBirthDate.Text = (cmbDeceasedDateOfBirthYear.Text.Substring(2, cmbDeceasedDateOfBirthYear.Text.Length - 2) + cmbDeceasedDateOfBirthMonth.Text + cmbDeceasedDateOfBirthDay.Text);
+            UpdatePersonalIdentifierNumber();
+        }
+
+        private void UpdatePersonalIdentifierNumber()
+        {
+            if (string.IsNullOrEmpty(cmbDeceasedDateOfBirthYear.Text) || string.IsNullOrEmpty(cmbDeceasedDateOfBirthMonth.Text) || string.IsNullOrEmpty(cmbDeceasedDateOfBirthDay.Text)) return;
+            tbDeceasedPersonalIdentifierNumberBirthDate.Text = (cmbDeceasedDateOfBirthYear.Text.Substring(2) + cmbDeceasedDateOfBirthMonth.Text + cmbDeceasedDateOfBirthDay.Text);
+        }
+
+        private void cbKidsFromOtherMarriage_CheckedChanged(object sender, EventArgs e)
+        {
+            lblKidsAlltogetherAll.Enabled = cbKidsFromOtherMarriage.Checked;
+            lblKidsAlltogetherBornAlive.Enabled = cbKidsFromOtherMarriage.Checked;
+            lblKidsAlltogetherAlive.Enabled = cbKidsFromOtherMarriage.Checked;
+            lblKidsAlltogether.Enabled = cbKidsFromOtherMarriage.Checked;
+
+            tbKidsAlltogetherAll.Enabled = cbKidsFromOtherMarriage.Checked;
+            tbKidsAlltogetherBornAlive.Enabled = cbKidsFromOtherMarriage.Checked;
+            tbKidsAlltogetherAlive.Enabled = cbKidsFromOtherMarriage.Checked;
         }
     }
 }

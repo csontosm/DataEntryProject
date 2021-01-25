@@ -32,8 +32,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.tbFuneralDateYear = new System.Windows.Forms.TextBox();
-            this.tbFuneralDateDay = new System.Windows.Forms.ComboBox();
-            this.tbFuneralDateMonth = new System.Windows.Forms.ComboBox();
+            this.cmbFuneralDateDay = new System.Windows.Forms.ComboBox();
+            this.cmbFuneralDateMonth = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.cmbFuneralType = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmbClientReach = new System.Windows.Forms.TextBox();
+            this.tbClientReach = new System.Windows.Forms.TextBox();
             this.cmbFuneralGraveMarker = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbFuneralGarveDigging = new System.Windows.Forms.ComboBox();
@@ -60,7 +60,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.tbFuneralGrave = new System.Windows.Forms.TextBox();
-            this.cmbGraveOrCrypt = new System.Windows.Forms.ComboBox();
+            this.cmbFuneralGraveOrCrypt = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.cbFuneralIsIDCardNeededByClient = new System.Windows.Forms.CheckBox();
             this.cbFuneralIsSpouseDeathCertificateTaken = new System.Windows.Forms.CheckBox();
@@ -95,6 +95,7 @@
             this.btnBack.TabIndex = 244;
             this.btnBack.Text = "Vissza";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnNext
             // 
@@ -108,6 +109,7 @@
             this.btnNext.TabIndex = 243;
             this.btnNext.Text = "Tovább";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // tbFuneralDateYear
             // 
@@ -119,31 +121,31 @@
             this.tbFuneralDateYear.Size = new System.Drawing.Size(120, 29);
             this.tbFuneralDateYear.TabIndex = 242;
             // 
-            // tbFuneralDateDay
+            // cmbFuneralDateDay
             // 
-            this.tbFuneralDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tbFuneralDateDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tbFuneralDateDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.tbFuneralDateDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbFuneralDateDay.ForeColor = System.Drawing.Color.White;
-            this.tbFuneralDateDay.FormattingEnabled = true;
-            this.tbFuneralDateDay.Location = new System.Drawing.Point(215, 481);
-            this.tbFuneralDateDay.Name = "tbFuneralDateDay";
-            this.tbFuneralDateDay.Size = new System.Drawing.Size(59, 28);
-            this.tbFuneralDateDay.TabIndex = 241;
+            this.cmbFuneralDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.cmbFuneralDateDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuneralDateDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbFuneralDateDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbFuneralDateDay.ForeColor = System.Drawing.Color.White;
+            this.cmbFuneralDateDay.FormattingEnabled = true;
+            this.cmbFuneralDateDay.Location = new System.Drawing.Point(215, 481);
+            this.cmbFuneralDateDay.Name = "cmbFuneralDateDay";
+            this.cmbFuneralDateDay.Size = new System.Drawing.Size(59, 28);
+            this.cmbFuneralDateDay.TabIndex = 241;
             // 
-            // tbFuneralDateMonth
+            // cmbFuneralDateMonth
             // 
-            this.tbFuneralDateMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tbFuneralDateMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tbFuneralDateMonth.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.tbFuneralDateMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbFuneralDateMonth.ForeColor = System.Drawing.Color.White;
-            this.tbFuneralDateMonth.FormattingEnabled = true;
-            this.tbFuneralDateMonth.Location = new System.Drawing.Point(150, 481);
-            this.tbFuneralDateMonth.Name = "tbFuneralDateMonth";
-            this.tbFuneralDateMonth.Size = new System.Drawing.Size(59, 28);
-            this.tbFuneralDateMonth.TabIndex = 240;
+            this.cmbFuneralDateMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.cmbFuneralDateMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuneralDateMonth.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbFuneralDateMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbFuneralDateMonth.ForeColor = System.Drawing.Color.White;
+            this.cmbFuneralDateMonth.FormattingEnabled = true;
+            this.cmbFuneralDateMonth.Location = new System.Drawing.Point(150, 481);
+            this.cmbFuneralDateMonth.Name = "cmbFuneralDateMonth";
+            this.cmbFuneralDateMonth.Size = new System.Drawing.Size(59, 28);
+            this.cmbFuneralDateMonth.TabIndex = 240;
             // 
             // label22
             // 
@@ -186,10 +188,15 @@
             this.cmbFuneralMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbFuneralMethod.ForeColor = System.Drawing.Color.White;
             this.cmbFuneralMethod.FormattingEnabled = true;
+            this.cmbFuneralMethod.Items.AddRange(new object[] {
+            "Úrnaelvitel",
+            "Úrnás",
+            "Koporsós"});
             this.cmbFuneralMethod.Location = new System.Drawing.Point(24, 356);
             this.cmbFuneralMethod.Name = "cmbFuneralMethod";
             this.cmbFuneralMethod.Size = new System.Drawing.Size(250, 28);
             this.cmbFuneralMethod.TabIndex = 153;
+            this.cmbFuneralMethod.SelectedIndexChanged += new System.EventHandler(this.cmbFuneralMethod_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -219,17 +226,17 @@
             this.label11.TabIndex = 150;
             this.label11.Text = "Elérhetőség";
             // 
-            // cmbClientReach
+            // tbClientReach
             // 
-            this.cmbClientReach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.cmbClientReach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cmbClientReach.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cmbClientReach.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cmbClientReach.ForeColor = System.Drawing.Color.White;
-            this.cmbClientReach.Location = new System.Drawing.Point(395, 552);
-            this.cmbClientReach.Name = "cmbClientReach";
-            this.cmbClientReach.Size = new System.Drawing.Size(250, 22);
-            this.cmbClientReach.TabIndex = 149;
+            this.tbClientReach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.tbClientReach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbClientReach.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbClientReach.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbClientReach.ForeColor = System.Drawing.Color.White;
+            this.tbClientReach.Location = new System.Drawing.Point(395, 552);
+            this.tbClientReach.Name = "tbClientReach";
+            this.tbClientReach.Size = new System.Drawing.Size(250, 22);
+            this.tbClientReach.TabIndex = 149;
             // 
             // cmbFuneralGraveMarker
             // 
@@ -289,6 +296,7 @@
             this.cmbFuneralCryptOrCaissionType.Name = "cmbFuneralCryptOrCaissionType";
             this.cmbFuneralCryptOrCaissionType.Size = new System.Drawing.Size(250, 28);
             this.cmbFuneralCryptOrCaissionType.TabIndex = 144;
+            this.cmbFuneralCryptOrCaissionType.SelectedIndexChanged += new System.EventHandler(this.cmbFuneralCryptOrCaissionType_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -312,7 +320,6 @@
             // cbFuneralUrnCloth
             // 
             this.cbFuneralUrnCloth.AutoSize = true;
-            this.cbFuneralUrnCloth.Enabled = false;
             this.cbFuneralUrnCloth.Location = new System.Drawing.Point(507, 310);
             this.cbFuneralUrnCloth.Name = "cbFuneralUrnCloth";
             this.cbFuneralUrnCloth.Size = new System.Drawing.Size(15, 14);
@@ -425,18 +432,19 @@
             this.tbFuneralGrave.Size = new System.Drawing.Size(250, 22);
             this.tbFuneralGrave.TabIndex = 131;
             // 
-            // cmbGraveOrCrypt
+            // cmbFuneralGraveOrCrypt
             // 
-            this.cmbGraveOrCrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.cmbGraveOrCrypt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGraveOrCrypt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbGraveOrCrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cmbGraveOrCrypt.ForeColor = System.Drawing.Color.White;
-            this.cmbGraveOrCrypt.FormattingEnabled = true;
-            this.cmbGraveOrCrypt.Location = new System.Drawing.Point(395, 36);
-            this.cmbGraveOrCrypt.Name = "cmbGraveOrCrypt";
-            this.cmbGraveOrCrypt.Size = new System.Drawing.Size(250, 28);
-            this.cmbGraveOrCrypt.TabIndex = 128;
+            this.cmbFuneralGraveOrCrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.cmbFuneralGraveOrCrypt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuneralGraveOrCrypt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbFuneralGraveOrCrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbFuneralGraveOrCrypt.ForeColor = System.Drawing.Color.White;
+            this.cmbFuneralGraveOrCrypt.FormattingEnabled = true;
+            this.cmbFuneralGraveOrCrypt.Location = new System.Drawing.Point(395, 36);
+            this.cmbFuneralGraveOrCrypt.Name = "cmbFuneralGraveOrCrypt";
+            this.cmbFuneralGraveOrCrypt.Size = new System.Drawing.Size(250, 28);
+            this.cmbFuneralGraveOrCrypt.TabIndex = 128;
+            this.cmbFuneralGraveOrCrypt.SelectedIndexChanged += new System.EventHandler(this.cmbFuneralGraveOrCrypt_SelectedIndexChanged);
             // 
             // label31
             // 
@@ -554,8 +562,8 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbFuneralDateYear);
-            this.Controls.Add(this.tbFuneralDateDay);
-            this.Controls.Add(this.tbFuneralDateMonth);
+            this.Controls.Add(this.cmbFuneralDateDay);
+            this.Controls.Add(this.cmbFuneralDateMonth);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.cmbFuneralType);
             this.Controls.Add(this.label13);
@@ -563,7 +571,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.cmbClientReach);
+            this.Controls.Add(this.tbClientReach);
             this.Controls.Add(this.cmbFuneralGraveMarker);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cmbFuneralGarveDigging);
@@ -582,7 +590,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbFuneralGrave);
-            this.Controls.Add(this.cmbGraveOrCrypt);
+            this.Controls.Add(this.cmbFuneralGraveOrCrypt);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.cbFuneralIsIDCardNeededByClient);
             this.Controls.Add(this.cbFuneralIsSpouseDeathCertificateTaken);
@@ -612,7 +620,7 @@
         private System.Windows.Forms.CheckBox cbFuneralIsMarriageCertificateTaken;
         private System.Windows.Forms.CheckBox cbFuneralIsSpouseDeathCertificateTaken;
         private System.Windows.Forms.CheckBox cbFuneralIsIDCardNeededByClient;
-        private System.Windows.Forms.ComboBox cmbGraveOrCrypt;
+        private System.Windows.Forms.ComboBox cmbFuneralGraveOrCrypt;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
@@ -634,14 +642,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox cmbClientReach;
+        private System.Windows.Forms.TextBox tbClientReach;
         private System.Windows.Forms.ComboBox cmbFuneralType;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbFuneralMethod;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tbFuneralDateYear;
-        private System.Windows.Forms.ComboBox tbFuneralDateDay;
-        private System.Windows.Forms.ComboBox tbFuneralDateMonth;
+        private System.Windows.Forms.ComboBox cmbFuneralDateDay;
+        private System.Windows.Forms.ComboBox cmbFuneralDateMonth;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;

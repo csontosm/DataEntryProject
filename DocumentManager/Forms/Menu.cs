@@ -20,14 +20,12 @@ namespace DocumentManager
 
             Settings.templateDocFolderPath = paths()[0];
             Settings.outputDocFolderPath = paths()[1];
-
-            //var elhunytData = Forms.deceivedData;
         }
 
         public string[] paths()
         {
             List<string> list = new List<string>();
-            string path = @"D:\Settings.txt";
+            string path = Constants.pathSettings;
 
             if (!File.Exists(path))
             {
@@ -56,7 +54,7 @@ namespace DocumentManager
 
         public bool checkPaths()
         {
-            string path = @"D:\Settings.txt";
+            string path = Constants.pathSettings;
             if (File.Exists(path))
             {
                 if (Settings.templateDocFolderPath == "" || Settings.outputDocFolderPath == "") return false; else return true;
